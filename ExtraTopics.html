@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Salesforce IP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+        <style>
+            .ag-format-container {
+                width: 1142px;
+                margin: 0 auto;
+              }
+              .ag-courses_box {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: start;
+                -ms-flex-align: start;
+                align-items: flex-start;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+              
+                padding: 50px 0;
+              }
+              .ag-courses_item {
+                -ms-flex-preferred-size: calc(33.33333% - 30px);
+                flex-basis: calc(33.33333% - 30px);
+              
+                margin: 0 15px 30px;
+              
+                overflow: hidden;
+              
+                border-radius: 28px;
+              }
+              .ag-courses-item_link {
+                display: block;
+                padding: 30px 20px;
+                background-color: #aeb5e1;
+              
+                overflow: hidden;
+              
+                position: relative;
+              }
+              .ag-courses-item_link:hover,
+              .ag-courses-item_link:hover .ag-courses-item_date {
+                text-decoration: none;
+                color: #000000;
+              }
+              .ag-courses-item_link:hover .ag-courses-item_bg {
+                -webkit-transform: scale(10);
+                -ms-transform: scale(10);
+                transform: scale(10);
+              }
+              .ag-courses-item_title {
+                min-height: 87px;
+                margin: 0 0 25px;
+              
+                overflow: hidden;
+              
+                font-weight: bold;
+                font-size: 30px;
+                color: #FFF;
+              
+                z-index: 2;
+                position: relative;
+              }
+              .ag-courses-item_date-box {
+                font-size: 18px;
+                color: #FFF;
+              
+                z-index: 2;
+                position: relative;
+              }
+              .ag-courses-item_date {
+                font-weight: bold;
+                color: #f9b234;
+              
+                -webkit-transition: color .5s ease;
+                -o-transition: color .5s ease;
+                transition: color .5s ease
+              }
+              .ag-courses-item_bg {
+                height: 128px;
+                width: 128px;
+                background-color: #f9b234;
+              
+                z-index: 1;
+                position: absolute;
+                top: -75px;
+                right: -75px;
+              
+                border-radius: 50%;
+              
+                -webkit-transition: all .5s ease;
+                -o-transition: all .5s ease;
+                transition: all .5s ease;
+              }
+              .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+                background-color: #3ecd5e;
+              }
+              .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+                background-color: #e44002;
+              }
+              .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+                background-color: #952aff;
+              }
+              .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+                background-color: #cd3e94;
+              }
+              .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+                background-color: #4c49ea;
+              }
+              
+              
+              
+              @media only screen and (max-width: 979px) {
+                .ag-courses_item {
+                  -ms-flex-preferred-size: calc(50% - 30px);
+                  flex-basis: calc(50% - 30px);
+                }
+                .ag-courses-item_title {
+                  font-size: 24px;
+                }
+              }
+              
+              @media only screen and (max-width: 767px) {
+                .ag-format-container {
+                  width: 96%;
+                }
+              
+              }
+              @media only screen and (max-width: 639px) {
+                .ag-courses_item {
+                  -ms-flex-preferred-size: 100%;
+                  flex-basis: 100%;
+                }
+                .ag-courses-item_title {
+                  min-height: 72px;
+                  line-height: 1;
+              
+                  font-size: 24px;
+                }
+                .ag-courses-item_link {
+                  padding: 22px 40px;
+                }
+                .ag-courses-item_date-box {
+                  font-size: 16px;
+                }
+              }
+        </style>
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4">
+		  		<h1><a href="index.html" class="logo">Salesforce <span>Interview Preparation</span></a></h1>
+	        <ul class="list-unstyled components mb-5">
+	          <li >
+	            <a href="index.html"><span class="fa fa-home mr-3"></span> Home</a>
+	          </li>
+	          <li >
+	              <a href="admin.html"><span class="fa fa-user mr-3"></span> Admin</a>
+	          </li>
+	          <li>
+              <a href="apex.html"><span class="fa fa-briefcase mr-3"></span> Apex</a>
+	          </li>
+	          <li>
+              <a href="aura.html"><span class="fa fa-sticky-note mr-3"></span> AURA</a>
+	          </li>
+	          <li>
+              <a href="lwc.html"><span class="fa fa-suitcase mr-3"></span> LWC</a>
+	          </li>
+	          <li>
+              <a href="integration.html"><span class="fa fa-cogs mr-3"></span> Integration</a>
+	          </li>
+	          <li>
+              <a href="triggers.html"><span class="fa fa-paper-plane mr-3"></span> Triggers</a>
+	          </li>
+			  <li>
+				<a href="ExtraQS.html"><span class="fa fa-paper-plane mr-3"></span> Extra Questions</a>
+				</li>
+				<li  class="active">
+					<a href="ExtraTopics.html"><span class="fa fa-paper-plane mr-3"></span> Extra Topics</a>
+					</li>
+	        </ul>
+
+
+	       <!--  <div class="mb-5">
+						<h3 class="h6 mb-3">Subscribe for newsletter</h3>
+						<form action="#" class="subscribe-form">
+	            <div class="form-group d-flex">
+	            	<div class="icon"><span class="icon-paper-plane"></span></div>
+	              <input type="text" class="form-control" placeholder="Enter Email Address">
+	            </div>
+	          </form>
+					</div> -->
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This  is made with Love
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Extra Topics</h2>
+        <div class="ag-format-container">
+            <div class="ag-courses_box">
+              <div class="ag-courses_item">
+                <a href="Deployment.html" class="ag-courses-item_link">
+                  <div class="ag-courses-item_bg"></div>
+          
+                  <div class="ag-courses-item_title">
+                   Deployment
+                  </div>
+                </a>
+              </div>
+          
+              <div class="ag-courses_item">
+                <a href="Sandbox.html" class="ag-courses-item_link">
+                  <div class="ag-courses-item_bg"></div>
+          
+                  <div class="ag-courses-item_title">
+                    SandBox
+                  </div>
+                </a>
+              </div>
+          
+              <div class="ag-courses_item">
+                <a href="AdminConcepts.html" class="ag-courses-item_link">
+                  <div class="ag-courses-item_bg"></div>
+          
+                  <div class="ag-courses-item_title">
+                    ADMIN Concepts
+                  </div>
+                </a>
+              </div>
+          
+               <div class="ag-courses_item">
+                <a href="TriggerTheory.html" class="ag-courses-item_link">
+                  <div class="ag-courses-item_bg"></div>
+          
+                  <div class="ag-courses-item_title">
+                    Trigger Theory
+                  </div>
+                </a>
+              </div>
+          
+             <!-- <div class="ag-courses_item">
+                <a href="#" class="ag-courses-item_link">
+                  <div class="ag-courses-item_bg"></div>
+          
+                  <div class="ag-courses-item_title">
+                    Motion Design
+                  </div>
+                </a>
+              </div>
+          
+              <div class="ag-courses_item">
+                <a href="#" class="ag-courses-item_link">
+                  <div class="ag-courses-item_bg">
+                  </div>
+                  <div class="ag-courses-item_title">
+                    Digital Marketing
+                  </div>
+                </a>
+              </div>
+          
+              <div class="ag-courses_item">
+                <a href="#" class="ag-courses-item_link">
+                  <div class="ag-courses-item_bg"></div>
+          
+                  <div class="ag-courses-item_title">
+                    Interior Design
+                  </div>
+                </a>
+              </div> -->
+          
+            </div>
+          </div>
+    
+    </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

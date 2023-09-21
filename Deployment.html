@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Salesforce IP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4">
+		  		<h1><a href="index.html" class="logo">Salesforce <span>Interview Preparation</span></a></h1>
+	        <ul class="list-unstyled components mb-5">
+	          <li >
+	            <a href="index.html"><span class="fa fa-home mr-3"></span> Home</a>
+	          </li>
+	          <li >
+	              <a href="admin.html"><span class="fa fa-user mr-3"></span> Admin</a>
+	          </li>
+	          <li>
+              <a href="apex.html"><span class="fa fa-briefcase mr-3"></span> Apex</a>
+	          </li>
+	          <li>
+              <a href="aura.html"><span class="fa fa-sticky-note mr-3"></span> AURA</a>
+	          </li>
+	          <li>
+              <a href="lwc.html"><span class="fa fa-suitcase mr-3"></span> LWC</a>
+	          </li>
+	          <li>
+              <a href="integration.html"><span class="fa fa-cogs mr-3"></span> Integration</a>
+	          </li>
+	          <li>
+              <a href="triggers.html"><span class="fa fa-paper-plane mr-3"></span> Triggers</a>
+	          </li>
+			  <li>
+				<a href="ExtraQS.html"><span class="fa fa-paper-plane mr-3"></span> Extra Questions</a>
+				</li>
+				<li  class="active">
+					<a href="ExtraTopics.html"><span class="fa fa-paper-plane mr-3"></span> Extra Topics</a>
+					</li>
+	        </ul>
+
+
+	       <!--  <div class="mb-5">
+						<h3 class="h6 mb-3">Subscribe for newsletter</h3>
+						<form action="#" class="subscribe-form">
+	            <div class="form-group d-flex">
+	            	<div class="icon"><span class="icon-paper-plane"></span></div>
+	              <input type="text" class="form-control" placeholder="Enter Email Address">
+	            </div>
+	          </form>
+					</div> -->
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This  is made with Love
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Deployment</h2>
+        <p><strong><span style="color: rgb(97, 189, 109); font-size: 22px;">Deployment in SFDC</span></strong></p>
+<p>Salesforce Deployment is nothing but copying/transferring Salesforce metadata from one Salesforce organization to another. There are various methods to achieve Salesforce metadata deployment.</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>Change Sets</strong></span></p>
+<p>It is the easiest way to send configuration changes from one Salesforce organization to another. But the change set also has a limitation that we can only use it among connected Salesforce orgs only (like Developer Sandbox to Test Sandbox &amp; Test Sandbox to Production Org etc.). We cannot use it in between any individual Salesforce orgs.</p>
+<p>To use change sets we need to have two Salesforce org&rsquo;s i.e. one Production org and its Sandbox org.</p>
+<ul>
+    <li><strong>Production Org</strong>: It is Salesforce org with live data which is being actively used.</li>
+    <li><strong>Sandbox</strong>:A sandbox is a copy of your production organization. Sandboxes contain the same metadata as production organization.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">Outbound Change Sets:</span></strong></p>
+<p>An outbound change set is a change set created in Source organization and that you want to deploy to target organization.</p>
+<p>Sending an outbound change set to another organization doesn&rsquo;t guarantee that the changes will be implemented in that organization. The change set must be deployed (accepted) by the target organization before the changes take effect.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Inbound Change Sets:</span></strong></p>
+<p>An inbound change set is a change set that is sent from source organization to the target organization. A change sent must be deployed for the changes to take effect. You can deploy the contents of an inbound change set as a whole, but not on a component-by-component basis.</p>
+<p>Accept, modify, or reject change sets uploaded from other organizations.</p>
+<p>Change sets require a deployment connection between the two Salesforce organizations.</p>
+<p>The first step is to create this connection.</p>
+<p><strong><span style="font-size: 20px; color: rgb(44, 130, 201);">Steps of deployment by using ChangeSet:</span></strong></p>
+<p><span style="color: rgb(226, 80, 65);"><strong>In PRODUCTION Org&nbsp;</strong></span></p>
+<ul>
+    <li>First we have to check there is a connection between Production org (Source Org) and Sandbox Org (Destination Org).To check this&nbsp;</li>
+    <li><strong>Deployment settings (in setup)</strong>&nbsp;</li>
+    <li>Click on edit near the sandbox from which deployment has to be done.</li>
+    <li>Then click on the checkbox named as &ldquo;allow inbound changeset&rdquo;.</li>
+</ul>
+<p><span style="color: rgb(226, 80, 65);"><strong>In SANDBOX Org&nbsp;</strong></span></p>
+<ul>
+    <li>Go to <strong>Deployment settings (in setup)</strong></li>
+    <li>Check &ldquo;Allow deployments of components when corresponding Apex jobs are pending or in progress.</li>
+    <li>Caution: Enabling this option may cause Apex jobs to fail.&rdquo; checkbox is tick or not. If not then make it checked.</li>
+</ul>
+<p><strong><span style="color: rgb(44, 130, 201); font-size: 20px;">OutBound Changeset (For a Specific Object - Sandbox)</span></strong></p>
+<ul>
+    <li>Create New and add components like</li>
+    <li>Custom Object</li>
+    <li>Custom Tab</li>
+    <li>Custom Field (Except Standard Field like Name)</li>
+    <li>Lightning Page (Record Page)</li>
+    <li>Apex Class</li>
+    <li>Aura Component Bundle (Lightning Component/Custom Page)&nbsp;</li>
+    <li>Process Builder/Flow/Work-Flow/Validation Rule</li>
+    <li>List View (ALL/Recent View)</li>
+    <li>Page Layout</li>
+    <li>Record Type</li>
+    <li>Permission Sets</li>
+</ul>
+<p>Upload</p>
+<p><span style="color: rgb(41, 105, 176);"><strong>In PRODUCTION Org</strong></span></p>
+<p><span style="color: rgb(226, 80, 65);"><strong>1. InBound Changeset (In Setup)</strong></span></p>
+<ul>
+    <li>Allow to Sandbox option</li>
+    <li>Open the Inbound Changeset (Which is uploaded from Sandbox)</li>
+    <li>Validate (3 Types)</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1. Components other than Apex Classes - Run as Default</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2. Components of Apex class - Run All Test class (Code Coverage Should be more than 75% for each Class)</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.If uploading only Specific Apex class - Run as Specific Test Class (Give test className on description)</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>2. Deployment Status (Check the Status)</strong></span></p>
+<p><span style="color: rgb(226, 80, 65);"><strong>3. Deploy</strong> </span></p>
+<p>&nbsp; &nbsp;- Deploy with the Test Classes as &quot;Run All&quot; or &quot;Run As Specific&quot; if required.</p>
+<p>NOTE</p>
+<ul>
+    <li>In Production org we can&apos;t allow to change any code in Apex class, for that we need to change in Sandbox and again deploy the specific Apex Class with Test Class also and code coverage should be more than 75%&nbsp;</li>
+    <li>In Production we can change codes of VisualForce Page &amp; Aura Components.</li>
+    <li>In Production &nbsp;we can create Aura &amp; LWC or can create in VS Code and deploy but it is not a best practice.</li>
+</ul>
+<p><strong><br></strong></p>
+<p><span style="color: rgb(226, 80, 65);"><strong>To &nbsp;change the AURA Version on Sandox</strong></span></p>
+<p>SELECT Id, DeveloperName, ApiVersion, Description FROM AuraDefinitionBundle WHERE DeveloperName = &apos;PaymentRecieptEditButtonController&apos;</p>
+<p><br></p>
+    </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
