@@ -1,0 +1,992 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Salesforce IP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4">
+		  		<h1><a href="index.html" class="logo">Salesforce <span>Interview Preparation</span></a></h1>
+	        <ul class="list-unstyled components mb-5">
+	          <li >
+	            <a href="index.html"><span class="fa fa-home mr-3"></span> Home</a>
+	          </li>
+	          <li class="active">
+	              <a href="admin.html"><span class="fa fa-user mr-3"></span> Admin</a>
+	          </li>
+	          <li>
+              <a href="apex.html"><span class="fa fa-briefcase mr-3"></span> Apex</a>
+	          </li>
+	          <li>
+              <a href="aura.html"><span class="fa fa-sticky-note mr-3"></span> AURA</a>
+	          </li>
+	          <li>
+              <a href="lwc.html"><span class="fa fa-suitcase mr-3"></span> LWC</a>
+	          </li>
+	          <li>
+              <a href="integration.html"><span class="fa fa-cogs mr-3"></span> Integration</a>
+	          </li>
+	          <li>
+              <a href="triggers.html"><span class="fa fa-paper-plane mr-3"></span> Triggers</a>
+	          </li>
+              <li>
+				<a href="ExtraQS.html"><span class="fa fa-paper-plane mr-3"></span> Extra Questions</a>
+			  </li>
+	        </ul>
+
+
+	       <!--  <div class="mb-5">
+						<h3 class="h6 mb-3">Subscribe for newsletter</h3>
+						<form action="#" class="subscribe-form">
+	            <div class="form-group d-flex">
+	            	<div class="icon"><span class="icon-paper-plane"></span></div>
+	              <input type="text" class="form-control" placeholder="Enter Email Address">
+	            </div>
+	          </form>
+					</div> -->
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This  is made with Love
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">ADMIN</h2> 
+		<p><span style="color: rgb(97, 189, 109);"><strong><span style="font-size: 19px;">Data Security and Record Sharing</span></strong></span></p>
+<p><span style="color: rgb(226, 80, 65);"><strong>What is a Profile?</strong></span></p>
+<p>A basic requirement for a user creation is profile without selecting a profile user level creation is not possible as it is used to specify all the basic information permissions to object, fields, apps, tabs, apex class, visual force pages, record types, login hours, ip ranges.</p>
+<p>A profile is a collection of permissions and settings for users in Salesforce. A user can have only one profile at a time but one profile can be assigned to any user. To create a profile, go to,</p>
+<p><strong>Setup-&gt; manage users-&gt; profile-&gt;new profile.</strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is the sharing setting?</span></strong></p>
+<p>In an organization, if a user record needs to be shared to other users then we can use a sharing setting. The record can be set as private, public read-only or public read-write. The access is of two types, external access and internal access.</p>
+<p>If the external access is set private, then the customers, portal users cannot see the objects records, they can see only their own account records.</p>
+<p>If the internal access is set as public read-only then the internal user can view that user data.</p>
+<p>If the internal access is set to a public read-write then they have full access to the records.</p>
+<p>To manage sharing setting, go to,<strong>&nbsp;Setup-&gt;security controls-&gt; sharing setting.</strong></p>
+<p>Setting an object to Private makes records visible to record owners and those above them in the role hierarchy, and access can be extended using sharing rules.</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>What is a Role?</strong></span></p>
+<p>Roles are technically optional, but it&rsquo;s a good practice to use them. Roles are predominately about sharing records to users. When organization-wide default sharing is set to lower than Public Read/Write for an object, you can use Roles in Sharing Rules to determine which records (and whether they&rsquo;re Read-Only or Read/Write) that users can view. Roles also have a hierarchy like an organization chart, so that the sharing can cascade beyond records users need, but also for managers to access their team&rsquo;s records.</p>
+<p>Roles control Records (RR). They are used to control records in salesforce. Each user is assigned with one role. No such configurations like profiles are required for roles. It works with Hierarchy but you need to set up a hierarchy for roles.</p>
+<p>To set up roles level hierarchy. Go to, <strong>Setup-&gt; Manage Users-&gt; roles.</strong></p>
+<p>For example, Top level role like manager can see all his bottom level roles records. With Role hierarchy, manager role gets record level access for all his below user roles.</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>What is a Permission Set?</strong></span></p>
+<p>Permission Sets are add-ons to Profiles. They generally have the same settings and are used to increase users&rsquo; permissions above what the Profile provides. The benefit to them is that you can give users slightly different permissions without having to create separate Profiles. They reduce the overhead for Administrators in that way. It&rsquo;s useful to think of Profiles as the base set of permissions that many users have in common while Permission Sets are the &ldquo;extra&rdquo; permissions that fewer users need.</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>What is a Public Group?</strong></span></p>
+<p>Public Groups are similar to Roles what Permission Sets are to Profiles. An Administrator can create ad hoc groups of users (naming them individually or by Roles) to be able to share records to them. A common use case is to share records to users of a similar level, say Directors. As there are probably Directors spread throughout the organization, they aren&rsquo;t likely to be under each other in the Role hierarchy, but an Admin could create a Public Group with all of the Director Roles in it and share records to the group.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Queue?</span></strong></p>
+<p>Queues are similar to Public Groups in that they are bespoke groupings of users (named individually or via Roles), but they are used for record ownership rather than Sharing Rules. The classic use is for Cases where you&rsquo;d want to assign an open one to a team of people, so whoever was available first could handle it.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is meant by field level security?</span></strong></p>
+<p>You can restrict access to the fields for the users using field level security. You can make a field required or read-only, hidden by using field level security.</p>
+<p><span style="color: rgb(97, 189, 109);"><strong><span style="font-size: 19px;">Data Modeling</span></strong></span></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a lookup relationship?</span></strong></p>
+<p>A lookup relationship allows you to relate records to each other, creating a parent-child schema. Generally, this is done between the different objects (such as Accounts and Contacts), but it can be one object (such as Parent Accounts). Relationship fields allow for users to specify how records affect each other and help with reporting.</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>What is a master-detail relationship?</strong></span></p>
+<p>Master-Detail relationships are similar to lookup relationships, but have a few special features. First, Master-Detail allows for Roll-up Summary fields to be created. This relationship type also affects security in that the Detail (or child) record does not have a record owner. It inherits its visibility from the Master (or parent) record. That can be very beneficial, or limiting, depending on your use case.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Roll-up Summary field?</span></strong></p>
+<p>A Roll-up Summary field is available on the master side of a Master-Detail relationship. It allows administrators to aggregate data from related detail records (count them, sum a numeric value on them, etc.) in real time. Ability to have Roll-up Summary fields is the top reason why you&rsquo;d consider a Master-Detail relationship.</p>
+<p>A roll up summary is used to calculate the values of the child records and displays in the parent object as a read &ndash; only field. You can sum, count, minimum and maximum the values of the fields of the child object</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are different types of fields?</span></strong></p>
+<p>Field types define the type of information you expect users to enter for that field. Examples include Text, Number, Date, Currency, etc. It&rsquo;s important to match the field type to the data because it affects your ability to report on and analyze the data.</p>
+<p>&nbsp;For example, you could store numbers in text fields, but that would make &nbsp;performing calculations on them needlessly challenging.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are Validation Rules?</span></strong></p>
+<p>Validation Rules allow you to enforce specific business logic to help with your org&rsquo;s data integrity. You can specify conditions on an object that aren&rsquo;t allowed to exist.</p>
+<p>Validation rules are used to validate the data based on the formula or criteria that a user provides. Before saving a record into the database, the validation rule checks whether the entered data is correct or not based on the user given criteria.</p>
+<p>To create a validation rule, <strong>go to Setup-&gt; object-&gt; click validation rule.</strong></p>
+<p>For example, if you don&rsquo;t want a user to mark an Opportunity as Closed Won if the Account doesn&rsquo;t have a Billing Address. You can add a Validation Rule so that when a user tries, it won&rsquo;t update the Opportunity record and displays an error message explaining what they need to do.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What if you need roll-ups on a lookup relationship?</span></strong></p>
+<p>Sometimes you&rsquo;d like to aggregate child data on a parent record, but you can&rsquo;t use Master-Detail due to the security limitations not aligning with your use case. In those situations, you could write code or use Flow Builder to replicate the functionality of Roll up Summary fields. Most likely, however, you&rsquo;ll want an app from the AppExchange to make configuration easy. In fact, an app like this is one of the first things you should look to install in your org (in a sandbox first, of course.)</p>
+<p>Read More: Rollup Helper or Declarative Lookup Rollup Summary(DLRS)</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>What is a junction object?</strong></span></p>
+<p>A junction object is a term to describe an object that is designed to have two different parent objects (generally with Master-Detail relationships) which forms a many-to-many relationship. There is nothing labeled &ldquo;junction object&rdquo; within</p>
+<p>Salesforce; it&rsquo;s a definition applied to an object based on its function in the data model. A common use case is something like Classes in a school. The school will offer many Courses and have many Students. Each of those will be connected to many Classes.</p>
+<p><strong><span style="font-size: 19px; color: rgb(97, 189, 109);">Process Automation</span></strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is workflow?</span></strong></p>
+<p>Workflow is a simply point and click tool to automate your business logic without writing any code. Whenever a record is inserted or updated in an object, you can perform certain actions using workflow rules. The actions in workflow and approval process are,</p>
+<ul>
+    <li>New task</li>
+    <li>Email alert</li>
+    <li>Field update</li>
+    <li>Outbound message.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Process Builder?</span></strong></p>
+<p>Process Builder is a more advanced automation tool than Workflows. While still following the If This Happens, Then Do That concept, Process Builder allows Admin to control the order of actions as well as offering more actions such as creating records, posting to Chatter, and launching other automated tools.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Flow?</span></strong></p>
+<p>Flow is the granddaddy of declarative automation tools. The logic required to perform actions is less rigid than the other tools, so you can do things like branching decisions and looping through actions. You can also perform additional types of actions such as deleting records or creating/editing records unrelated to the original starting point. Finally, Flow is the only declarative automation tool that allows admins to build custom screens to interact with users and can greatly improve the user experience in Lightning (which is required for Screen Flows.)</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is an Approval Process?</span></strong></p>
+<p>An Approval Process is for very specific automation use cases. Naturally, it&rsquo;s used when something needs to be approved and tracks when and who approved or rejected something. It covers notifying approvers, locking the record from edits, conditional logic for who should approve, and varied approval models (for example, all approvers or any approvers.)</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is Apex?</span></strong></p>
+<p>Apex is the language in which Salesforce code is written. While a tool for Developers more than Admins, it&rsquo;s important to know that code can extend your org to do pretty much anything you need.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is Difference between workflow &amp; approval process?</span></strong></p>
+<p>The main difference between workflow and approval process is,&nbsp;</p>
+<table style="width: 100%; background-color: rgb(245, 244, 244); border-collapse: collapse; border: solid rgb(223, 80, 65);">
+    <tbody>
+        <tr>
+            <td style="width: 50%; border: solid rgb(223, 80, 65);">
+                <div style="text-align: left;"><strong>WorkFlow</strong></div>
+            </td>
+            <td style="width: 50%; border: solid rgb(223, 80, 65);">
+                <div style="text-align: left;"><strong>Approval Process</strong></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 50%; border: solid rgb(223, 80, 65);">Action is carried out based on the criteria the user has provided</td>
+            <td style="width: 50%; border: solid rgb(223, 80, 65);">Action is based on the approver</td>
+        </tr>
+        <tr>
+            <td style="width: 50%; border: solid rgb(223, 80, 65);">
+                <p>The things to keep in mind while creating workflow is</p>
+                <ul>
+                    <li>Object &ndash; name of the object that you want to write workflow</li>
+                    <li>Criteria &ndash; we have rule criteria and evaluation criteria</li>
+                    <li>Action- choose any of the four actions shown above.</li>
+                </ul>
+            </td>
+            <td style="width: 50%; border: solid rgb(223, 80, 65);">
+                <p>In approval process we need to keep in mind,</p>
+                <ul>
+                    <li>Object &ndash; name of the object</li>
+                    <li>Criteria &ndash; criteria if anything needed</li>
+                    <li>Approver &ndash; approver has to be selected for approving the record, based on the</li>
+                    <li>approver only the action is performed.</li>
+                    <li>Action &ndash; Select anyone from above four.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>We can have up-to maximum of 10 actions in a single workflow.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is process builder and difference between process builder and <strong style='font-weight: 700; color: rgb(0, 0, 0); font-family: "Times New Roman"; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;'><span style="color: rgb(226, 80, 65);">workflow?</span></strong></span></strong></p>
+<table style="width: 100%; background-color: rgb(245, 244, 244); border-collapse: collapse; border: solid rgb(223, 80, 65);">
+    <tbody>
+        <tr>
+            <td style="width: 50%; border: solid rgb(223, 80, 65);">
+                <div style="text-align: left;"><strong>WORKFLOW</strong></div>
+            </td>
+            <td style="width: 50%; border: solid rgb(223, 80, 65);">
+                <div style="text-align: left;"><strong>PROCESS BUILDER</strong></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 50%; border: solid rgb(223, 80, 65);">
+                <p>A process builder is a tool to perform automation without code whenever a record is created or updated. It is similar to workflow but it has more advantages than workflow.</p>
+                <p>Using process builder, you can perform various actions like,</p>
+                <ul>
+                    <li>Create a new record</li>
+                    <li>Post to chatter</li>
+                    <li>Update related record</li>
+                    <li>call a flow</li>
+                    <li>Call apex \ another process</li>
+                    <li>submit for approval</li>
+                    <li>Email alert</li>
+                    <li>Quick action</li>
+                </ul>
+            </td>
+            <td style="width: 50%; border: solid rgb(223, 80, 65);">
+                <p>In workflow, we can only update records from child to parent but in process builder both child to parent and parent to child record update are possible. We can have control over the order of execution using process builder.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>Disadvantages:</p>
+<ul>
+    <li>Even though process builder is very better than workflow but it has few disadvantages like</li>
+    <li>Deleting a record is not possible.</li>
+    <li>You can update a record in the objects that are in a relationship.&nbsp;</li>
+    <li>Outbound message action is not available in process builder.</li>
+</ul>
+<p><strong><span style="color: rgb(97, 189, 109); font-size: 19px;">Communities</span></strong></p>
+<p><span style="color: rgb(226, 80, 65);"><strong>What is a Community (Experience Cloud)?</strong></span></p>
+<p>A Community is a way that you can allow your customers and partners to access your Salesforce org. With these special licenses, they can have user accounts and a special access portal, customized with a bevy of Lightning features that are able to be configured without any code. It&rsquo;s also very simple to layer in security so they can only see or edit the objects and records you want them to.</p>
+<p>Note: Community Cloud was renamed to &ldquo;Experience Cloud&rsquo;</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are Guest Users?</span></strong></p>
+<p>Guest Users are people without user accounts in your org. They are also called unauthenticated users because they don&rsquo;t need to log in. You can make pages (and data!) publicly available. These users can even create or edit records.</p>
+<p>Naturally, there are a lot of considerations and limitations to evaluate, but leveraging this feature can solve a lot of use cases and do it economically as guest user licenses are free.</p>
+<p><strong><span style="color: rgb(97, 189, 109); font-size: 19px;">AppExchange</span></strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is the difference between managed and unmanaged packages?</span></strong></p>
+<p>Applications you install from the AppExchange are in the form of packages &mdash; a collection of all of the elements required to make the app function correctly. The creator of the app decides whether the package is managed or not. At a high-level unmanaged packages, once installed, behave like things you have created yourself in the org, whereas components of managed packages are locked down from being edited, kind of like apps you install on your smartphone.</p>
+<p><strong><span style="font-size: 19px; color: rgb(97, 189, 109);">Change Management</span></strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Change Set?</span></strong></p>
+<p>While not exactly the same as an AppExchange package, a Change Set is quite similar. It&rsquo;s a collection of components that you want to migrate between related orgs (generally from a sandbox to Production, but also sandbox to sandbox, and other configurations.)</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the different types of sandboxes?</span></strong></p>
+<ol>
+    <li>Developer</li>
+    <li>Developer Pro</li>
+    <li>Partial</li>
+    <li>Full sandboxes.&nbsp;</li>
+</ol>
+<p>The difference is what data is included in the sandbox when it is created or refreshed. <strong>The Developer</strong> ones have no data initially (they differ in the amount of data it can contain) and the <strong>Partial and Full</strong> start with some or all of your Production data. It&rsquo;s important to note that they also differ in how often they can be refreshed:</p>
+<p><strong>Developer daily; Partial every five days; Full every 29 days</strong>.</p>
+<p><strong><span style="font-size: 19px; color: rgb(97, 189, 109);">User Experience</span></strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are Record Types?</span></strong></p>
+<p>Record Types allow you to create separate kinds of records for each object. They control the page layouts, picklist values available, and other business logic. A good example is a call center. You&rsquo;d likely need different fields visible and required for Cases involving customers&rsquo; mortgages compared to car loans.</p>
+<p>Here&rsquo;s a tip: I almost always create a Record Type when I create a new object even if I&rsquo;m only planning to use one type. It&rsquo;s so much easier to add a second one when you need them than it is to go back and introduce Records Types to an object that already has records.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are List Views?</span></strong></p>
+<p>List Views are the queries you can present to your users to help them review their records that interest them. Most often found when they click on a tab in an app, but they could also be displayed via Lightning Components on other</p>
+<p>Lightning Pages. List Views can be filtered how they are needed and display whichever columns are relevant. Users can also pin their default List View on each tab.</p>
+<p><strong><span style="font-size: 19px; color: rgb(226, 80, 65);">What are Reports and Dashboards?</span></strong></p>
+<p>Reports are similar to List Views, but they can do so much more. They can group records and create summaries.&nbsp;</p>
+<p>Dashboards allow for visualizations of the data.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are reports and their types?</span></strong>&nbsp;</p>
+<p>A report is a list of records displayed with certain criteria that users define. The records can be grouped, filtered and sorted based on requirements. We have 4 types of reports they are</p>
+<ul>
+    <li>Tabular format</li>
+    <li>Matrix format</li>
+    <li>Summary format</li>
+    <li>Joined Format</li>
+</ul>
+<p>To create a report we need to keep 5 things in mind.</p>
+<ul>
+    <li>Report Type &ndash; (template, simply object or related objects that you want to create a report).</li>
+    <li>Fields &ndash; fields in the objects you want to display in the report.</li>
+    <li>Filters &ndash; we have many filters like Field filter, cross filter, row limit, logic filter.</li>
+    <li>Format &ndash; Tabular, matrix, summary or joined format</li>
+    <li>Folder &ndash; after creating a report you can save it in a public folder or you can create a folder.</li>
+</ul>
+<p>&nbsp;<strong><span style="color: rgb(226, 80, 65);">What are Dashboards?</span></strong></p>
+<p>A Dashboard is the graphical portrayal of the information produced by a report or different reports. Dashboard part types can be graphs, tables, measures, measurements, or different segments that you can make with Visual Force.</p>
+<p>Dashboard has two primary things, information source and segments Information source is the report that you need to show graphically. Part is the kind of graphical portrayal like diagrams, tables and so on. We can have the most extreme of 20 dashboard in a solitary dashboard board.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is the page layout? Record types?</span></strong></p>
+<p>Page layout is a user interface customization. You can organize buttons, links, fields, related lists, visual force pages and quick actions etc., using page layout.</p>
+<p>To create a new page layout, go to,</p>
+<p>Setup-&gt; customize\create-&gt; objects-&gt;select an object-&gt;page layout.&nbsp;</p>
+<p>You can customize the contents of a page for different users using page layout. Record types: By default, you can have only one page layout per profile, if you want to have more than one profile then you have to use record type. It provides different business processes, pick-list and page layouts for users.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are Lightning Components?</span></strong></p>
+<p>Lightning Components are where the magic of Lightning Experience really comes alive. They are modular features that can be added, moved, or rearranged on Lightning Pages. They are the Record Details, Chatter elements, Highlights Panel,Path display, etc. There are dozens of standard Lightning components and you can also create your own custom Lightning Components or get them from the AppExchange.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is the difference between a page layout and a Lightning page?</span></strong></p>
+<p>In Lightning Experience page layouts are basically represented by Lightning Components that display its content (mostly the Details and Related List components), but Lightning Record Pages house so much more!</p>
+<p>The Lightning Page controls all of the other Lightning Components you can leverage. You can also make all of the components conditionally visible. The conditions can be based on things like the user&rsquo;s profile or data in the record.</p>
+<p>There are other types of Lightning pages too: Home pages and App pages. Those pages won&rsquo;t have any individual records, but could enhance the user experience by containing things like charts, list views, Lightning Screen Flows, and more!</p>
+<p>The limit is almost anything you can think of to make things better for your users. You can even make Lightning Pages function differently between desktop and mobile instances.</p>
+<p><strong><span style="font-size: 19px; color: rgb(97, 189, 109);">Data Management</span></strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is the Data Loader?</span></strong></p>
+<p>There are a lot of ways to import and export data in bulk from Salesforce (including Import Wizard, exporting Reports, and third-party tools such as dataloader.io), but the Salesforce Data Loader is the original. It&rsquo;s a downloadable client application that is free and provides all of the options you need.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Custom Metadata Type?</span></strong></p>
+<p>Once a tool primarily for Developers, Custom Metadata Types have increasingly become useful for Admins. Custom Metadata is kind of like a custom object, but rather than store data for your organization, it&rsquo;s data about your organization. Things like discount rates, blackout dates, sales goals, etc. are good use cases. The metadata becomes available to you in formulas, automation, etc.</p>
+<p>Also, because it&rsquo;s metadata and not data, it&rsquo;s automatically available in all sandboxes you create or refresh.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is Salesforce? Cloud computing and benefits?</span></strong></p>
+<p><strong>Salesforce&nbsp;</strong>is a powerful CRM (Customer Relationship Management) tool that works on cloud computing technology.</p>
+<p><strong>Cloud computing:</strong> Technology in which the applications are hosted somewhere (simply called on the cloud) and users can access those applications from anyplace without installing it. Cloud computing provides:</p>
+<p>●<strong>&nbsp;Paas (Platform as a service)</strong> PaaS means&rdquo; Platform as a Service&rdquo;. Here in &ldquo;PaaS &ldquo; the cloud service provider provides hardware, OS(operating System), Storage, Network services over the cloud. It is like a rent. If there is no service like Platform, there will be no Applications. Which applications are built on a Platform.</p>
+<p>● <strong>Raas (Recovery as a service)</strong></p>
+<p><strong>● Saas (Software as a service)&nbsp;</strong><span style="text-align: start; color: rgb(0, 0, 0); font-size: medium;">SaaS means Software as a Service. Through this Services all the software&rsquo;s are&nbsp;distributes over the cloud. By using SaaS no need to install any software all&nbsp;software&rsquo;s are readily available over the internet</span></p>
+<p><strong>● Maas (Maintenance as a service) etc.</strong></p>
+<p><strong>● Iaas (infrastructure as a service).</strong>Full form IaaS is &ldquo;Infrastructure as a Service&rdquo;. Here in IaaS the cloud service providers will provide infrastructure like servers, hosting services and storage. Servers and storage are the basic services provided by Cloud Service Providers.</p>
+<p>In salesforce, we use only Paas and Saas. with Paas, a platform to code &ndash; you can develop your own application, Eg: force.com.</p>
+<p>With Saas, you can use the application without installing anything on your computer Eg: Salesforce.com.</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>What is MVC architecture?</strong></span></p>
+<p>There are many architectures available like Client server architecture, Standalone architecture etc., Salesforce uses MVC architecture i.e., Model View and Controller Architecture. Model &ndash; It deals with Database designing like Table, fields creation, data types etc., View &ndash; It deals with UI (User interface) customization like Page layout, designing of the page etc., Controller- It controls the data flow between Model and view.</p>
+<p>You can use Point and click tools like Workflow, approval process, process builder etc., to achieve the control or you can use Apex programming like Classes and triggers. Design of Database, Table, fields etc.,</p>
+<p><strong><span style="color: rgb(97, 189, 109);font-size: 19px;">How/What Questions</span></strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to delete a user in Salesforce?</span></strong></p>
+<p>We cannot delete a user in Salesforce. However, we can inactive orfreeze a user.&nbsp;</p>
+<p>Go to, <strong>Setup&ndash;&gt;manage users&ndash;&gt;select that user and click freeze or uncheck the checkbox active.</strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the ways to store images, files and documents in Salesforce?</span></strong></p>
+<p>We can store those data by :</p>
+<ul>
+    <li>Libraries</li>
+    <li>Notes and attachments</li>
+    <li>Static resources</li>
+    <li>Chatter files</li>
+    <li>Documents</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a static resource?</span></strong></p>
+<p>Static resources allows us to store the images, gif, css files, javascript, jar files and also in zip format that are used in the visual force page. A single file should be less than 5MB and an organization is provided with a maximum of 250 MB size.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are data loaders, import/export wizards?</span></strong></p>
+<p>An import and export wizard are used to upload or download records from Salesforce. You can process up to a maximum of 50,000 records at a time. If you want to process more than 50, 000 records then you can use a data loader.</p>
+<p>In a data loader you can process up to 5 million records. The only tool in Salesforce where you need to install in your pc to use it is data loader.</p>
+<p>If you want to perform more than 5 million records then you need to use some third party tools like apex data loader, jitter data loader etc.,</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How does the release in Salesforce work? What are the releases?What is AppExchange?&nbsp;</span></strong></p>
+<p>Generally, Salesforce has 3 major releases every year i.e., every four months once. They are</p>
+<ul>
+    <li>Spring &ndash; around the month of February.</li>
+    <li>Summer &ndash; around the month of june.</li>
+    <li>Winter &ndash; around the month of October.</li>
+</ul>
+<p>AppExchange is the marketplace to get the managed packages(applications) for Salesforce. Similar to the play store in android.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to customize the Standard application Label &amp; Logo in Salesforce?</span></strong></p>
+<p>We cannot customize the standard application label &amp; logo. We can only. customize the custom application log &amp; label.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can we change the assigned Custom object to Custom Object Tab once it</span></strong><span style="color: rgb(226, 80, 65);">&nbsp;<strong>has been created?</strong></span></p>
+<p>There is no option to change the object that is assigned to the once it has been created.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">In a many-to-many relationship, in which scenario a user can&rsquo;t delete a parent Record?</span></strong></p>
+<p>Parent record has more than 200 junction records associated with it. Junction record which is associated with this parent record is having a rollup summary field that rolls up to another parent.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to make the Login Button visible in the User Account page?</span></strong></p>
+<p>By enabling &ldquo;Grant Login Access&rdquo; for particular users. We can see the &ldquo;login&rdquo; button under the user detail page of that user.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Why do we create Connected Apps in Salesforce?</span></strong></p>
+<p>A Connected App is created in a situation where an external application wants to connect with our salesforce organization.</p>
+<p>Example: When an external application wants to make a Rest Call to Salesforce Org.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What happens to related opportunities when an associated Account is deleted?&nbsp;</span></strong></p>
+<p>Account &amp; Opportunity relationship acts as master detail relationship in backend. So when Account record is deleted associated opportunity record is also got deleted.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How many login history records can we track using Login History in Setup?</span></strong></p>
+<p>We can track 20,000 records of the last six month login history.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">If a user grants login access to an admin and the admin makes a setup change, how can we track it?</span></strong></p>
+<p>In setup, we can download setup audit trail, where we can see the username who made the changes in Delegate user columns.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to set a name that will appear on your outgoing Email from Salesforce?</span></strong></p>
+<p>Go to the Email setting from the My Personal information and set outgoing</p>
+<p>Email Name. By setting this value, any outgoing Email from Salesforce org will have this name associated with Email id.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to prevent deletion of Parent record if there is a related child record present in the lookup relationship?</span></strong></p>
+<p>While creating a lookup relationship, we can define this under the &ldquo;what happens when the parent record gets deleted&rdquo; section.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can we set the Default value for controlling picklist?</span></strong></p>
+<p>We can set the default value for controlling picklist but not for dependent picklist.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">When we convert an existing picklist to a controlling or dependent picklist what happens to the existing record?</span></strong></p>
+<p>When we convert existing fields to dependent picklists or controlling fields, it doesn&rsquo;t affect the existing values in your records. After conversion, the dependency rules apply to only new records and to any changes to existing records.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can users who don&rsquo;t have &ldquo;View Encrypted Data&rdquo; permission edit the Encrypted field?&nbsp;</span></strong></p>
+<p>Encrypted fields are editable regardless of whether the user is having the &ldquo;View Encrypted Data&rdquo; permission.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can we create Detail Record in Master Detail Relationship without&nbsp;</span></strong><strong><span style="color: rgb(226, 80, 65);">associating master Record?</span></strong></p>
+<p>No. We can&rsquo;t create a detailed record without associating the master record. One master record can be associated with multiple children.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the fields available when you select sum as the roll-up type?</span></strong></p>
+<p>Integer, Currency, Percentage</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the fields that can be inserted into the formula editor while creating formula fields?</span></strong></p>
+<p>Global Variable, Hierarchical Custom Setting, Objects and related parent objects.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the functions which are used in the Validation Rule for&nbsp;</span></strong><strong><span style="color: rgb(226, 80, 65);">checking whether a newly created record or not?</span></strong>&nbsp;</p>
+<p>ISNEW function is used to check whether a record is newly created or not.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to assign the particular record type case to a particular owner automatically without using the Assignment Rule?</span></strong></p>
+<p>We can create workflow rules and define every time record is created. Give criteria using record type and use field update action for updating owner field.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can we access Related Records fields using Workflow Rule?</span></strong></p>
+<p>We can only access and update parent record fields if it is in master detail relationship.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to send messages to the External system from salesforce upon updates to salesforce Records?&nbsp;</span></strong></p>
+<p>We can create workflow rules on particular objects. Give required conditions for triggering the workflow rule. Add Send outbound message action for sending message to external system.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What happens to the record which is pending to execute in the Time Based workflow Queue when the record is changed from meeting criteria to not meeting criteria?</span></strong></p>
+<p>Pending action is removed from the timed based workflow queue. It will not get executed.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to make the currently assigned approver edit the record once it is&nbsp;</span></strong><strong><span style="color: rgb(226, 80, 65);">submitted for approval Process?</span></strong>&nbsp;</p>
+<p>While creating the approval process we can enable this permission.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to edit the System Administrator Profile?&nbsp;</span></strong></p>
+<p>We can&rsquo;t edit the system administrator profile. If there is a requirement for that, we can clone the existing system administrator profile.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">In one Profile, For Custom object Student__C edit permission is not given.&nbsp;</span></strong><span style="color: rgb(226, 80, 65);"><strong>How can we enable edit permission for only 3 users in that profile without&nbsp;</strong></span><strong><span style="color: rgb(226, 80, 65);">modifying the Profile?</span></strong></p>
+<p>For extending the permission that we gave in profile, we can use permission set. We need to create a new permission set and give edit permission and add those users to this permission set.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the Report Formats available for creating Dashboard?&nbsp;</span></strong></p>
+<p>Summary and Matrix Report. Tabular and join report is not available for creating a dashboard.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Give me the Scenario where we need to create a Custom Report Type?</span></strong></p>
+<p>Scenario where we need to create entirely new report types by adding objects and specified fields.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">User A wants to give edit permission for his Case Record to User B (Who&nbsp;</span></strong><span style="color: rgb(226, 80, 65);"><strong>is having only Read Permission), how can User A give Edit permission to User&nbsp;</strong></span><strong><span style="color: rgb(226, 80, 65);">B?</span></strong></p>
+<p>Manual Sharing</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can we modify the &ldquo;Grant Access Using hierarchies&rdquo; feature of Standard object?</span></strong></p>
+<p>No, we can&apos;t modify it for standard objects. We can only modify it for custom objects.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">In OWD, Case object sharing setting is Private. How to enable Edit permission for only Specific Profile Users?</span></strong></p>
+<p>Sharing Rule</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to make the field required in the UI Level and not required in the API or Code level?</span></strong></p>
+<p>Enable field required in page layout level.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Profile associated with user is having Edit permission for case object. But we need to restrict the user from editing the case records. How can we achieve this?</span></strong></p>
+<p>We can create validation rules and validate by using user id.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can one queue have another queue as a Member?</span></strong></p>
+<p>No. We can&rsquo;t add one queue into another queue. But one public group can have another public group.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can Public group owner of the Record?</span></strong></p>
+<p>Public groups can&rsquo;t be the direct owner of the record. We can add a public group to the queue and the queue can be the owner of the record.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to show different picklist values to two different profiles?</span></strong></p>
+<p>Create a different record type and assign different picklist values.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to restrict the user from logging in from a specific IP Address?</span></strong></p>
+<p>We can add IP addresses at profile level. So those profiles can only login to</p>
+<p>org specified in the IP address specified at their profile level.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to extract the string that is present after &ldquo;@&rdquo; in the email field and&nbsp;</span></strong><span style="color: rgb(226, 80, 65);"><strong>store it in a different field of the same record. How can we achieve it using&nbsp;</strong></span><strong><span style="color: rgb(226, 80, 65);">the salesforce declarative approach?</span></strong></p>
+<p>Create a Formula field in salesforce and achieve it by using substitute, left and Find function.&nbsp;</p>
+<p><strong>SUBSTITUTE(Email, LEFT(Email, FIND(&ldquo;@&rdquo;, Email)),NULL)</strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What happens when we add IP Address range in Trusted IP Address?</span></strong></p>
+<p>Trusted IP Ranges define a list of IP addresses from which users can log in without receiving a login challenge for verification of their identity, such as a code sent to their mobile phone.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">I have one requirement where all users in salesforce Org have to send mail using the same From Address in the Email. This from Address should be available to all users in org when they send any email from salesforce. How can I achieve this?</span></strong></p>
+<p>For this requirement, you can define organization-wide addresses for all user profiles.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">I contacted salesforce for clarifying some challenges that I face in my org.&nbsp;</span></strong><strong><span style="color: rgb(226, 80, 65);">The Salesforce team is asking for Org id. How can I find out?</span></strong></p>
+<p>Setup &agrave; Company information &agrave; Org id</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is the difference between transferring the record using mass&nbsp;</span></strong><strong><span style="color: rgb(226, 80, 65);">transfer and sharing the record using a sharing rule or manual sharing?</span></strong></p>
+<p>While transferring the record ownership of the record gets changed. But while sharing the record ownership is not changed, we are just giving permission to other users on our record.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">While importing data using a data loader, whether it follows all or none approach?&nbsp;</span></strong></p>
+<p>Data loader doesn&rsquo;t use an all or none approach. If one record fails in 100 records, the remaining 99 records will get processed.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">When the manual sharing button is visible to the user in Record Detail Page?&nbsp;</span></strong></p>
+<p>We have to enable it in the OWD sharing setting. OWD for objects should be private/public readonly. And it should pass any of the below conditions: Administrator, Record owner, User above in the role hierarchy of record owner, User granted with full access sharing.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to create a new field that is used for categorizing based on existing&nbsp;</span></strong><span style="color: rgb(226, 80, 65);"><strong>record field values and it should be available only in report and not in object&nbsp;</strong></span><strong><span style="color: rgb(226, 80, 65);">definition?&nbsp;</span></strong></p>
+<p>Use a bucket field for categorizing. It will be only available in Report.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">When a user clicks on the link available in the Detail page, it should&nbsp;</span></strong><strong><span style="color: rgb(226, 80, 65);">redirect to the Edit page of the record. How can we implement this ?</span></strong></p>
+<p>We should not use the standard Edit button for redirecting to the Edit page of the record.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">We have one text field with more than 255 characters. Field tracking is&nbsp;</span></strong><span style="color: rgb(226, 80, 65);"><strong>enabled for that. User updates that field to a new value. Can we see old and&nbsp;</strong></span><strong><span style="color: rgb(226, 80, 65);">new value in Field History?</span></strong></p>
+<p>Any Changes to fields with more than 255 characters are tracked as edited, and</p>
+<p>their old and new values are not recorded.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Is there any option that is available in salesforce for arranging the picklist values alphabetically?</span></strong></p>
+<p>After adding the picklist value in Salesforce. We can arrange it using Arrange picklist values alphabetically in Picklist Field Definition Page.</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>Whenever an opportunity record is created or edited with an&nbsp;</strong><strong>amount greater than 10,000. Salesforce has to automatically send mail to&nbsp;</strong><strong>a specific group of recipients. How can we achieve this?</strong></span></p>
+<p>Create Workflow Rule with Evaluation criteria &ldquo;every time record is created and edited to subsequently meet the criteria&rdquo; and add Rule criteria opportunity amount &gt;= 10000. Add Send Email Alert action for sending the mail and add</p>
+<p>Email template for formatting the Email.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is the difference between deactivating and freezing the user?</span></strong></p>
+<p>When we freeze the user, the user loses all permission. Users won&rsquo;t be able to</p>
+<p>login to salesforce. But still License is assigned to the user. When we deactivate</p>
+<p>the user, the license is also removed for that user.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is the difference between Export and Export All in the Dataloader?</span></strong></p>
+<p>Export doesn&rsquo;t take data from the Recycle Bin. But Export all takes data from</p>
+<p>the Recycle pin as well.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the fields that can be used for mapping while upserting the&nbsp;</span></strong><strong><span style="color: rgb(226, 80, 65);">record in Salesforce?</span></strong></p>
+<p>Salesforce id or field with External id can be used for mapping while upserting the record in salesforce.</p>
+<p><span style="color: rgb(97, 189, 109);"><strong><span style="font-size: 19px;">Cloud Computing</span></strong></span></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is Cloud computing?</span></strong></p>
+<p>&ldquo;Cloud Computing is a new trend in IT development, deployment, Delivery module of business Products, Services that are provided over the internet that are been used by the real time User&ldquo;</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Expand CRM and briefly explain about CRM ?</span></strong></p>
+<p>Full form for CRM or Acronym for CRM is &ldquo;Customer Relationship Management &ldquo;. We can understand from the full form where CRM is an application used to automate Sales and marketing functions by using a Software called CRM Software . BY using CRM Software every Company / Organization plans to increase their revenues and profits. This strategy of increasing revenue is done mainly by attracting Customers, clients, Sales etc. ∙</p>
+<p><strong><span style="color: rgb(226, 80, 65);">List some CRM Software?</span></strong></p>
+<p>We have a number of CRM softwares which are provided by top CRM companies. Some of them are listed below depending upon their present market.&nbsp;</p>
+<ul>
+    <li>Salesforce CRM.</li>
+    <li>Microsoft Dynamics CRM.</li>
+    <li>Oracle CRM.</li>
+    <li>SAP CRM.</li>
+    <li>Sage CRM.</li>
+    <li>NetSuite CRM.</li>
+    <li>Oracle CRM on Demand.</li>
+    <li>Oracle Sales Cloud(Fusion CRM).</li>
+    <li>SugarCRM.</li>
+    <li>Nimble</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the Advantages of Cloud Computing?</span></strong></p>
+<p>Cloud computing has made tremendous growth in processing power, reliability of the Internet and the great increase in broadband speeds. ∙ It makes tremendous sense to make use of the centralized server of the provider of cloud computing services as not only does it reduce the costs by a great extent by making redundant the need to buy several software licenses, it also eliminates the huge costs required by an organization to maintain and upgrade existing software.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are deployment modes of cloud computing?</span></strong></p>
+<p>Cloud computing services can be provided in four different deployment modes depending on size and structure of an organization. Four deployment modes of</p>
+<p>cloud computing are</p>
+<ul>
+    <li>Public Cloud.</li>
+    <li>Private Cloud.</li>
+    <li>Hybrid Cloud and</li>
+    <li>Community Cloud.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What is Public Cloud?</span></strong></p>
+<p>Public clouds can be available to people across the world. In this Public Cloud the user has no control over the resources.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is Private Cloud?</span></strong></p>
+<p>Private Cloud Can be accessed only within the limited premises. Private cloud Cloud Services Providers Cloud infrastructure to particular Organization or Business specially. This Cloud infrastructure is not provided to others.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is Hybrid Cloud?</span></strong></p>
+<p>Hybrid Cloud is the combination of number of clouds of any type but the cloud has the ability to allow data and / or applications to be moved from one cloud to another cloud. Hybrid Cloud is a combination of (Public Cloud ,Private Cloud, Community Cloud). Here API is used as an interface between public and Private Cloud.</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>What are the different types of Cloud Service providers?</strong></span></p>
+<p>Cloud Service Providers are those who provide cloud services to the business and customers or consumers. Cloud Service providers will have huge databases, Data centers, infrastructure, software&rsquo;s, platform and hardware systems.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Difference between Public and Private Cloud?</span></strong></p>
+<p>Public clouds can be available to people across the world. In this Public Cloud the user has no control over the resources. Where Private Cloud Can be accessed only within the limited premises. Private cloud Cloud Services Providers Cloud infrastructure to particular Organization or Business specially. This Cloud infrastructure is not provided to others.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Salesforce.com is based on which cloud computing Service ?</span></strong></p>
+<p>Salesforce.com is based on Software as a Service ( SaaS).</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are common factors on SaaS, PaaS, and IaaS?</span></strong>&nbsp;</p>
+<p>SaaS, Paas and IaaS are the three types of services provided using &ldquo;cloud&rdquo;. Their common factor for providing services to organizations and customers is the &ldquo;CLOUD&rdquo;depending upon the types of the service they need. Saas provides Software service on cloud where PaaS provides Platform for application development and finally IaaS provides Infrastructure.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is Salesforce?</span></strong></p>
+<p>Salesforce is one of the best customer relationship management (CRM) tools. Salesforce is among one of the best web based flexible and powerful database providers available in the market.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Different Salesforce Editions?</span></strong></p>
+<p>Salesforce.com provides different types of editions and features depending upon the cloud. For Sales cloud it provides four different types of editions. They are</p>
+<ul>
+    <li>Group.</li>
+    <li>Professional.</li>
+    <li>Enterprise.</li>
+    <li>Unlimited.</li>
+</ul>
+<p><span style="color: rgb(226, 80, 65);"><strong>Difference between Salesforce.com and Force.com?</strong></span></p>
+<p>Salesforce.com and fore.com are relatively the same but they are different in their functionality. Salesforce.com is used to develop CRM functionality based applications where force.com is used to customize our data model, business logic and User interface.</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>What is Database.com?</strong></span></p>
+<p>Database.com is a type of service provided by Salesforce.com to enhance the power of Salesforce.com CRM applications. Database.com provides &ldquo;Data as a Service&rdquo; to subscribers.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How many types of portals are available in Salesforce?</span></strong></p>
+<p>In Salesforce.com we have three types of portals. They are</p>
+<ul>
+    <li>Customer Portal.</li>
+    <li>Partner portal.</li>
+    <li>Self Service portal.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What is an App in Salesforce?</span></strong></p>
+<p>App means an Application. In Salesforce an Application consists of a group of tabs which are designed to work as a single function. We have a number of applications in Salesforce.com some of them are sales, marketing, chatter, site.com, work.com etc.</p>
+<p>We can create new applications and also customization for the existing apps in Salesforce.com.</p>
+<p>To create a new app in SFDC <strong>go to Setup=&gt;Build=&gt;Create=&gt;App.</strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">Different types of objects in Salesforce.com? And why are they called so?</span></strong></p>
+<p>In Salesforce.com we have two types of objects. They are</p>
+<ul>
+    <li>Standard objects.</li>
+    <li>Custom Objects.</li>
+</ul>
+<ol>
+    <li><strong>Standard Objects :-</strong> Standard objects are called so because they are created and provided by Salesforce.com.</li>
+    <li><strong>Custom Objects :-&nbsp;</strong>Custom objects are those which are created by an User in salesforce.com.</li>
+</ol>
+<p><strong><span style="color: rgb(226, 80, 65);">What is an object in Salesforce?</span></strong></p>
+<p>An Object is represented as a database table which stores organization data . Objects consist of a set of fields and we store data against that field. To view data Salesforce provided TABS.</p>
+<p>To create custom fields go to <strong>Setup=&gt;Build=&gt;Create=&gt;Object.</strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is TAB in Salesforce?</span></strong></p>
+<p>Salesforce.com provides a list of tabs and are placed in the Tab menu. To access data of an object&apos;s Tabs are used. Tabs in Salesforce are three types.</p>
+<ul>
+    <li>Custom Tabs.</li>
+    <li>Visualforce Tabs.</li>
+    <li>Web Tabs.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">List examples of custom field types?</span></strong></p>
+<p>Some of the custom field types are date field, Date/Time field, Currency field, Checkbox field, Number field, Text field, Pick list field, Email field, percent fields, phone field, Url field and many more.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How many custom fields can I create in an object?&nbsp;</span></strong></p>
+<p>In the <strong>Unlimited edition&nbsp;</strong>we can create up to <strong>500&nbsp;</strong>fields per object. In the <strong>professional edition</strong> we can create up to <strong>100</strong> custom fields per object.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How can you use the term &ldquo;Transfer Record&rdquo; in your profile?</span></strong></p>
+<p>Transfer record is a type of permission in salesforce. If a user is given access to transfer a record then the user will have the ability to transfer the records which have Read access.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Tell me about Company Profile?</span></strong></p>
+<p>In salesforce.com company profile consists of information about language, locale, time zone, number of licenses, storage and available space, about fiscal year, address and currencies.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to get security token in Salesforce.com?</span></strong></p>
+<p>To get a security token in salesforce.com<strong>&nbsp;go to your name=&gt;Personal=&gt;Reset my Security token.</strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Fiscal Year in Salesforce?</span></strong></p>
+<p>Fiscal years in Salesforce are used to define the starting and ending date of an organization&apos;s financial year. Fiscal years in salesforce are two types.</p>
+<ul>
+    <li><strong>Standard fiscal year :-</strong> To change the starting month of the fiscal year this type is used.</li>
+    <li><strong>Custom fiscal year :-</strong> We can set custom fiscal year dates like quarters, weeks.</li>
+</ul>
+<p><br></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a dependent picklist?</span></strong></p>
+<p>Dependent Picklist allows to contain multiple values and pick values one among them or Multiple values among them. Dependent fields depend upon controlling fields.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">List some standard indexed fields in salesforce.com?</span></strong></p>
+<p>Id, name, owner fields, lookup fields, master-detail relationship fields, audit dates like Last Modified dates etc. are the standard indexed fields in Salesforce.com.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Which fields are Indexed by default in Salesforce?</span></strong></p>
+<p>&nbsp;Salesforce indexed some fields by default; they are Id, name, owner fields, lookup fields, master-detail relationship fields, and audit dates like Last Modified dates.</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>Which fields cannot be added as a custom Index?</strong></span></p>
+<p>Formula fields.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">In salesforce, Can two users&rsquo; can have the same profile?</span></strong></p>
+<p>Yes.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Is it possible to edit formula field values in a record?</span></strong></p>
+<p>No.</p>
+<p><strong><span style="font-size: 19px; color: rgb(97, 189, 109);">Salesforce Important &nbsp;interview Questions on Security</span></strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Sharing Rule?</span></strong></p>
+<p>Sharing rules in Salesforce represent the permissions and exceptions to your organization. By using sharing rules we can grant access to edit, read, read/write permissions to users. Sharing Rules are of two types. They are</p>
+<ul>
+    <li>Manual Sharing.</li>
+    <li>Automatic Sharing.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What is Manual Sharing?</span></strong></p>
+<p>Manual sharing is the process of sharing records manually.</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>What is the permission set?</strong></span></p>
+<p>Permission sets in salesforce.com are the combination of different settings and permission sets given to users to access records and files.</p>
+<p>Note :- Manual sharing is available for only Organization wide default settings are private to the object.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How can you define Field Dependency?</span></strong></p>
+<p>In Field dependency, we have fields controlling fields and dependent fields. When a selection is made the controlling field controls dependent picklist values.</p>
+<p>Ex:- When a country is selected in a dependent picklist then the states are available to that country. Here the country is the controlling field and the State is the dependent field.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How many field dependencies can we use in the VisualForce page?</span></strong></p>
+<p>We can use up to<strong>&nbsp;10</strong> field dependencies in visualforce pages.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Tell me about Field-Level Security?</span></strong></p>
+<p>In field level security, we control the user what to see, edit, delete of a particular field in the object.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Briefly describe Field-Level Security?</span></strong></p>
+<p>In field level security, we control the user what to see, edit, delete of a particular field in the object. In some situations like if we want to grant access control over Object to a user but the user should not be able to access some particular fields in that object then we go for Field Level Security. Field Level Security can be controlled by Profiles and Permission sets.&nbsp;</p>
+<p><strong>Profiles.</strong></p>
+<ul>
+    <li>Page Layouts.</li>
+    <li>IP Ranges.</li>
+    <li>&nbsp;Login Hours.</li>
+    <li>Desktop.</li>
+    <li>Client Access.</li>
+</ul>
+<p><strong>Permission sets.</strong></p>
+<ul>
+    <li>App Permissions.</li>
+    <li>Record Types.</li>
+    <li>Tab Settings.</li>
+    <li>Assigned Apps.</li>
+    <li>Object Permissions.</li>
+    <li>Field Level Security.</li>
+    <li>Apex Classes</li>
+    <li>Visualforce Pages</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What are Login Hours and Login IP Ranges?</span></strong></p>
+<p>Login hours are set in an organization to restrict the user&rsquo;s who try to login before or after login hours.</p>
+<p>To set login hours in an organization go to <strong>Setup=&gt;Administration=&gt;Manage users=&gt;Profiles.</strong></p>
+<p>IP ranges are used to restrict any login attempt from unknown IP addresses. Usually organizations maintain login IP ranges.</p>
+<p>To set Login IP ranges in salesforce go to <strong>Setup=&gt;Administration Setup=&gt;Manage Users=&gt; Profiles.</strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a User Record?</span></strong></p>
+<p>User records consist of key information about the user.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Record Owner?</span></strong></p>
+<p>Record Ownership : The User or Queue who controls and has the right to access a record. Generally there are two types of Owners. They are</p>
+<ul>
+    <li>Users.</li>
+    <li>&nbsp;Queues.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What are Organization Wide Defaults?</span></strong></p>
+<ul>
+    <li>Organization wide Defaults define the baseline level of access to data records for all users in an Organization.</li>
+    <li>Organization wide Defaults are used to restrict access to data(Records).</li>
+    <li>Organization wide Defaults(OWD) can be defined for Standard Objects and Custom Objects.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What is Access at the Role Level?</span></strong></p>
+<p>Access at the role level depends upon the organization wide defaults. 64. What are the different types of Sharing Rules in Salesforce and explain them?</p>
+<ul>
+    <li>Account sharing Rule.</li>
+    <li>Contact Sharing Rule.</li>
+    <li>Case Sharing Rule.</li>
+    <li>Opportunity sharing Rule.</li>
+    <li>Lead Sharing Rule.</li>
+    <li>Custom Object sharing Rule.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">In how many ways can we share a record?</span></strong></p>
+<p>Records can be shared in 5 types they are</p>
+<ul>
+    <li>Role Hierarchy.</li>
+    <li>Organization Wide Defaults.</li>
+    <li>Manual Sharing.</li>
+    <li>Criteria Based Sharing Rules.</li>
+    <li>Apex Sharing.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">Best Practices of Creating Contact Sharing Rules?</span></strong></p>
+<p>Organization wide default settings are used to set red, write, read/write permissions</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How can I provide record level access to user&rsquo;s in an organization?&nbsp;</span></strong><span style="color: rgb(226, 80, 65);"><strong>Then what should I use from the Salesforce security model?</strong></span></p>
+<p>Get more details on record level security :- Record level security in salesforce.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">If I want Object level access then what should I use from the Salesforce&nbsp;</span></strong><strong><span style="color: rgb(226, 80, 65);">security model?</span></strong></p>
+<p>Get more details on object level access. Object Level Security in Salesforce.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are governor limits?</span></strong></p>
+<p>Governor Limits in Salesforce.com are the run time limits enforced by the apex runtime engine to write scalable and efficient code. 70.&nbsp;</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Is it possible to bypass Grant Login access using Hierarchies in case of standard objects?</span></strong></p>
+<p>Yes</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can we use sharing rules to restrict data access?</span></strong></p>
+<p>No, sharing rules cannot restrict data access.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Is it possible to create sharing rules for detailed objects?</span></strong></p>
+<p>No, we can not create sharing rules for detailed objects because they don&rsquo;t have an owner field.</p>
+<p><strong><span style="color: rgb(97, 189, 109); font-size: 19px;">Salesforce Interview Questions on OWD</span></strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">How can you change the setting &ldquo;Grant Access Using Hierarchies&rdquo; for Standard Objects ?</span></strong></p>
+<p>It is not possible , by default Grant Access Using Hierarchies options are enabled for standard objects and they can not be changed. For custom objects we can change &ldquo;Grant Access Using Hierarchies &ldquo;settings .</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the Mandatory points that you think while creating User and Role ?</span></strong></p>
+<p>It&rsquo;s Profile.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">While setting OWD (Organization wide sharing), can we change/modify the setting of the child record in case of Master-Detail relationship?</span></strong></p>
+<p>No, we can not change the settings of the child record in Master Detail relationship because the child record is controlled by the parent record.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">In the Partner Community, external users have appropriate OWD and Profile Settings for Opportunity or consider any other Object. However they are getting insufficient privilege access, what might be the cause of this error ?</span></strong></p>
+<ul>
+    <li>First check that every field used in the report has Field level security for external users.</li>
+    <li>Check whether Standard Report Visibility settings are enabled, if it is enabled users can be able to see reports which are based on standard report types.</li>
+    <li>Now external users can be able to access sensitive information of internal users. Salesforce Interview Questions on Relationships</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the different types of Relationships in SFDC? What are they?</span></strong></p>
+<p>&nbsp;There are four types of Relationships in Salesforce.com. They are</p>
+<p>1. Master-Detail relationship.</p>
+<p>2. Look-up Relationship.</p>
+<p>3. May-Many Relationship.</p>
+<p>4. Hierarchy Relationship (we can not use this relationship).</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a &ldquo;Self Relationship&rdquo;?</span></strong></p>
+<p>Self Relationship is nothing but creating a relationship between two same objects. This Self Relationship is a Look-up Relationship to the same object.</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>List out the functions of the Roll-up Summary field ?</strong></span></p>
+<ul>
+    <li>Count : It calculates the total number of related records.</li>
+    <li>Sum : It totals the values of selected fields.</li>
+    <li>Min : Displays lowest value.</li>
+    <li>Max : Displays the highest value.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What is the Many-Many Relationship in Salesforce ?</span></strong></p>
+<ul>
+    <li>Many-Many Relationships between two objects can be created. ∙ Junction Object is used to create Many-Many Relationships.</li>
+    <li>Junction object can also be called as Join Object.</li>
+    <li>Junction Object links each object in Many-Many Relationship.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">Can we have Roll up Summary fields in case of Parent-ChildRelationships?</span></strong></p>
+<p>&nbsp;No.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Is it possible to edit the Roll up summary field value in a record?</span></strong></p>
+<p>No. roll up summary fields are read only fields and they can not be edited.</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>&nbsp;Is it possible to create a Roll up summary field on a parent object ?</strong></span></p>
+<p>Yes, we can create a Roll up Summary field on parent objects only with master detail relation between objects.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the main things needed to consider in the &ldquo;Master- Detail Relationship&rdquo;?</span></strong></p>
+<p>Cascade deletion of the child records is done when the parent record is deleted in Master-Detail Relationship.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can we convert the lookup relationship to Master Detail relationship? If so How can we convert?</span></strong></p>
+<p>Yes, we can convert Look-Up relationships to Master-Details Relationships. Conversion can be done only if all the fields have valid look-Up fields values only.&rsquo;</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can we create Master Detail relationships on existing records?</span></strong></p>
+<p>Yes, It is possible to create a Master-Detail Relationship on an existing record. First we have to create a Look-Up relationship to a record then convert it to master Detail Relationship.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to create many to many relationships between two objects?</span></strong></p>
+<p>Many to Many Relationships can be created using Junction objects.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">In case of Master-Detail relationship, on Update of master record can we update the field of child record using workflow rule?</span></strong></p>
+<p>No</p>
+<p><strong><span style="color: rgb(226, 80, 65);">In case of Master-Detail relationship, on Update of child record can we update the field of Parent record using workflow rule?</span></strong></p>
+<p>Yes, we can update the field of Parent record using workflow rules.</p>
+<p>&nbsp;<strong><span style="color: rgb(226, 80, 65);">A custom object contains some records, now my requirement is to create a field in this object with master detail relationship.</span></strong></p>
+<p>No. we can not create master detail relationship, first create lookup relationship and associate look fields for every parent record and then convert this to Master detail relationship.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can we create both master detail relationships and Look-Up Relationships at a time ?</span></strong></p>
+<p>Yes, we can create.</p>
+<p><strong><span style="font-size: 19px; color: rgb(97, 189, 109);">Salesforce Interview Questions on Reports &amp; Dashboards.</span></strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are Standard Reports?</span></strong></p>
+<p>Standard reports in salesforce are those provided by salesforce.com. These types of reports can not be deleted and used primarily for creating custom reports.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are custom Reports?</span></strong></p>
+<p>Custom reports in salesforce are those created by users with specific criteria. These types of reports can be deleted, edited and stored in personal folders.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Tabular report ?</span></strong></p>
+<p>Tabular reports in salesforce are those where the data is displayed in the form of a list. In Tabular reports custom data is arranged without subtotals. 106.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Summary Report?</span></strong></p>
+<p>Summary reports in salesforce are those where the data is displayed in the form of summary format. Sorting, sum-total of data can be available in this report.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Matrix Report?</span></strong></p>
+<p>Matrix reports salesforce are those where the data is arranged in grid format having rows and columns. Data is arranged vertically and horizontally in tables like excel format.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is the Trend Report?</span></strong></p>
+<p>Trend reports in salesforce are those which display historical data. Trend reports are used to analyze which fields contain data that we want to leave out.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are Custom Report Types?</span></strong></p>
+<p>Custom report types in salesforce allows us to build a framework in the report wizard when creating custom reports. These custom reports can be created between standard and custom objects.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Who can run Reports?</span></strong></p>
+<p>In Salesforce.com, most reports run automatically when we click on the report name. If we want to run a report click on &ldquo;Run Report&rdquo; to run automatically.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a bucket field in reports?&nbsp;</span></strong></p>
+<p>In salesforce reports, bucket fields are used to categorize reports records . When we use bucket fields in reports there is no need of creating formulas or a custom field.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Is it possible to delete reports using a Data loader?</span></strong></p>
+<p>No, it is not possible to delete reports using data loaders.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are Dashboards?</span></strong></p>
+<p>Salesforce Dashboards are the graphical representation and visual presentation of reports data in salesforce.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the different Dashboard Components?</span></strong></p>
+<p>Salesforce dashboard components are used to represent data. Salesforce dashboards have some visual representation components like graphs, charts, gauges, tables, metrics and visualforce pages.</p>
+<p>Note : We can use up to 20 components in a single dashboard.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can we schedule dynamic dashboards?</span></strong></p>
+<p>No, we can not schedule dynamic dashboards for refresh. It must be done manually.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Who can access the &ldquo;drag and drop dashboard&rdquo;?</span></strong></p>
+<p>Users who have permissions in the managed dashboard can access the drag and drop dashboard.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Which type of report can be used for dashboard components?</span></strong></p>
+<p>Summary reports and Matrix reports are used for dashboard components.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Which permission is required to set the running user other than you in the dashboard?</span></strong></p>
+<p>The user must have &ldquo;View All Data&rdquo; permission is required to set the running users.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is the use of &ldquo;floating report header&rdquo;?</span></strong></p>
+<p>Floating report headers enables us to display the column header visible on each</p>
+<p>page when we scroll the report page.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to enable the &ldquo;floating report header&rdquo;?</span></strong></p>
+<p>To enable floating report header in salesforce go to</p>
+<p><strong>Setup=&gt;Customize=&gt;Reports and Dashboards=&gt;User Interface settings=&gt;Click on&nbsp;</strong><strong>enable floating report header.</strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is Analytical Snapshot in Salesforce.com ?</span></strong></p>
+<p>Analytical Snapshots in Salesforce are used to create reports on historical data.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Workflow Task?</span></strong></p>
+<p>Workflow tasks in salesforce are used to assign a task to users. Using tasks we can specify the Subject, Status, Priority, and Due Date of the task. Tasks are workflow &amp; approval actions that are triggered by workflow rules or approval processes.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Workflow Alert?</span></strong></p>
+<p>Email alert is one of the actions used in workflow and approval. They are used to generate email templates by a workflow rule or approval process and sent to destination recipients. We can send workflow email alerts to users, contacts having a valid email address.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is a Workflow Field Update?</span></strong></p>
+<p>Field updates in workflow and approval processes specify the field that we want updated and insert the new value for it. Depending on the field type, we can choose the following options. They apply a specific value, make the value blank, or calculate a value based on a formula you create.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is Time-Dependent Workflow?</span></strong></p>
+<p>Time dependent workflows are not executed independently. Time dependent workflows remain constant in the workflow queue as long as the workflow rule criteria is valid.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Limitations of Time-dependent workflow?</span></strong></p>
+<p>When defining time dependent workflows in salesforce we have to use standard and custom date and date/time fields defined for the object.</p>
+<ul>
+    <li>We have to specify time using days and hours.</li>
+    <li>Also add actions to existing time triggers.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">In which criteria of a workflow &ndash; &ldquo;time dependent workflow action&rdquo; cannot be created ?</span></strong></p>
+<p>Created, and every time it&rsquo;s edited.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">When you can&rsquo;t add Time dependent action in Workflow rule?&nbsp;</span></strong></p>
+<p>Time dependent actions in workflow rules can not be added when the following actions take place.</p>
+<ul>
+    <li>When workflow rules are active.</li>
+    <li>When the workflow rule is deactivated and has pending actions in the queue.</li>
+    <li>When the workflow rule criteria of a record is set to: created, and every time it&rsquo;s edited.</li>
+    <li>When the workflow rule is included in a package.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">We have a &ldquo;Time Based Workflow&rdquo; and there is Action scheduled to be executed. If we Deactivate the workflow, Scheduled actions will be removed from the queue or not?</span></strong></p>
+<p>Even after deactivating the workflow, its action will not be removed. It&rsquo;s still active in the queue.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">We have &ldquo;Time Based Workflow&rdquo; and there is action scheduled to be executed. Can we delete that workflow?</span></strong></p>
+<p>It is not possible to delete the workflow when the workflow is having any pending time dependent actions.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to clear the Time based workflow action queue?</span></strong></p>
+<p>We can clear time based workflow action queues in two ways</p>
+<ul>
+    <li>Make the criteria false.</li>
+    <li>Removing scheduled actions from the queue.</li>
+</ul>
+<p><span style="color: rgb(226, 80, 65);"><strong>While creating workflow on Task, what difference is observed on available actions?</strong></span></p>
+<p>While creating workflow on task we can not find &ldquo;Send Email&rdquo;action.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Suppose if a record meets workflow criteria for time based workflow action, the action goes in queue. Later, before the time based action is triggered, the same record gets modified and the criteria previously met is changed and now it does not meet the workflow criteria. What happens to the time based action placed in Queue?</span></strong></p>
+<p>Simply the time based workflow action is removed from the workflow queue and will not get fired.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the duties of a Salesforce Administrator?</span></strong></p>
+<p>The primary responsibilities and duties of a Salesforce Administrator include:&nbsp;</p>
+<ul>
+    <li>Handle normal administrator functions and routine tasks, including user account maintenance, dashboards and reports, and workflows.</li>
+    <li>Perform routine internal system audits and prepare the system for possible upgrades</li>
+    <li>Help train new Salesforce users and help the staff increase their Salesforce skills.</li>
+    <li>Oversee Salesforce data feeds</li>
+    <li>Function as a liaison between users, vendors, and development teams</li>
+    <li>Work with the organization&rsquo;s management teams to establish appropriate processes that benefit all administrative, change management, and development activities</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What is Salesforce Lightning?</span></strong></p>
+<p>Lightning is a component-based framework designed for business users unfamiliar with programming. The framework makes app development processes easier.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">In the context of activities, what are WhoID and WhatID?</span></strong></p>
+<p><strong>WhoID</strong> is used for people, such as leads or contacts.</p>
+<p><strong>WhatID</strong> refers to objects such as campaigns, accounts, custom objects, or cases.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is an Apex transaction?</span></strong></p>
+<p>Apex transactions represent a set of operations executed as a single unit. It is alternately called an execution context.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the differences between Private and Public Cloud?</span></strong></p>
+<p><strong>Public Cloud</strong> is offered across the globe by sharing hardware, storage and network devices with various organizations. These organizations are termed as cloud tenants.</p>
+<p><strong>Private cloud&nbsp;</strong>is limited for an organization, with infrastructure and services are maintained on the private network for an organization or any business entity. It allows the organization to meet the demands of specific business requirements &ndash; with customization of private resources.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can you differentiate between Hybrid Cloud and Public Cloud?</span></strong></p>
+<p><strong>Hybrid Cloud</strong> brings out the best of both the worlds &ndash; public and private clouds. This way the hybrid cloud offers a range of deployment options and enhances flexibility.</p>
+<p>However, in the case of a<strong>&nbsp;public cloud</strong> the resources are shared with other organizations too. Here the account is managed and services accessed &ndash; using a web browser.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">In how many ways can you call Apex Classes?</span></strong></p>
+<p>The many ways to call Apex classes are:</p>
+<ul>
+    <li>From Visualforce Page</li>
+    <li>Within another Class</li>
+    <li>Invoke from a Trigger</li>
+    <li>Use a Developer Button</li>
+    <li>Use JavaScript buttons and Links</li>
+    <li>From Components in a Home Page</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">If you want to set the Running User other than yourself in the dashboard then what is the permission required?&nbsp;</span></strong></p>
+<p>Here the permission required is &ldquo;View All Data&rdquo; to set another running user in the dashboard.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can you tell me about the Data Import Wizard?</span></strong></p>
+<p>Data Import Wizard in Salesforce makes it easier to import standard objects like accounts, leads, contacts, person accounts, and others. It enables us to import custom objects too. The number of records allowed to be imported is <strong>50,000.</strong> Here is an image depicting Data Import Wizard:</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can you tell me about Export and Export All with reference to Data Loader?&nbsp;</span></strong></p>
+<p>Export and Export All are the two buttons present in the Salesforce Data Loader. When the export button is used with any Salesforce object, then all the records belonging to that particular object (except the ones present in the recycle bin) are exported to a .csv file.</p>
+<p>In the case of Export All option, all records for that object including the ones from the recycle bin are exported to a .csv file.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can the Data Loader delete the reports?&nbsp;</span></strong></p>
+<p>The Data Loader cannot delete reports in Salesforce. what are Custom Reports in Salesforce? What are Custom Report Types?</p>
+<p>Custom Reports in Salesforce are built as per the requirements of your organization. These reports can be built on standard and custom objects. When the user is keen to create a complex, dynamic report quickly then he/she uses a template or framework to specify the object/relationship or the fields that make the report.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">State the cause of error for insufficient privilege access in a Partner Community with External Users. The User has proper Owd and Profile Settings for any object.</span></strong></p>
+<p>We need to check the following to determine this error so that the external user must have access to all the data for the internal user.&nbsp;</p>
+<ul>
+    <li>Check field- level security for all fields for the external users &ndash; used in the reports.</li>
+    <li>Check as to whether the Standard Visibility Record Settings are enabled. If enabled then only the user can view all the standard report types.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the types of sharing Rules?</span></strong></p>
+<p>The two types of sharing rules are:</p>
+<p><strong>Owner-based Sharing Rules:</strong> Access is given for records owned by other users. For Example, The Sales Head of a US company giving access to the Sales Manager in the European region to opportunities owned by the US team.</p>
+<p><strong><span style="color: rgb(0, 0, 0);">Criteria-based Sharing Rules:&nbsp;</span></strong>Access is given based on record values and not based on record owners. It states who you share based on the field value For Example, There is a custom picklist value called the department for a custom object in your organization named job application. A criteria-based sharing rule allows the IT manager to see all job applications for the department field set as &ldquo;IT&rdquo;.</p>
+<p><span style="color: rgb(226, 80, 65);"><strong>What do you think are the best practices of creating Contact Sharing Rules?</strong></span></p>
+<p>The permissions for the read, read/write, write are used by using the default settings across the entire organization.</p>
+<p><br></p>
+<p><strong><span style="color: rgb(226, 80, 65);">Which fields are indexed by default in Salesforce?</span></strong></p>
+<p>The default indexed fields in Salesforce are:</p>
+<ul>
+    <li>Primary Keys (ID, owner and name fields)</li>
+    <li>Foreign Keys (lookup and master-detail relationship)</li>
+    <li>Custom Fields (only marked as External ID or unique)</li>
+    <li>Audit Dates</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What is conditional highlighting in Salesforce Reports? State some limitations.</span></strong></p>
+<p>When you need to highlight field values in matrix or summary reports with the use of ranges or colors then conditional highlighting is used. But, one thing is important for you to remember that the report must have at least one summary field or custom summary formula. This is shown in the below figure:</p>
+<p>For example:</p>
+<p>The limitations of conditional highlighting are:</p>
+<ul>
+    <li>Only applied to summary rows.</li>
+    <li>Only for summary and matrix reports.</li>
+    <li>Use a maximum of up to three conditions in a report.</li>
+    <li>Use only for summary rows.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">How to automate business processes?</span></strong></p>
+<p>Salesforce used various tools such as approvals, workflow, process builder and flow builder to automate business processes.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are Queues in Salesforce?&nbsp;</span></strong></p>
+<p>Queues in Salesforce help to prioritize, distribute as well as assign records to teams sharing workloads. They apply to cases, service contracts, leads, orders, custom objects and many such more. It becomes possible for the queue members to jump and take ownership of any record that is in the queue.</p>
+<p>For example: Create a queue on a case for support agents assigned to various service levels.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can you throw some light on Assignment Rules? How do you Set up an Assignment rule?</span></strong></p>
+<p>Assignment rules impose conditions on the processing of cases or leads. You can set up and assignment rule by following the path:</p>
+<p><strong>Go to Setup-&gt;Search for Assignment Rules in Quick Find Box-&gt; Choose Lead/Case Assignment Rule-&gt;Click New-&gt; Save after a name-&gt;Create Rule entries.</strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are Custom Labels in Salesforce? How to access custom labels?&nbsp;</span></strong><span style="color: rgb(226, 80, 65);"><strong>What is the character limit for Custom Labels?</strong></span></p>
+<p>Answer: Custom Labels help to create a multilingual application in Salesforce. They provide information automatically to the users in the form of error messages and help texts &ndash; by using their native language.</p>
+<p>Custom Labels are defined as custom text values to be accessed from a Visualforce page or an Apex class or even Lightning components. These values then are translated into any language that is supported by Salesforce. You can access the custom labels with the below path:</p>
+<p><strong>Setup-&gt;Search Custom Labels in Quick Find Box-&gt;Custom Labels</strong></p>
+<p>It is possible to create <strong>5000 custom labels</strong> for your organization and the<strong>&nbsp;character limit is 1000.</strong></p>
+<p><strong><span style="color: rgb(226, 80, 65);">What is Auto-Response?</span></strong></p>
+<p>This is about sending automatic emails to cases or leads for specified record attributes. Quickly reply to customer issues or inquiries by setting up an auto-response rule. At a time, it is possible to set one rule for a case and one for a lead.</p>
+<p>Here is how an auto-response rule looks like for two levels of support in an organization (Basic and Premier) and two products (A and B). For a premier support customer, with a case, the premier template is sent from the corresponding Premier Support email address. On the other hand, the basic support customer will receive a different template.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">What are Escalation Rules?</span></strong></p>
+<p>These rules apply to the escalation of cases as per the criteria defined in the escalation rule entry. Along with the rule entries, it is possible to create escalation actions to specify what happens when a case escalates. An escalation rule can reassign the case to another support agent or even a support queue.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">&nbsp;What are the uses of Salesforce Chatter?</span></strong></p>
+<p>Chatter is the Salesforce&rsquo;s enterprise social networking application that allows users to share information, working collaboratively and conversing with each other. It helps to build higher employee engagement by motivation. It also provides a forum across the enterprise to share insights or novel ideas. You can use the mobile feed to track your team for a critical project for a mobile-first experience.</p>
+<p><strong><span style="color: rgb(226, 80, 65);">How to identify a class as a Test Class in Salesforce? What are the best practices to write a Test Class?</span></strong></p>
+<p>Test classes enable efficient debugging. The Test Classes can create error-free code in Apex. Test Classes are used in Apex for unit testing. Test Classes detect bugs in your code and improve your code.</p>
+<p>Moreover, it also does Code Coverage. Code Coverage is the percentage of code that works and the minimum is 75 % as you navigate your code from Sandbox to Production org.</p>
+<p>Some of the best practices for test classes are:</p>
+<ul>
+    <li>Test Class is annotated with<strong>&nbsp;@isTest keyword</strong>.</li>
+    <li>Any method used inside a test class must have the keyword testMethod and can be termed as a test method.</li>
+    <li>The <strong>system.assertEquals</strong> enables you to know what is being tested and the expected output.</li>
+    <li>The annotation<strong>&nbsp;isTest(SeeAllData=true)</strong> for opening data access at the class or method level.</li>
+    <li>The annotation<strong>@ Test.runAs</strong>.is used for a particular user.</li>
+    <li>You must avoid creating Multiple test methods for testing the same production code method.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the available portals in Salesforce?&nbsp;</span></strong></p>
+<p>Three types of portals are available in Salesforce.com:</p>
+<ul>
+    <li>Customer portal: It enables us to utilize the capabilities of the web as the ideal channel to deliver superior self-service.</li>
+    <li>Partner portal: It allows partner users to log in to Salesforce via a separate website than that is used for our non-partner users.</li>
+    <li>Self-service portal: Customers will be able to search for details about the organization using this portal.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">Mention the types of Profiles available in Salesforce.</span></strong></p>
+<p>There are two types of profiles:</p>
+<ul>
+    <li>Standard profiles: Profiles created by Force.com</li>
+    <li>Custom profiles: Profiles created by users Salesforce standard profiles are:</li>
+    <li>Standard User</li>
+    <li>Solution Manager</li>
+    <li>Marketing User</li>
+    <li>Read-only</li>
+    <li>System Administrator</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">Mention the ways to store files, documents, and images in Salesforce.com.</span></strong></p>
+<p>We can store files, documents, and images in Salesforce.com as below:</p>
+<ul>
+    <li>Attachments</li>
+    <li>Documents</li>
+    <li>Google Drive</li>
+    <li>Libraries</li>
+    <li>Chatter Files</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">In the Visualforce page, how many field dependencies are used?</span></strong></p>
+<p><span style="color: rgb(0, 0, 0);">10 field dependencies</span></p>
+<p><span style="color: rgb(226, 80, 65);"><strong>Can two users have the same profile in Salesforce?</strong></span></p>
+<p><span style="color: rgb(0, 0, 0);">Yes</span></p>
+<p><span style="color: rgb(226, 80, 65);"><strong>Which field cannot be added as a custom index?</strong></span></p>
+<p><span style="color: rgb(0, 0, 0);">Formula Field</span></p>
+<p><span style="color: rgb(226, 80, 65);"><strong>Can we edit a formula field value in a record?</strong></span></p>
+<p><span style="color: rgb(0, 0, 0);">No</span></p>
+<p><strong><span style="color: rgb(226, 80, 65);">Can we use sharing rules to restrict data access?</span></strong></p>
+<p>No</p>
+<p><strong><span style="color: rgb(226, 80, 65);">Define Dynamic Dashboards. Can we schedule Dynamic Dashboards?</span></strong></p>
+<p>Dynamic dashboards help us display the set of metrics in an organization. They are created to provide security settings for dashboards at Salesforce.com. Two setting options are there in dynamic dashboards:</p>
+<ul>
+    <li>Run as a specified user</li>
+    <li>Run as the logged-in user</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">What are the limitations of a Time-dependent Workflow?</span></strong></p>
+<p>Limitations of a time-dependent workflow are as follows:</p>
+<ul>
+    <li>Time triggers do not support minutes or seconds.</li>
+    <li>Time triggers cannot reference formula fields that include related-object merge fields.</li>
+    <li>We cannot add or remove a time trigger if:</li>
+    <li>The workflow rule is active</li>
+    <li>The workflow rule is included in the package</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">Explain different Salesforce editions?</span></strong></p>
+<p><strong>Essentials: </strong>The Salesforce Essentials edition is specially designed for small scale businesses. It consists of an easy-to-use UI. There are various tools in the edition that help customize it according to business needs.</p>
+<p><strong>Professiona</strong><strong>l:</strong> This edition is built for businesses that require most of the CRM functionality. It has features such as easy customization and integration with other technologies. Also, it consists of administration tools that help in the deployment of a small-scale application.</p>
+<p><strong>Enterprise:</strong> The Enterprise edition is built for large-scale businesses. It provides advanced customization tools. The administration tools of the Enterprise edition help large-scale deployment. The edition allows access to the features of the Salesforce API.</p>
+<p><strong>Unlimited:</strong> This edition consists of extremely advanced features that help maximize usage. The Unlimited edition of Salesforce allows for the efficient management of business resources that can be provided instantly on- demand. Also, it provides premier support, high storage limit, an</p>
+<p><strong><span style="font-size: 19px; color: rgb(97, 189, 109);">WorkBench&nbsp;</span></strong></p>
+<p>Limitation - upto 50K records we can upload at once.</p>
+<p>6 Functions that can perform from WorkBench -</p>
+<ul>
+    <li>&nbsp;Insert - Create New Records.</li>
+    <li>Update - Updates Existing Records.</li>
+    <li>&nbsp;Upsert (Insert + Update) - Create New Records and/or Updates</li>
+</ul>
+<p>Existing Records based on Unique External ID.</p>
+<ul>
+    <li>Delete - Moves Records to RecycleBin.</li>
+    <li>Undelete - Restore Records from RecycleBin.</li>
+    <li>Purge - Permanently Deletes Records from RecycleBin.</li>
+</ul>
+<p><strong><span style="color: rgb(97, 189, 109); font-size: 19px;">Data Import Wizard :</span></strong></p>
+<p>Limitation - upto 50K records we can upload at once.</p>
+<p>3 Functions - Insert, Update &amp; Upsert only.</p>
+<p>NOTE - Suppose we are entering 35K records in processing then in this case 4 Batch will execute where :</p>
+<ul>
+    <li>1st Batch - 10K</li>
+    <li>2st Batch - 10K</li>
+    <li>3st Batch - 10K</li>
+    <li>4th Batch - 5K</li>
+</ul>
+<p><strong><span style="font-size: 19px; color: rgb(97, 189, 109);">Data Loader :</span></strong></p>
+<p>Limitation - upto 5M records we can upload at once.</p>
+<p>Note: If you need to load more than 50,00,000 or 5M records, we recommend you work with a Salesforce.com partner.</p>
+<p>7 Functions -<strong>&nbsp;Insert, Update, Upsert, Delete, (Hard Delete), Export &amp; Export All.</strong></p>
+<ul>
+    <li><strong>Export&nbsp;</strong>- To fetch the Data from any particular Object excluding the record available in the recycleBin.</li>
+    <li><strong>Export All -</strong> To fetch the Data from any particular Object including the record available in the recycleBin.</li>
+</ul>
+<p><strong><span style="color: rgb(226, 80, 65);">Difference Between DataLoader &amp; Dataloader.io ?</span></strong></p>
+<ul>
+    <li>Data Loader is an application for the bulk import or export of data. Use it to insert, update, delete, or export Salesforce records.</li>
+    <li>Dataloader.io is a web-based tool to import and export information from Salesforce.com.</li>
+    <li>Dataloader.io is a cloud-based data import tool powered by Mulesoft.</li>
+    <li>Dataloader.io is a Mulesoft product, and as such is owned by Salesforce.</li>
+</ul>
+
+</div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

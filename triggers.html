@@ -1,0 +1,1074 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Salesforce IP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<!-- Plugin CSS -->
+		<link rel="stylesheet" href="assets/plugins/highlight/styles/monokai-sublime.min.css">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4">
+		  		<h1><a href="index.html" class="logo">Salesforce <span>Interview Preparation</span></a></h1>
+	        <ul class="list-unstyled components mb-5">
+	          <li>
+	            <a href="index.html"><span class="fa fa-home mr-3"></span> Home</a>
+	          </li>
+	          <li>
+	              <a href="admin.html"><span class="fa fa-user mr-3"></span> Admin</a>
+	          </li>
+	          <li>
+              <a href="apex.html"><span class="fa fa-briefcase mr-3"></span> Apex</a>
+	          </li>
+	          <li>
+              <a href="aura.html"><span class="fa fa-sticky-note mr-3"></span> AURA</a>
+	          </li>
+	          <li>
+              <a href="lwc.html"><span class="fa fa-suitcase mr-3"></span> LWC</a>
+	          </li>
+	          <li>
+              <a href="integration.html"><span class="fa fa-cogs mr-3"></span> Integration</a>
+	          </li>
+	          <li class="active">
+              <a href="triggers.html"><span class="fa fa-paper-plane mr-3"></span> Triggers</a>
+	          </li>
+			  <li>
+				<a href="ExtraQS.html"><span class="fa fa-paper-plane mr-3"></span> Extra Questions</a>
+				</li>
+	        </ul>
+
+
+	       <!--  <div class="mb-5">
+						<h3 class="h6 mb-3">Subscribe for newsletter</h3>
+						<form action="#" class="subscribe-form">
+	            <div class="form-group d-flex">
+	            	<div class="icon"><span class="icon-paper-plane"></span></div>
+	              <input type="text" class="form-control" placeholder="Enter Email Address">
+	            </div>
+	          </form>
+					</div> -->
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This  is made with Love
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Trigger Questions</h2>
+		<p><strong><span style="color: rgb(226, 80, 65);">Upon Account Creation if Industry is not null and having value as ‘Media’ then populate Rating as Hot.</span></strong></p>
+        <pre>
+			<code>
+trigger AccountTrigger on Account (before insert) {
+	if(Trigger.isInsert){
+		if(Trigger.isBefore){
+			AccountTriggerHandler.updateRating(Trigger.New);
+		}
+	}
+}
+public class AccountTriggerHandler {
+	public static void updateRating(List<Account> accList){
+		for(Account acc:accList){
+			if(acc.Industry!=null && acc.Industry=='Media'){
+				acc.Rating='Hot';
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Upon Opportunity Creation if Amount is not null and is greater than 100000 then populate ‘Hot Opportunity’ in description field.</span></strong></p>
+        <pre>
+			<code>
+trigger OpportunityTrigger on Opportunity (before insert) {
+	if(Trigger.isInsert){
+		if(Trigger.isBefore){
+			OpportunityTriggerHandler.updateDesc(Trigger.New);
+		}
+	}
+}
+public class OpportunityTriggerHandler {
+	public static void updateDesc(List<Opportunity> oppList){
+		for(Opportunity opp:oppList){
+			if(opp.Amount!=null && opp.Amount>100000){
+				opp.Description='Hot Opportunity';
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">When an account inserts and CopyBillingToShipping (Custom Field) checkbox is checked then automatically copy account billing address into account shipping address.</span></strong></p>
+        <pre>
+			<code>
+trigger AccountTrigger on Account (before insert) {
+	if(Trigger.isInsert){
+		if(Trigger.isBefore){
+			AccountTriggerHandler.updateRating(Trigger.New);
+		}
+	}
+}
+public class AccountTriggerHandler {
+	public static void updateAddres(List<Account> accList){
+		for(Account acc:accList){
+			if(acc.CopyBillingToShipping__c && acc.acc.BillingCity!= null && acc.BillingCountry!= null && acc.BillingPostalCode != null && acc.BillingState != null && acc.BillingStreet != null){
+				acc.ShippingCity=acc.BillingCity;
+				acc.ShippingCountry=acc.BillingCountry;
+				acc.ShippingPostalCode=acc.BillingPostalCode;
+				acc.ShippingState=acc.BillingState;
+				acc.ShippingStreet=acc.BillingStreet;
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Upon Account Creation if Industry is not null and having value as ‘Media’ then populate Rating as Hot.</span></strong></p>
+        <pre>
+			<code>
+trigger AccountTrigger on Account (before insert) {
+	if(Trigger.isInsert){
+		if(Trigger.isBefore){
+			AccountTriggerHandler.updateRating(Trigger.New);
+		}
+	}
+}
+public class AccountTriggerHandler {
+	public static void updateRating(List<Account> accList){
+		for(Account acc:accList){
+			if(acc.Industry!=null && acc.Industry=='Media'){
+				acc.Rating='Hot';
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+
+		<p><strong><span style="color: rgb(226, 80, 65);">Upon Creation of Position (Custom Object) if it is a New Position and Open Date,
+			Min Pay & Max Pay are not populated then populated them with below values:
+			<ul style="color: rgb(226, 80, 65);">
+				<li>Open Date = Today’s Date</li>
+				<li> Min Pay = 10000</li>
+				<li>Max Pay = 15000</li>
+			</ul></span></strong></p>
+        <pre>
+			<code>
+trigger PositionTrigger on Position__c (before insert) {
+	if(Trigger.isInsert){
+		if(Trigger.isBefore){
+			PositionTriggerHandler.populateDateAndPay(Trigger.New);
+		}
+	}
+}
+public class PositionTriggerHandler {
+	public static void populateDateAndPay(List<Position__c> posList){
+		for(Position__c pos:posList){
+			if(pos.status__c=='New Position' && pos.Min_Pay__c ==null && pos.Max_Pay__c==null &&
+				pos.Open_Date__c==null){
+				pos.Open_Date__c=System.today();
+				pos.Min_Pay__c=10000;
+				pos.Max_Pay__c=15000;
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Create a related Contact when an Account is created.</span></strong></p>
+        <pre>
+			<code>
+trigger AccountTrigger on Account (after insert) {
+	if(Trigger.isInsert){
+		if(Trigger.isAfter){
+			AccountTriggerHandler.createContact(Trigger.New);
+		}
+	}
+}
+public class AccountTriggerHandler {
+	public static void createContact(List<Account> accList){
+	List<Contact> conList = new List<Contact>();
+		for(Account acc: accList){
+			Contact con= new Contact();
+				con.FirstName = acc.Name + 'FN';
+				con.LastName = acc.Name + 'LN';
+				con.AccountId = acc.Id;
+				conList.add(con);
+			} 
+			if(!conList.isEmpty()){
+				insert conList;
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Create a related Opportunity when an Account is created.</span></strong></p>
+        <pre>
+			<code>
+trigger AccountTrigger on Account (after insert) {
+	if(Trigger.isInsert){
+		if(Trigger.isAfter){
+			AccountTriggerHandler.createRelatedOpp(Trigger.New);
+		}
+	}
+}
+public class AccountTriggerHandler {
+	public static void createRelatedOpp(List<Account> accList){
+	List<Opportunity> oppList = new List<Opportunity>();
+		for(Account acc: accList){
+		Opportunity opp = new Opportunity();
+			opp.Name = acc.Name + 'opp';
+			opp.AccountId = acc.Id;
+			opp.StageName = 'Prospecting';
+			opp.CloseDate = System.today();
+			oppList.add(opp);
+		} 
+		if(!oppList.isEmpty()){
+			insert oppList;
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">When a Case is created on any Account, put the latest case number on the Account in the ‘Latest Case Number’ field.</span></strong></p>
+        <pre>
+			<code>
+trigger CaseTrigger on Case (after insert) {
+	if(Trigger.isInsert){
+		if(Trigger.isAfter){
+			CaseTriggerHandler.populateLatestCaseNum(Trigger.New);
+		}
+	}
+}
+public class CaseTriggerHandler {
+	public static void populateLatestCaseNum(List<Case> caseList){
+	List<Account> accLIst = new List<Account>();
+		for(Case cs : caseList){
+			if(cs.AccountId != null){
+				Account acc = new Account();
+				acc.id = cs.AccountId;
+				acc.Latest_Case_Number__c = cs.CaseNumber;
+				accList.add(acc);
+			}
+		} 
+		if(!accList.isEmpty()){
+			update accList;
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Account records should have a field named ‘Recent Opportunity Amount’. It should contain the opportunity amount of the latest created opportunity on
+			account.</span></strong></p>
+        <pre>
+			<code>
+trigger OpportunityTrigger on Opportunity (after insert) {
+	if(Trigger.isInsert){
+		if(Trigger.isAfter){
+			OpportunityTriggerHandler.populateAmount(Trigger.New);
+		}
+	}
+}
+public class OpportunityTriggerHandler {
+	public static void populateAmount(List<Opportunity> oppList){
+	List<Account> accList= new List<Account>();
+		for(Opportunity opp:oppList){
+			if(opp.Amount!=null && opp.AccountId!=null){
+				Account acc = new Account();
+				acc.Id=opp.AccountId;
+				acc.Recent_Opp_Amount__c=opp.Amount;
+				accList.add(acc);
+			}
+		}
+		if(!accList.isEmpty()){
+			update accList;
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">On Account create two checkbox fields labeled as Contact and Opportunity. Now when a new Account record is created and if a particular Contact or Opportunity checkbox is checked then create that related record. Also Opportunity record should be created only if the Account record Active picklist is populated with a Yes.</span></strong></p>
+			
+        <pre>
+			<code>
+trigger AccountTrigger on Account (after insert) {
+	if(Trigger.isInsert){
+		if(Trigger.isAfter){
+			AccountTriggerHandler.createContactOrOpp(Trigger.New);
+		}
+	}
+}
+public class AccountTriggerHandler {
+	public static void createContactOrOpp(List<Account> accList){
+	List<Contact> conList= new List<Contact>();
+	List<Opportunity> oppList= new List<Opportunity>();
+		for(Account acc:accList){
+			if(acc.Contact__c){
+			Contact con = new Contact();
+			con.FirstName = 'con1';
+			con.LastName = 'last';
+			con.AccountId = acc.Id;
+			conList.add(con);
+			} 
+			if(acc.Opportunity__c && acc.Active__c== 'Yes'){
+				Opportunity opp = new Opportunity();
+				opp.AccountId = acc.Id;
+				opp.StageName = 'Prospecting';
+				opp.CloseDate = System.today();
+				opp.Name = 'Opp1';
+				oppList.add(opp);
+			}
+		}
+		if(oppList.size()>0){
+			insert oppList;
+		} if(conList.size()>0){
+			insert conList;
+		}
+	}
+}	
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">If the Account phone is updated then populate below message in
+			description.Description = Phone is Updated! Old Value : XXX & New Value : XXX</span></strong></p>
+        <pre>
+			<code>
+trigger AccountTrigger on Account (before update) {
+	if(Trigger.isUpdate){
+		if(Trigger.isBefore){
+			AccountTriggerHandler.updateDescription(Trigger.New,Trigger.oldMap);
+		}
+	}
+}
+public class AccountTriggerHandler {
+	public static void updateDescription(List<Account> accList,Map<Id,Account> oldMap){
+		for(Account acc:accList){
+			if(acc.Phone!=oldMap.get(acc.Id).Phone){
+				acc.Description='Phone is updated! Old Value :'+oldMap.get(acc.Id).Phone+' & New Value :'+acc.Phone;
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">When an account is inserted or updated and the CopyBillingToShipping
+			checkbox is checked then automatically copy the account billing address
+			into account shipping address.</span></strong></p>
+        <pre>
+			<code>
+trigger AccountTrigger on Account (before update) {
+	if(Trigger.isUpdate){
+		if(Trigger.isBefore){
+			AccountTriggerHandler.copyBillToShip(Trigger.New,Trigger.oldMap);
+		}
+	}
+}
+public class AccountTriggerHandler {
+	public static void copyBillToShip(List<Account> accList,Map<Id,Account>oldMap){
+		for(Account acc:accList){
+			if((oldMap==null && acc.CopyBillingToShipping__c) || (!oldMap.get(acc.Id).CopyBillingToShipping__c && acc.CopyBillingToShipping__c)){
+				acc.ShippingCity=acc.BillingCity;
+				acc.ShippingCountry=acc.BillingCountry;
+				acc.ShippingPostalCode=acc.BillingPostalCode;
+				acc.ShippingState=acc.BillingState;
+				acc.ShippingStreet=acc.BillingStreet;
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Upon Account Creation or updation if Industry is not null and having value
+			as ‘Media’ then populate Rating as Hot.</span></strong></p>
+        <pre>
+			<code>
+trigger AccountTrigger on Account (before update) {
+	if(Trigger.isUpdate){
+		if(Trigger.isBefore){
+			AccountTriggerHandler.updateIndustryRating(Trigger.New, Trigger.oldMap);
+		}
+	}
+}
+public class AccountTriggerHandler {
+	public static void updateIndustryRating(List<Account> accList,Map<Id,Account> oldMap){
+		for(Account acc:accList){
+			if((oldMap==null &&acc.Industry=='Media') || (acc.Industry=='Media' && acc.Industry != oldMap.get(acc.Id).Industry)){
+				acc.Rating='Hot';
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">If opportunity Stage is updated upon its creation or update then update
+			description as either 'Opp is Closed Lost' or 'Opp is Closed Won' or 'Opp is
+			Open'.</span></strong></p>
+        <pre>
+			<code>
+trigger OpportunityTrigger on Opportunity (before update) {
+	if(Trigger.isUpdate){
+		if(Trigger.isBefore){
+			OpportunityTriggerHandler.updateDesc(Trigger.New,Trigger.oldMap);
+		}
+	}
+}
+public class OpportunityTriggerHandler {
+	public static void updateDesc(List<Opportunity> oppList,Map<Id,Opportunity> oldMap){
+		for(Opportunity opp:oppList){
+			if((oldMap==null)||(opp.StageName!=oldMap.get(opp.Id).StageName)){
+				if(opp.StageName=='Closed Won'){
+					opp.Description='Opportunity is Closed won';
+				}else if(opp.StageName=='Closed Lost'){
+					opp.Description='Opportunity is closed lost';
+				}else{
+					opp.Description='Opportunity is open';
+				}
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">If the Account phone is updated then populate the phone number on all
+			related Contacts (Home Phone field). [Using Map]</span></strong></p>
+        <pre>
+			<code>
+trigger AccountTrigger on Account (after update) {
+	if(Trigger.isUpdate){
+		if(Trigger.isAfter){
+			AccountTriggerHandler.updateRelatedConts(Trigger.New,Trigger.oldMap);
+		}
+	}
+}
+public class AccountTriggerHandler {
+	public static void updateRelatedConts(List<Account> accList,Map<Id,Account> oldMap){
+	List<Contact> conList=new List<Contact>();
+	Map<Id,Account> accToAccountMap= new Map<Id,Account>();
+		for(Account acc:accList){
+			if((acc.Phone!=null && acc.Phone!=(oldMap.get(acc.Id).Phone)) && oldMap!=null){
+				accToAccountMap.put(acc.Id,acc);
+			}
+		}
+		for(Contact cont:[SELECT Id, HomePhone, AccountId FROM Contact WHERE AccountId IN: accTOAccountMap.keySet()]){
+			if(accToAccountMap.containsKey(cont.AccountId)){
+				cont.HomePhone=accToAccountMap.get(cont.AccountId).Phone;
+				conList.add(cont);
+			}
+		} 
+		if(!conList.isEmpty()){
+			update conList;
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">If the Account phone is updated then populate the phone number on all
+			related Contacts (Home Phone field). [Using Parent-Child SOQL]</span></strong></p>
+        <pre>
+			<code>
+trigger AccountTrigger on Account (after update) {
+	if(Trigger.isUpdate){
+		if(Trigger.isAfter){
+			AccountTriggerHandler.updateRelatedConts(Trigger.New,Trigger.oldMap);
+		}
+	}
+}
+public class AccountTriggerHandler {
+	public static void updateRelatedContsWithoutMap(List<Account>accList,Map<Id,Account> oldMap){
+	List<Contact> conList=new List<Contact>();
+	Set<Id> accIds = new Set<Id>();
+		for(Account acc:accList){
+			if((acc.Phone!=null && acc.Phone!=(oldMap.get(acc.Id).Phone)) && oldMap!=null){
+				accIds.add(acc.Id);
+			}
+		}
+		for(Account acc : [SELECT Id, Phone, (SELECT HomePhone FROM Contacts) FROM Account WHERE Id IN: accIds]){
+			if(acc.Contacts != null){
+				for(Contact con : acc.Contacts){
+					con.HomePhone=acc.Phone;
+					conList.add(con);
+				}
+			}
+		} 
+		if(!conList.isEmpty()){
+			update conList;
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">If the Account billing address is updated then update related contacts
+			mailing address. [Using Map]</span></strong></p>
+        <pre>
+			<code>
+trigger AccountTrigger on Account (after update) {
+	if(Trigger.isUpdate){
+		if(Trigger.isAfter){
+			AccountTriggerHandler.updateRelatedConts(Trigger.New,Trigger.oldMap);
+		}
+	}
+}
+public class AccountTriggerHandler {
+	public static void updateRelatedContactMail(List<Account> accList,Map<Id,Account> oldMap){
+	List<Contact> conList=new List<Contact>();
+	Map<Id,Account> accToAccountMap= new Map<Id,Account>();
+		for(Account acc:accList){
+			if( (!acc.BillingCity.equals(oldMap.get(acc.Id).BillingCity) || !acc.BillingCountry.equals(oldMap.get(acc.Id).BillingCountry) ||
+			!acc.BillingPostalCode.equals(oldMap.get(acc.Id).BillingPostalCode) ||c!acc.BillingState.equals(oldMap.get(acc.Id).BillingState)
+			|| !acc.BillingStreet.equals(oldMap.get(acc.Id).BillingStreet) ) && oldMap!=null){
+				accToAccountMap.put(acc.Id,acc);
+			}
+		}
+		for(Contact con:[SELECT Id,AccountId FROM Contact WHERE AccountId IN: accTOAccountMap.keySet()]){
+			if(accToAccountMap.containsKey(cont.AccountId)){
+				con.MailingCountry = accToAccountMap.get(cont.AccountId).BillingCountry;
+				con.MailingCity = accToAccountMap.get(cont.AccountId).BillingCity;
+				con.MailingState = accToAccountMap.get(cont.AccountId).BillingState;
+				con.MailingPostalCode = accToAccountMap.get(cont.AccountId).BillingPostalCode;
+				con.MailingStreet = accToAccountMap.get(cont.AccountId).BillingStreet;
+				conList.add(con);
+			}
+		} 
+		if(!conList.isEmpty()){
+			update conList;
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">If the Account billing address is updated then update related contacts
+			mailing address. [Using Parent-Child SOQL]</span></strong></p>
+        <pre>
+			<code>
+trigger AccountTrigger on Account (after update) {
+	if(Trigger.isUpdate){
+		if(Trigger.isAfter){
+			AccountTriggerHandler.updateRelatedConts(Trigger.New,Trigger.oldMap);
+		}
+	}
+}
+public class AccountTriggerHandler {
+	public static void updateRelatedContactMailWithoutMap(List<Account> accList,Map<Id,Account> oldMap){
+	List<Contact> conList=new List<Contact>();
+	Set<Id> idSet= new Set<Id>();
+		for(Account acc:accList){
+		if((!acc.BillingCity.equals(oldMap.get(acc.Id).BillingCity) ||!acc.BillingCountry.equals(oldMap.get(acc.Id).BillingCountry) ||
+		!acc.BillingPostalCode.equals(oldMap.get(acc.Id).BillingPostalCode) || !acc.BillingState.equals(oldMap.get(acc.Id).BillingState) ||
+		!acc.BillingStreet.equals(oldMap.get(acc.Id).BillingStreet) ) && oldMap!=null){
+			idSet.add(acc.Id);
+		}
+		}
+		for(Account acc:[SELECT Id, BillingCountry, BillingCity, BillingState,BillingPostalCode, BillingStreet, (SELECT Id FROM Contacts) FROM Account WHERE Id IN:idSet]) {
+			if(acc.Contacts!=null){
+				for(Contact cont:acc.Contacts){
+					cont.MailingCountry=acc.BillingCountry;
+					cont.MailingCity= acc.BillingCity;
+					cont.MailingState=acc.BillingState;
+					cont.MailingPostalCode=acc.BillingPostalCode;
+					cont.MailingStreet=acc.BillingStreet;
+					conList.add(cont);
+				}
+			}
+		} 
+		if(!conList.isEmpty()){
+			update conList;
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">When a Opportunity Stage (field) is changed, create a Task record on
+			Opportunity and assign it to Logged In User/Opportunity Owner / Any User</span></strong></p>
+        <pre>
+			<code>
+trigger OpportunityTrigger on Opportunity (after update) {
+	if(Trigger.isUpdate){
+		if(Trigger.isAfter){
+			OpportunityTriggerHandler.createTask(Trigger.New,Trigger.oldMap);
+		}
+	}
+}
+public class OpportunityTriggerHandler {
+	public static void createTask(List<Opportunity>oppList,Map<Id,Opportunity> oldMap){
+	List<Task> tList= new List<Task>();
+		for(Opportunity opp:oppList){
+			if(opp.StageName!=oldMap.get(opp.Id).StageName){
+				Task t = new Task();
+				t.WhatId = opp.Id;
+				t.Subject = 'Email';
+				t.Priority = 'Normal';
+				T.status = 'Not Started';
+				t.OwnerId = UserInfo.getUserId();
+				tList.add(t);
+			}
+		} If(tList.size( )>0){
+			insert tList;
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Write a trigger on Account when Account Active field is updated from ‘Yes’
+			to ‘No’ then check all opportunities associated with the account. Update all
+			Opportunities Stage to close lost if stage not equal to close won.</span></strong></p>
+        <pre>
+			<code>
+trigger AccountTrigger on Account (after update) {
+	if(Trigger.isUpdate){
+		if(Trigger.isAfter){
+			AccountTriggerHandler.updateOpportunityStage(Trigger.New,Trigger.oldMap);
+		}
+	}
+}
+public class AccountTriggerHandler {
+	public static void updateOpportunityStage(List<Account> accList,Map<Id,Account> oldMap){
+	List<Opportunity> oppList=new List<Opportunity>();
+	Set<Id> idSet= new Set<Id>();
+		for(Account acc:accList){
+			if(acc.Active__c == 'No' && acc.Active__c !=oldMap.get(acc.Id).Active__c){
+				idSet.add(acc.Id);
+			}
+		}
+	for(Account a:[SELECT Id,Active__c,(SELECT Id,StageName FROM Opportunities) FROM Account WHERE Id IN:idSet]){
+		if(acc.Opportunities!=null){
+			for(Opportunity opp:a.Opportunities){
+				if(opp.StageName!='ClosedWon'&&opp.StageName!='Closed Lost'){
+					opp.StageName='Closed Lost';
+					oppList.add(opp);
+				}
+			}
+		}
+	} 
+		if(oppList.size( )>0){
+			update oppList;
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Account records cannot be deleted if active is Yes.</span></strong></p>
+        <pre>
+			<code class="java">
+trigger AccountTrigger on Account (before delete) {
+	if(Trigger.isDelete){
+		if(Trigger.isBefore){
+			AccountTriggerHandle.preventDel(Trigger.old);
+		}
+	}
+}
+public class AccountTriggerHandle{
+	public static void preventDel(List<Account> accList){
+		for(Account acc : accList){
+			if(acc.Active__c == 'Yes'){
+				acc.addError(Label.Prevent_Account_Deletion);
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Prevent account record from being edited if the record is created 7 days
+			back.</span></strong></p>
+        <pre>
+			<code class="java">
+trigger AccountTrigger on Account (before update) {
+	if(Trigger.isUpdate){
+		if(Trigger.isBefore){
+			AccountTriggerHandle.preventAccEdit(Trigger.new);
+		}
+	}
+}
+public class AccountTriggerHandle{
+	public static void preventAccEdit(List<Account> accList){
+		for(Account acc:accList){
+			if(acc.CreatedDate < System.today()-6){
+			acc.addError('You cannot update account created 7 days back');
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Apply validation using addError( ) method in trigger. While Creation of
+			Opportunity is Amount is null then throw an error message.</span></strong></p>
+        <pre>
+			<code class="java">
+trigger OpportunityTrigger on Opportunity (before insert) {
+	if(Trigger.isInsert){
+		if(Trigger.isBefore){
+			OpportunityTriggerHandler.validateAmount(Trigger.New);
+		}
+	}
+}
+public class OpportunityTriggerHandler {
+	public static void validateAmount(List<Opportunity> oppList){
+		for(Opportunity opp:oppList){
+			if(opp.Amount == null){
+				opp.addError('Amount field can not be null');
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">When an opportunity is updated to Closed Lost and Closed Lost Reason
+			(field) is not populated then throw validation error that ‘Please populate
+			Closed Lost Reason’ on opportunity. [before update]</span></strong></p>
+        <pre>
+			<code class="java">
+trigger OpportunityTrigger on Opportunity (before update) {
+	if(Trigger.isUpdate){
+		if(Trigger.isBefore){
+			OpportunityTriggerHandler.populateClosedReason(Trigger.New, Trigger.oldMap);
+		}
+	}
+}
+public class OpportunityTriggerHandler {
+	public static void populateClosedReason(List<Opportunity> oppList,Map<Id,Opportunity> oldMap){
+		for(Opportunity opp:oppList){
+			if(opp.StageName == 'Closed Lost' && opp.StageName != oldMap.get(opp.Id).StageName && opp.Closed_Lost_Reason__c == null){
+				opp.addError('Please populate Closed Lost Reason');
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Write a trigger on Account and check only System Administrator profile
+			users should be able to delete an account.</span></strong></p>
+        <pre>
+			<code class="java">
+trigger AccountTrigger on Account (before delete) {
+	if(Trigger.isDelete){
+		if(Trigger.isBefore){
+			AccountTriggerHandler.checkProfileForDeletion(Trigger.old);
+		}
+	}
+}
+public class AccountTriggerHandler{
+	public static void checkProfileForDeletion(List<Account> accList){
+		Profile p = [SELECT Id FROM Profile WHERE Name = 'System Administrator'];
+		for(Account acc:accList){
+			if(UserInfo.getProfileId() != p.Id){
+				acc.addError('Only System Administrator can delete Account');
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">If an opportunity is closed then, no one should be able to delete it except
+			the user having a System Administrator profile.</span></strong></p>
+        <pre>
+			<code class="java">
+trigger OpportunityTrigger on Opportunity (before delete) {
+	if(Trigger.isDelete){
+		if(Trigger.isBefore){
+			OpportunityTriggerHandler.checkProfileForDeletion(Trigger.old);
+		}
+	}
+}
+public class OpportunityTriggerHandler {
+	public static void checkProfileForDeletion(List<Opportunity> oppList){
+	Profile p = [SELECT Id FROM Profile WHERE Name = 'System Administrator'];
+		for(Opportunity opp:oppList){
+			if(opp.StageName == 'Closed Won' || opp.StageName == 'Closed Lost'){
+				if(UserInfo.getProfileId() != p.Id){
+					opp.addError('Only System administrator can delete opportunity');
+				}
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Prevent deletion of an account if there is any opportunity related to that
+			account.</span></strong></p>
+        <pre>
+			<code class="java">
+trigger AccountTrigger on Account (before delete) {
+	if(Trigger.isDelete){
+		if(Trigger.isBefore){
+			AccountTriggerHandler.preventDelIfHasRelatedOpp(Trigger.old);
+		}
+	}
+}
+public class AccountTriggerHandler{
+	public static void preventDelIfHasRelatedOpp(List<Account> accList){
+	Set<Id> idSet= new Set<Id>();
+		for(Account acc:accList){
+			idSet.add(acc.Id);
+		}
+		for(Account acc:[SELECT Id,(SELECT Id FROM Opportunities)FROM Account WHERE Id IN:idSet]){
+			if(acc.Opportunities.size( ) > 0){
+				acc.addError('You can not delete account where opportunities are available ');
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Prevent deletion of an account if there is any case related to that account.</span></strong></p>
+        <pre>
+			<code class="java">
+trigger AccountTrigger on Account (before delete) {
+	if(Trigger.isDelete){
+		if(Trigger.isBefore){
+			AccountTriggerHandler.preventDelIfHasRelatedOpp(Trigger.old);
+		}
+	}
+}
+public class AccountTriggerHandler{
+	public static void preventDelIfHasRelatedCase(List<Account> accList){
+		Set<Id> idSet= new Set<Id>();
+		for(Account acc:accList){
+			idSet.add(acc.Id);
+		}
+		for(Account acc:[SELECT Id,(SELECT Id FROM Cases)FROM Account WHERE Id IN:idSet]){
+			if(acc.Cases.size() > 0){
+				acc.addError('You can not delete account where cases are available ');
+			}
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">When the Employee record is deleted then update ‘Left Employee Count’
+			on Account.</span></strong></p>
+        <pre>
+			<code class="java">
+trigger EmployeeTrigger on Employee__c (After delete) {
+	if(Trigger.isDelete){
+		if(Trigger.isAfter){
+			EmployeeTriggerHandler.leftEmpCount(Trigger.old);
+		}
+	}
+}
+public class EmployeeTriggerHandler{
+	public static void leftEmpCount(List<Employee__c> oldEmpList){
+		Set<Id> accIds=new Set<Id>();
+		List<Account> accToBeUpdated=new List<Account>();
+		Map<Id,Account> accIdToAccMap;
+		List<Employee__c> empList= new List<Employee__c>();
+		Map<Id,Decimal> accIdToTotalCount= new Map<Id,Decimal>();
+		for(Employee__c emp:oldEmpList){
+			if(emp.Account__c!=null){
+				accIds.add(emp.Account__c);
+				empList.add(emp);
+			}
+		}
+		if(!accIds.isEmpty()){
+			accIdToAccMap= new Map<Id,Account>([SELECT Id,Left_Employee_Count__c FROM Account WHERE Id IN:accIds]);
+		} 
+		if(!empList.isEmpty()){
+			for(Employee__c emp:empList){
+				if(accIdToAccMap.containsKey(emp.Account__c)){
+					if(accIdToTotalCount.containsKey(emp.Account__c)){
+						Decimal count = accIdToTotalCount.get(emp.Account__c)+1;
+						accIdToTotalCount.put(emp.Account__c,count);
+					}else{
+						accIdToTotalCount.put(emp.Account__c,accIdToAccMap.get(emp.Account__c).Left_Employee_Count__c+1);
+					}
+				}
+			}
+		} 
+		for(Id accId:accIdToTotalCount.keySet()){
+			Account acc= new Account();
+			acc.Id=accId;
+			acc.Left_Employee_Count__c=accIdToTotalCount.get(accId);
+			accToBeUpdated.add(acc);
+		}
+		if(!accToBeUpdated.isEmpty()){
+		update accToBeUpdated;
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Undelete Employee record and set Active as true.</span></strong></p>
+        <pre>
+			<code class="java">
+trigger EmployeeTrigger on Employee__c (After undelete) {
+	if(Trigger.isUnDelete){
+	if(Trigger.isAfter){
+	EmployeeTriggerHandler.unDeletionofEmp(Trigger.New);
+	}
+	}
+}
+public class EmployeeTriggerHandler{
+	public static void unDeletionofEmp(List<Employee__c> empList){
+	List<Employee__c> empListToBeUpdated = new
+	List<Employee__c>();
+		for(Employee__c emp : empList){
+			Employee__c e = new Employee__c();
+			e.Id = emp.Id;
+			e.Active__c = true;
+			empListToBeUpdated.add(e);
+		} 
+		if(!empListToBeUpdated.isEmpty()){
+			update empListToBeUpdated;
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">When the Employee record is undeleted then update ‘Left Employee Count’
+			on Account.</span></strong></p>
+        <pre>
+			<code class="java">
+trigger EmployeeTrigger on Employee__c (After undelete) {
+	if(Trigger.isUnDelete){
+		if(Trigger.isAfter){
+			EmployeeTriggerHandler.updateLeftEmpCountUndeletedOnes(Trigger.New);
+		}
+	}
+}
+public class EmployeeTriggerHandler{
+	public static void updateLeftEmpCountUndeletedOnes(List<Employee__c>oldEmpList){
+		Set<Id> accIds=new Set<Id>();
+		List<Account> accToBeUpdated=new List<Account>();
+		Map<Id,Account> accIdToAccMap;
+		List<Employee__c> empList= new List<Employee__c>();
+		Map<Id,Decimal> accIdToTotalCount= new Map<Id,Decimal>();
+			for(Employee__c emp:oldEmpList){
+				if(emp.Account__c!=null){
+					accIds.add(emp.Account__c);
+					empList.add(emp);
+				}
+			}
+		if(!accIds.isEmpty()){
+			accIdToAccMap= new Map<Id,Account>([SELECT Id,Left_Employee_Count__c FROM Account WHERE Id IN:accIds]);
+		} 
+		if(!empList.isEmpty()){
+			for(Employee__c emp:empList){
+				if(accIdToAccMap.containsKey(emp.Account__c)){
+					if(accIdToTotalCount.containsKey(emp.Account__c)){
+						Decimal count=accIdToTotalCount.get(emp.Account__c)-1;
+						accIdToTotalCount.put(emp.Account__c,count);
+					}else{
+						accIdToTotalCount.put(emp.Account__c,accIdToAccMap.get(emp.Account__c).Left_Employee_Count__c-1);
+					}
+				}
+			}
+		}
+		for(Id accId:accIdToTotalCount.keySet()){
+			Account acc= new Account();
+			acc.Id=accId;
+			acc.Left_Employee_Count__c=accIdToTotalCount.get(accId);
+			accToBeUpdated.add(acc);
+		} 
+		if(!accToBeUpdated.isEmpty()){
+			update accToBeUpdated;
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">When the Employee record is inserted, deleted and undeleted then update
+			‘Present Employee Count’ on related Account. [Parent-Child SOQL]</span></strong></p>
+        <pre>
+			<code class="java">
+//Same code will work for insert, delete and undelete
+trigger EmployeeTrigger on Employee__c(after insert,after delete,after undelete) {
+	if(Trigger.isInsert){
+		if(Trigger.isAfter){
+			EmployeeTriggerHandler.updatePresentEmpCount(Trigger.New);
+		}
+	} 
+	if(Trigger.isDelete){
+		if(Trigger.isAfter){
+			EmployeeTriggerHandler.updatePresentEmpCount(Trigger.New);
+		}
+	}
+	if(Trigger.isUnDelete){
+		if(Trigger.isAfter){
+			EmployeeTriggerHandler.updatePresentEmpCount(Trigger.New);
+		}
+	}
+}
+public class EmployeeTriggerHandler{
+	public static void updatePresentEmpCount(List<Employee__c> empList){
+		List<Account> accList= new List<Account>();
+		Set<Id> idSet= new Set<Id>();
+		for(Employee__c emp:empList){
+			if(emp.Account__c!=null){
+				idSet.add(emp.Account__c);
+			}
+		}
+		for(Account acc:[SELECT Id, Name,(SELECT Id FROM Employees__r) FROM Account WHERE Id IN:idSet]){
+			acc.Present_Employee_Count__c=acc.Employees__r.size();
+			accList.add(acc);
+		}
+		if(!accList.isEmpty()){
+			update accList;
+		}
+	}
+}
+			</code>
+		</pre>
+		<p><strong><span style="color: rgb(226, 80, 65);">Upon contact creation an email should be sent to email populated on
+			Contact with specified template.</span></strong></p>
+        <pre>
+			<code class="java">
+trigger ContactTrigger on Contact (after insert) {
+	if(Trigger.isInsert){
+			if(Trigger.isAfter){
+			ContactTriggerHandler.sendEmailToContact(Trigger.new);
+			}
+	}
+}
+public class ContactTriggerHandler{
+	public static void sendEmailToContact(List<Contact> conList){
+	List<Messaging.Email> emailList=new List<Messaging.Email>();
+		for(Contact con:conList){
+			if(con.Email!=null){
+				Messaging.SingleEmailMessage emailMsg= new Messaging.SingleEmailMessage();
+				String[] toAddress= new String[]{con.Email};
+				emailMsg.setToAddresses(toAddress);
+				String emailSubject='Welcome '+con.FirstName;
+				emailMsg.setSubject(emailSubject);
+				String disName='Sanjay Gupta';
+				emailMsg.setSenderDisplayName(disName);
+				String content= 'Hi '+con.FirstName+ ',<br/><br/>'+'Welcome to SalesForce EcoSystem! <br/><br/>'+'Happy learning! <br/><br/>'+'Thank you! <br/><br/>';
+				emailMsg.setHtmlBody(content);
+				emailList.add(emailMsg);
+			}
+		}
+	Messaging.sendEmail(emailList);
+	}
+}
+			</code>
+		</pre>
+		</div>
+		</div>
+	<!-- Page Specific JS -->
+    <script src="cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+	<script>hljs.highlightAll();</script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+	<script>/*<![CDATA[*/
+		/*! Pre code with copy button v2.0 | (c) anutrickz | https://anutrickz.blogspot.com/ */
+		var codeBlocks=document.querySelectorAll("pre");codeBlocks.forEach(function(t){var o=document.createElement("button");o.className="at_copy",o.type="button",o.ariaLabel="Copy code to clipboard",o.innerText="Copy",t.append(o),o.addEventListener("click",function(){var e=t.querySelector("code").innerText.trim();window.navigator.clipboard.writeText(e),o.innerText="Copied";setTimeout(function(){o.innerText="Copy"},1e3)})});
+		/*]]>*/</script>
+  </body>
+</html>
