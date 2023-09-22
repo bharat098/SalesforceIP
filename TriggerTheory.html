@@ -48,7 +48,7 @@
 				<a href="ExtraQS.html"><span class="fa fa-paper-plane mr-3"></span> Extra Questions</a>
 				</li>
 				<li  class="active">
-					<a href="ExtraTopics.html"><span class="fa fa-paper-plane mr-3"></span> Extra Topics</a>
+					<a href="ExtraTopics.html"><span class="fa fa-paper-plane mr-3"></span> More Topics</a>
 					</li>
 	        </ul>
 
@@ -75,18 +75,18 @@
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
         <h2 class="mb-4">Trigger Theory Questions</h2>
-		<p><span style="color: rgb(226, 80, 65);">What is difference between workflow process builder and trigger?</span></p>
+		<p><span style="color: red;">What is difference between workflow process builder and trigger?</span></p>
 <p>workflow and process builder work only after action,and trigger is work on before and after action.</p>
-<p><span style="color: rgb(226, 80, 65);">Q)WHAT IS APEX TRANSACTION</span></p>
-<p><span style="color: rgb(226, 80, 65);">Q)What is trigger?</span></p>
+<p><span style="color: red;">Q)WHAT IS APEX TRANSACTION</span></p>
+<p><span style="color: red;">Q)What is trigger?</span></p>
 <p>trigger it is piece of code that execute before or after record is updated/inserted/deleted from the database.</p>
-<p><span style="color: rgb(226, 80, 65);">Different ways of trigger?</span></p>
+<p><span style="color: red;">Different ways of trigger?</span></p>
 <ul>
     <li>using standard navigation</li>
     <li>using devoloper consoleq</li>
     <li>using eclipse ide</li>
 </ul>
-<p><span style="color: rgb(226, 80, 65);">Different events of trigger?</span></p>
+<p><span style="color: red;">Different events of trigger?</span></p>
 <ul>
     <li><strong>before insert</strong>=we have to executing logic before inserting record into the object.eg.validation rule</li>
     <li><strong>after insert</strong>=by using this we can fire action after the inserting the record into obj,ex-email alert</li>
@@ -96,7 +96,7 @@
     <li><strong>after delete</strong>=we can fire the action after deleting record from object.ex-rollup summary</li>
     <li><strong>after undelete</strong>=we can fire the action after restoring the records back to the object.</li>
 </ul>
-<p><span style="color: rgb(226, 80, 65);">Different context variable</span></p>
+<p><span style="color: red;">Different context variable</span></p>
 <ul>
     <li><strong>is executing</strong>:it return true if curreent executing apex code is trigger.</li>
     <li><strong>is update</strong>-it return true,if trigger was fired due to the update operation.</li>
@@ -109,7 +109,7 @@
     <li><strong>is old map</strong>-return map of old version of sobject record</li>
     <li><strong>is size</strong>-it return intger (total no of records due to trigger invocation for the both old and new);</li>
 </ul>
-<p><span style="color: rgb(226, 80, 65);">Best practices of trigger</span></p>
+<p><span style="color: red;">Best practices of trigger</span></p>
 <ul>
     <li>one object one trigger</li>
     <li>always use helper and handler methoed inside the trigger</li>
@@ -120,7 +120,7 @@
     <li>proparly use of future methoed inside trigger.</li>
     <li>trigger should be bulkified.</li>
 </ul>
-<p><span style="color: rgb(226, 80, 65);">Execusion flow of Trigger/saleforce/apex class</span></p>
+<p><span style="color: red;">Execusion flow of Trigger/saleforce/apex class</span></p>
 <ul>
     <li>load the data from database</li>
     <li>check for the system validation</li>
@@ -133,50 +133,50 @@
     <li>sharing and shecurity</li>
     <li>post commit opertion like email alert</li>
 </ul>
-<p><span style="color: rgb(226, 80, 65);">why we use one trigger one object?</span></p>
+<p><span style="color: red;">why we use one trigger one object?</span></p>
 <p>if we use multiple trigger to one object then system unable to recognize order of execusion.also it promotes code clearity,code reusability,modularity,and mintainability</p>
-<p><span style="color: rgb(226, 80, 65);">WHAT IS helper and hendler?</span></p>
+<p><span style="color: red;">WHAT IS helper and hendler?</span></p>
 <p>trigger class known as helper and apex class known as handler</p>
-<p><span style="color: rgb(226, 80, 65);">what is trigger should be logicless?</span></p>
+<p><span style="color: red;">what is trigger should be logicless?</span></p>
 <p>keeping trigger logicless helps maintain sepration consern,improve modularity,enable code reuse,enhance maintainability,avoid hitting governance limit due to complex logic.</p>
-<p><span style="color: rgb(226, 80, 65);">why we can not write query inside loop</span></p>
+<p><span style="color: red;">why we can not write query inside loop</span></p>
 <p>if we write query inside for loop again and again fetching record from database,it may increse no of database operation,it may cause consume more cpu time,and limit on query and dml operation,may impact on performance and governance limit,so that</p>
-<p><span style="color: rgb(226, 80, 65);">why quries should streeming or filtered?</span></p>
+<p><span style="color: red;">why quries should streeming or filtered?</span></p>
 <p>so that it improve performance,reduce resources usage,reducing processing overhead,enhancing efficiency</p>
-<p><span style="color: rgb(226, 80, 65);">Avoid hard coded id?</span></p>
+<p><span style="color: red;">Avoid hard coded id?</span></p>
 <p>hard coded id run in devolopment org,but not work on other org so that,because it makes code infexible,and if org enviorment change it difficult to maintain.</p>
-<p><span style="color: rgb(226, 80, 65);">WHAT IS MEAN trigger SHOULD BE BULKIFIED</span></p>
+<p><span style="color: red;">WHAT IS MEAN trigger SHOULD BE BULKIFIED</span></p>
 <p>BY default every triggr is bulk trigger which used to procced multiple record at a time as a betch,rather then processing them individually,improve the performance and reduces the no of database operation.bulk</p>
 <p>size of trigger 200records at a time.</p>
-<p><span style="color: rgb(226, 80, 65);">what is recursive trigger?</span></p>
+<p><span style="color: red;">what is recursive trigger?</span></p>
 <p>consider,there are two methoed one methoed call to another methoed,and another methoed call to 1st methoed</p>
 <p>OR</p>
 <p>Situation where a trigger on an object initiate another instant of the same trigger.</p>
-<p><span style="color: rgb(226, 80, 65);">How to avoid recursive trigger?</span></p>
+<p><span style="color: red;">How to avoid recursive trigger?</span></p>
 <p>to avoid that create class with static bollean variable with default value true.</p>
-<p><span style="color: rgb(226, 80, 65);">Trigger syntax</span></p>
+<p><span style="color: red;">Trigger syntax</span></p>
 <p>Trigger trigger name on object(events){}</p>
-<p><span style="color: rgb(226, 80, 65);">TRIGGER FOR NEW</span></p>
+<p><span style="color: red;">TRIGGER FOR NEW</span></p>
 <p>Trigger updatenameonselectionofgenderongender on student__c(before insert,before update)</p>
 <p>{for(student__c so:Trigger.new)</p>
 <p>}</p>
-<p><span style="color: rgb(226, 80, 65);">TRIGGER.NEW</span></p>
+<p><span style="color: red;">TRIGGER.NEW</span></p>
 <p>-Which return list of records that have been added recentely to sobject.</p>
-<p><span style="color: rgb(226, 80, 65);">why we use context variable inside trigger?</span></p>
+<p><span style="color: red;">why we use context variable inside trigger?</span></p>
 <p>allow developers to access run-time context.</p>
-<p><span style="color: rgb(226, 80, 65);">When we use null ptr exception.?</span></p>
+<p><span style="color: red;">When we use null ptr exception.?</span></p>
 <p>when line of code is trying to use object filled is not been initited.</p>
-<p><span style="color: rgb(226, 80, 65);">why quries and dml operation not write inside the trigger?</span></p>
+<p><span style="color: red;">why quries and dml operation not write inside the trigger?</span></p>
 <p>it not write inside trigger it lead to performance issue and governance limit violation,so better performance and prevent governance limit violation not write inside trigger</p>
-<p><span style="color: rgb(226, 80, 65);">What is mean bulkified trigger?</span></p>
+<p><span style="color: red;">What is mean bulkified trigger?</span></p>
 <p>by default every trigger has bulk of trigger,which used to process multiple records as batch,every batch has 200 recauds</p>
-<p><strong><span style="color: rgb(226, 80, 65);">what is recursive trigger?</span></strong></p>
+<p><strong><span style="color: red;">what is recursive trigger?</span></strong></p>
 <p>consider,there are two methoed one methoed call to another methoed,and another methoed call to 1st method</p>
 <p>OR</p>
 <p>Situation where a trigger on an object initiate another instant of the same trigger.</p>
-<p><span style="color: rgb(226, 80, 65);">How to avoid recursive trigger?</span></p>
+<p><span style="color: red;">How to avoid recursive trigger?</span></p>
 <p>to avoid that create class with static bollean variable with default value true.</p>
-<p><span style="color: rgb(226, 80, 65);">how do you handle error and exception in trigger?</span></p>
+<p><span style="color: red;">how do you handle error and exception in trigger?</span></p>
 <p>by using try-catch block catch exception and handle them gracefully,by implementing appropiate error handling logic such as loggig the error details,sending notification</p>
 <p style="text-align: justify;"><br></p>
 	</div>

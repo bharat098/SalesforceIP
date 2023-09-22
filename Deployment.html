@@ -48,7 +48,7 @@
 				<a href="ExtraQS.html"><span class="fa fa-paper-plane mr-3"></span> Extra Questions</a>
 				</li>
 				<li  class="active">
-					<a href="ExtraTopics.html"><span class="fa fa-paper-plane mr-3"></span> Extra Topics</a>
+					<a href="ExtraTopics.html"><span class="fa fa-paper-plane mr-3"></span> More Topics</a>
 					</li>
 	        </ul>
 
@@ -77,30 +77,30 @@
         <h2 class="mb-4">Deployment</h2>
         <p><strong><span style="color: rgb(97, 189, 109); font-size: 22px;">Deployment in SFDC</span></strong></p>
 <p>Salesforce Deployment is nothing but copying/transferring Salesforce metadata from one Salesforce organization to another. There are various methods to achieve Salesforce metadata deployment.</p>
-<p><span style="color: rgb(226, 80, 65);"><strong>Change Sets</strong></span></p>
+<p><span style="color: red;"><strong>Change Sets</strong></span></p>
 <p>It is the easiest way to send configuration changes from one Salesforce organization to another. But the change set also has a limitation that we can only use it among connected Salesforce orgs only (like Developer Sandbox to Test Sandbox &amp; Test Sandbox to Production Org etc.). We cannot use it in between any individual Salesforce orgs.</p>
 <p>To use change sets we need to have two Salesforce org&rsquo;s i.e. one Production org and its Sandbox org.</p>
 <ul>
     <li><strong>Production Org</strong>: It is Salesforce org with live data which is being actively used.</li>
     <li><strong>Sandbox</strong>:A sandbox is a copy of your production organization. Sandboxes contain the same metadata as production organization.</li>
 </ul>
-<p><strong><span style="color: rgb(226, 80, 65);">Outbound Change Sets:</span></strong></p>
+<p><strong><span style="color: red;">Outbound Change Sets:</span></strong></p>
 <p>An outbound change set is a change set created in Source organization and that you want to deploy to target organization.</p>
 <p>Sending an outbound change set to another organization doesn&rsquo;t guarantee that the changes will be implemented in that organization. The change set must be deployed (accepted) by the target organization before the changes take effect.</p>
-<p><strong><span style="color: rgb(226, 80, 65);">Inbound Change Sets:</span></strong></p>
+<p><strong><span style="color: red;">Inbound Change Sets:</span></strong></p>
 <p>An inbound change set is a change set that is sent from source organization to the target organization. A change sent must be deployed for the changes to take effect. You can deploy the contents of an inbound change set as a whole, but not on a component-by-component basis.</p>
 <p>Accept, modify, or reject change sets uploaded from other organizations.</p>
 <p>Change sets require a deployment connection between the two Salesforce organizations.</p>
 <p>The first step is to create this connection.</p>
 <p><strong><span style="font-size: 20px; color: rgb(44, 130, 201);">Steps of deployment by using ChangeSet:</span></strong></p>
-<p><span style="color: rgb(226, 80, 65);"><strong>In PRODUCTION Org&nbsp;</strong></span></p>
+<p><span style="color: red;"><strong>In PRODUCTION Org&nbsp;</strong></span></p>
 <ul>
     <li>First we have to check there is a connection between Production org (Source Org) and Sandbox Org (Destination Org).To check this&nbsp;</li>
     <li><strong>Deployment settings (in setup)</strong>&nbsp;</li>
     <li>Click on edit near the sandbox from which deployment has to be done.</li>
     <li>Then click on the checkbox named as &ldquo;allow inbound changeset&rdquo;.</li>
 </ul>
-<p><span style="color: rgb(226, 80, 65);"><strong>In SANDBOX Org&nbsp;</strong></span></p>
+<p><span style="color: red;"><strong>In SANDBOX Org&nbsp;</strong></span></p>
 <ul>
     <li>Go to <strong>Deployment settings (in setup)</strong></li>
     <li>Check &ldquo;Allow deployments of components when corresponding Apex jobs are pending or in progress.</li>
@@ -123,7 +123,7 @@
 </ul>
 <p>Upload</p>
 <p><span style="color: rgb(41, 105, 176);"><strong>In PRODUCTION Org</strong></span></p>
-<p><span style="color: rgb(226, 80, 65);"><strong>1. InBound Changeset (In Setup)</strong></span></p>
+<p><span style="color: red;"><strong>1. InBound Changeset (In Setup)</strong></span></p>
 <ul>
     <li>Allow to Sandbox option</li>
     <li>Open the Inbound Changeset (Which is uploaded from Sandbox)</li>
@@ -132,8 +132,8 @@
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1. Components other than Apex Classes - Run as Default</p>
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2. Components of Apex class - Run All Test class (Code Coverage Should be more than 75% for each Class)</p>
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.If uploading only Specific Apex class - Run as Specific Test Class (Give test className on description)</p>
-<p><span style="color: rgb(226, 80, 65);"><strong>2. Deployment Status (Check the Status)</strong></span></p>
-<p><span style="color: rgb(226, 80, 65);"><strong>3. Deploy</strong> </span></p>
+<p><span style="color: red;"><strong>2. Deployment Status (Check the Status)</strong></span></p>
+<p><span style="color: red;"><strong>3. Deploy</strong> </span></p>
 <p>&nbsp; &nbsp;- Deploy with the Test Classes as &quot;Run All&quot; or &quot;Run As Specific&quot; if required.</p>
 <p>NOTE</p>
 <ul>
@@ -142,7 +142,7 @@
     <li>In Production &nbsp;we can create Aura &amp; LWC or can create in VS Code and deploy but it is not a best practice.</li>
 </ul>
 <p><strong><br></strong></p>
-<p><span style="color: rgb(226, 80, 65);"><strong>To &nbsp;change the AURA Version on Sandox</strong></span></p>
+<p><span style="color: red;"><strong>To &nbsp;change the AURA Version on Sandox</strong></span></p>
 <p>SELECT Id, DeveloperName, ApiVersion, Description FROM AuraDefinitionBundle WHERE DeveloperName = &apos;PaymentRecieptEditButtonController&apos;</p>
 <p><br></p>
     </div>

@@ -50,7 +50,7 @@
 			  <a href="ExtraQS.html"><span class="fa fa-paper-plane mr-3"></span> Extra Questions</a>
 			  </li>
 			  <li>
-			  <a href="ExtraTopics.html"><span class="fa fa-paper-plane mr-3"></span> Extra Topics</a>
+			  <a href="ExtraTopics.html"><span class="fa fa-paper-plane mr-3"></span> More Topics</a>
 			  </li>
 		      
 				
@@ -79,7 +79,7 @@
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
         <h2 class="mb-4">Trigger Questions</h2>
-		<p><strong><span style="color: rgb(226, 80, 65);">Upon Account Creation if Industry is not null and having value as ‘Media’ then populate Rating as Hot.</span></strong></p>
+		<p><strong><span style="color: red;">Upon Account Creation if Industry is not null and having value as ‘Media’ then populate Rating as Hot.</span></strong></p>
         <pre>
 			<code>
 trigger AccountTrigger on Account (before insert) {
@@ -100,7 +100,7 @@ public class AccountTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Upon Opportunity Creation if Amount is not null and is greater than 100000 then populate ‘Hot Opportunity’ in description field.</span></strong></p>
+		<p><strong><span style="color: red;">Upon Opportunity Creation if Amount is not null and is greater than 100000 then populate ‘Hot Opportunity’ in description field.</span></strong></p>
         <pre>
 			<code>
 trigger OpportunityTrigger on Opportunity (before insert) {
@@ -121,7 +121,7 @@ public class OpportunityTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">When an account inserts and CopyBillingToShipping (Custom Field) checkbox is checked then automatically copy account billing address into account shipping address.</span></strong></p>
+		<p><strong><span style="color: red;">When an account inserts and CopyBillingToShipping (Custom Field) checkbox is checked then automatically copy account billing address into account shipping address.</span></strong></p>
         <pre>
 			<code>
 trigger AccountTrigger on Account (before insert) {
@@ -146,7 +146,7 @@ public class AccountTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Upon Account Creation if Industry is not null and having value as ‘Media’ then populate Rating as Hot.</span></strong></p>
+		<p><strong><span style="color: red;">Upon Account Creation if Industry is not null and having value as ‘Media’ then populate Rating as Hot.</span></strong></p>
         <pre>
 			<code>
 trigger AccountTrigger on Account (before insert) {
@@ -168,9 +168,9 @@ public class AccountTriggerHandler {
 			</code>
 		</pre>
 
-		<p><strong><span style="color: rgb(226, 80, 65);">Upon Creation of Position (Custom Object) if it is a New Position and Open Date,
+		<p><strong><span style="color: red;">Upon Creation of Position (Custom Object) if it is a New Position and Open Date,
 			Min Pay & Max Pay are not populated then populated them with below values:
-			<ul style="color: rgb(226, 80, 65);">
+			<ul style="color: red;">
 				<li>Open Date = Today’s Date</li>
 				<li> Min Pay = 10000</li>
 				<li>Max Pay = 15000</li>
@@ -198,7 +198,7 @@ public class PositionTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Create a related Contact when an Account is created.</span></strong></p>
+		<p><strong><span style="color: red;">Create a related Contact when an Account is created.</span></strong></p>
         <pre>
 			<code>
 trigger AccountTrigger on Account (after insert) {
@@ -225,7 +225,7 @@ public class AccountTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Create a related Opportunity when an Account is created.</span></strong></p>
+		<p><strong><span style="color: red;">Create a related Opportunity when an Account is created.</span></strong></p>
         <pre>
 			<code>
 trigger AccountTrigger on Account (after insert) {
@@ -253,7 +253,7 @@ public class AccountTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">When a Case is created on any Account, put the latest case number on the Account in the ‘Latest Case Number’ field.</span></strong></p>
+		<p><strong><span style="color: red;">When a Case is created on any Account, put the latest case number on the Account in the ‘Latest Case Number’ field.</span></strong></p>
         <pre>
 			<code>
 trigger CaseTrigger on Case (after insert) {
@@ -281,7 +281,7 @@ public class CaseTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Account records should have a field named ‘Recent Opportunity Amount’. It should contain the opportunity amount of the latest created opportunity on
+		<p><strong><span style="color: red;">Account records should have a field named ‘Recent Opportunity Amount’. It should contain the opportunity amount of the latest created opportunity on
 			account.</span></strong></p>
         <pre>
 			<code>
@@ -310,7 +310,7 @@ public class OpportunityTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">On Account create two checkbox fields labeled as Contact and Opportunity. Now when a new Account record is created and if a particular Contact or Opportunity checkbox is checked then create that related record. Also Opportunity record should be created only if the Account record Active picklist is populated with a Yes.</span></strong></p>
+		<p><strong><span style="color: red;">On Account create two checkbox fields labeled as Contact and Opportunity. Now when a new Account record is created and if a particular Contact or Opportunity checkbox is checked then create that related record. Also Opportunity record should be created only if the Account record Active picklist is populated with a Yes.</span></strong></p>
 			
         <pre>
 			<code>
@@ -351,7 +351,7 @@ public class AccountTriggerHandler {
 }	
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">If the Account phone is updated then populate below message in
+		<p><strong><span style="color: red;">If the Account phone is updated then populate below message in
 			description.Description = Phone is Updated! Old Value : XXX & New Value : XXX</span></strong></p>
         <pre>
 			<code>
@@ -373,7 +373,7 @@ public class AccountTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">When an account is inserted or updated and the CopyBillingToShipping
+		<p><strong><span style="color: red;">When an account is inserted or updated and the CopyBillingToShipping
 			checkbox is checked then automatically copy the account billing address
 			into account shipping address.</span></strong></p>
         <pre>
@@ -400,7 +400,7 @@ public class AccountTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Upon Account Creation or updation if Industry is not null and having value
+		<p><strong><span style="color: red;">Upon Account Creation or updation if Industry is not null and having value
 			as ‘Media’ then populate Rating as Hot.</span></strong></p>
         <pre>
 			<code>
@@ -422,7 +422,7 @@ public class AccountTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">If opportunity Stage is updated upon its creation or update then update
+		<p><strong><span style="color: red;">If opportunity Stage is updated upon its creation or update then update
 			description as either 'Opp is Closed Lost' or 'Opp is Closed Won' or 'Opp is
 			Open'.</span></strong></p>
         <pre>
@@ -451,7 +451,7 @@ public class OpportunityTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">If the Account phone is updated then populate the phone number on all
+		<p><strong><span style="color: red;">If the Account phone is updated then populate the phone number on all
 			related Contacts (Home Phone field). [Using Map]</span></strong></p>
         <pre>
 			<code>
@@ -484,7 +484,7 @@ public class AccountTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">If the Account phone is updated then populate the phone number on all
+		<p><strong><span style="color: red;">If the Account phone is updated then populate the phone number on all
 			related Contacts (Home Phone field). [Using Parent-Child SOQL]</span></strong></p>
         <pre>
 			<code>
@@ -519,7 +519,7 @@ public class AccountTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">If the Account billing address is updated then update related contacts
+		<p><strong><span style="color: red;">If the Account billing address is updated then update related contacts
 			mailing address. [Using Map]</span></strong></p>
         <pre>
 			<code>
@@ -558,7 +558,7 @@ public class AccountTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">If the Account billing address is updated then update related contacts
+		<p><strong><span style="color: red;">If the Account billing address is updated then update related contacts
 			mailing address. [Using Parent-Child SOQL]</span></strong></p>
         <pre>
 			<code>
@@ -599,7 +599,7 @@ public class AccountTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">When a Opportunity Stage (field) is changed, create a Task record on
+		<p><strong><span style="color: red;">When a Opportunity Stage (field) is changed, create a Task record on
 			Opportunity and assign it to Logged In User/Opportunity Owner / Any User</span></strong></p>
         <pre>
 			<code>
@@ -630,7 +630,7 @@ public class OpportunityTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Write a trigger on Account when Account Active field is updated from ‘Yes’
+		<p><strong><span style="color: red;">Write a trigger on Account when Account Active field is updated from ‘Yes’
 			to ‘No’ then check all opportunities associated with the account. Update all
 			Opportunities Stage to close lost if stage not equal to close won.</span></strong></p>
         <pre>
@@ -668,7 +668,7 @@ public class AccountTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Account records cannot be deleted if active is Yes.</span></strong></p>
+		<p><strong><span style="color: red;">Account records cannot be deleted if active is Yes.</span></strong></p>
         <pre>
 			<code class="java">
 trigger AccountTrigger on Account (before delete) {
@@ -689,7 +689,7 @@ public class AccountTriggerHandle{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Prevent account record from being edited if the record is created 7 days
+		<p><strong><span style="color: red;">Prevent account record from being edited if the record is created 7 days
 			back.</span></strong></p>
         <pre>
 			<code class="java">
@@ -711,7 +711,7 @@ public class AccountTriggerHandle{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Apply validation using addError( ) method in trigger. While Creation of
+		<p><strong><span style="color: red;">Apply validation using addError( ) method in trigger. While Creation of
 			Opportunity is Amount is null then throw an error message.</span></strong></p>
         <pre>
 			<code class="java">
@@ -733,7 +733,7 @@ public class OpportunityTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">When an opportunity is updated to Closed Lost and Closed Lost Reason
+		<p><strong><span style="color: red;">When an opportunity is updated to Closed Lost and Closed Lost Reason
 			(field) is not populated then throw validation error that ‘Please populate
 			Closed Lost Reason’ on opportunity. [before update]</span></strong></p>
         <pre>
@@ -756,7 +756,7 @@ public class OpportunityTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Write a trigger on Account and check only System Administrator profile
+		<p><strong><span style="color: red;">Write a trigger on Account and check only System Administrator profile
 			users should be able to delete an account.</span></strong></p>
         <pre>
 			<code class="java">
@@ -779,7 +779,7 @@ public class AccountTriggerHandler{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">If an opportunity is closed then, no one should be able to delete it except
+		<p><strong><span style="color: red;">If an opportunity is closed then, no one should be able to delete it except
 			the user having a System Administrator profile.</span></strong></p>
         <pre>
 			<code class="java">
@@ -804,7 +804,7 @@ public class OpportunityTriggerHandler {
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Prevent deletion of an account if there is any opportunity related to that
+		<p><strong><span style="color: red;">Prevent deletion of an account if there is any opportunity related to that
 			account.</span></strong></p>
         <pre>
 			<code class="java">
@@ -830,7 +830,7 @@ public class AccountTriggerHandler{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Prevent deletion of an account if there is any case related to that account.</span></strong></p>
+		<p><strong><span style="color: red;">Prevent deletion of an account if there is any case related to that account.</span></strong></p>
         <pre>
 			<code class="java">
 trigger AccountTrigger on Account (before delete) {
@@ -855,7 +855,7 @@ public class AccountTriggerHandler{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">When the Employee record is deleted then update ‘Left Employee Count’
+		<p><strong><span style="color: red;">When the Employee record is deleted then update ‘Left Employee Count’
 			on Account.</span></strong></p>
         <pre>
 			<code class="java">
@@ -907,7 +907,7 @@ public class EmployeeTriggerHandler{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Undelete Employee record and set Active as true.</span></strong></p>
+		<p><strong><span style="color: red;">Undelete Employee record and set Active as true.</span></strong></p>
         <pre>
 			<code class="java">
 trigger EmployeeTrigger on Employee__c (After undelete) {
@@ -934,7 +934,7 @@ public class EmployeeTriggerHandler{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">When the Employee record is undeleted then update ‘Left Employee Count’
+		<p><strong><span style="color: red;">When the Employee record is undeleted then update ‘Left Employee Count’
 			on Account.</span></strong></p>
         <pre>
 			<code class="java">
@@ -986,7 +986,7 @@ public class EmployeeTriggerHandler{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">When the Employee record is inserted, deleted and undeleted then update
+		<p><strong><span style="color: red;">When the Employee record is inserted, deleted and undeleted then update
 			‘Present Employee Count’ on related Account. [Parent-Child SOQL]</span></strong></p>
         <pre>
 			<code class="java">
@@ -1028,7 +1028,7 @@ public class EmployeeTriggerHandler{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Upon contact creation an email should be sent to email populated on
+		<p><strong><span style="color: red;">Upon contact creation an email should be sent to email populated on
 			Contact with specified template.</span></strong></p>
         <pre>
 			<code class="java">
@@ -1061,7 +1061,7 @@ public class ContactTriggerHandler{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Create two record types named as “Partner Case” and “Customer Case” on
+		<p><strong><span style="color: red;">Create two record types named as “Partner Case” and “Customer Case” on
 			Case Object. On creation of Case, as per the record type populate the total
 			number of Partner Case or Customer Case on Account object. Create
 			Custom Fields on Account to have total numbers.</span></strong></p>
@@ -1111,7 +1111,7 @@ public class CaseTriggerHandler{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">When any Opportunity is created with amount populated or Opportunity
+		<p><strong><span style="color: red;">When any Opportunity is created with amount populated or Opportunity
 			Amount is updated then populate total Amount on Account Level for all
 			related opportunities in Annual Revenue Field. If opportunity is deleted or
 			undeleted then update Amount on Account as well. (Hint: rollup summary)</span></strong></p>
@@ -1147,7 +1147,7 @@ public static void populateAmountOnAccount(List&lt;Opportunity&gt;oppList,Map&lt
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Database class and addError( ) method in trigger.</span></strong></p>
+		<p><strong><span style="color: red;">Database class and addError( ) method in trigger.</span></strong></p>
         <pre>
 			<code class="java">
 trigger AccountTrigger on Account (after insert) {
@@ -1182,7 +1182,7 @@ public class AccountTriggerHandler{
 }
 		</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">When an opportunity is updated to closed won or closed lost then update
+		<p><strong><span style="color: red;">When an opportunity is updated to closed won or closed lost then update
 			description having value 'Opportunity is Closed Won' or 'Opportunity is
 			Closed Lost' accordingly. (Hint: Recursion)</span></strong></p>
         <pre>
@@ -1222,7 +1222,7 @@ public class OpportunityTriggerHandler{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Write a trigger, if the owner of an account is changed then the owner for the
+		<p><strong><span style="color: red;">Write a trigger, if the owner of an account is changed then the owner for the
 			related contacts should also be updated. [Without Map]</span></strong></p>
         <pre>
 			<code class="java">
@@ -1258,7 +1258,7 @@ public class AccountTriggerHandler{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Write a trigger, if the owner of an account is changed then the owner for the
+		<p><strong><span style="color: red;">Write a trigger, if the owner of an account is changed then the owner for the
 			related contacts should also be updated. [Using Map]</span></strong></p>
         <pre>
 			<code class="java">
@@ -1290,7 +1290,7 @@ public class AccountTriggerHandler{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Whenever a new User having profile “System Administrator” is inserted and
+		<p><strong><span style="color: red;">Whenever a new User having profile “System Administrator” is inserted and
 			is Active, add the user to the public group “Admins”. Create a public group
 			named Admins.</span></strong></p>
         <pre>
@@ -1322,7 +1322,7 @@ public class UserTriggerHandler{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Write a trigger on contact to prevent duplicate records based on Contact
+		<p><strong><span style="color: red;">Write a trigger on contact to prevent duplicate records based on Contact
 			Email.</span></strong></p>
         <pre>
 			<code class="java">
@@ -1351,7 +1351,7 @@ public static void preventDuplicateEmail(List&lt;Contact&gt; conList,Map&lt;Id,C
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Set OWD as Private for Account. Once an Account record is created, it
+		<p><strong><span style="color: red;">Set OWD as Private for Account. Once an Account record is created, it
 			should be automatically shared with any one user who belongs to Standard
 			User profile.</span></strong></p>
         <pre>
@@ -1384,7 +1384,7 @@ public class AccountTriggerHandler{
 }
 			</code>
 		</pre>
-		<p><strong><span style="color: rgb(226, 80, 65);">Demo Trigger.isExecuting Context Variable.</span></strong></p>
+		<p><strong><span style="color: red;">Demo Trigger.isExecuting Context Variable.</span></strong></p>
         <pre>
 			<code class="java">
 public class AccountHandler{

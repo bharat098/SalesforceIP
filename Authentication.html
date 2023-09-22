@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Salesforce IP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4">
+		  		<h1><a href="index.html" class="logo">Salesforce <span>Interview Preparation</span></a></h1>
+	        <ul class="list-unstyled components mb-5">
+	          <li >
+	            <a href="index.html"><span class="fa fa-home mr-3"></span> Home</a>
+	          </li>
+	          <li >
+	              <a href="admin.html"><span class="fa fa-user mr-3"></span> Admin</a>
+	          </li>
+	          <li>
+              <a href="apex.html"><span class="fa fa-briefcase mr-3"></span> Apex</a>
+	          </li>
+	          <li>
+              <a href="aura.html"><span class="fa fa-sticky-note mr-3"></span> AURA</a>
+	          </li>
+	          <li>
+              <a href="lwc.html"><span class="fa fa-suitcase mr-3"></span> LWC</a>
+	          </li>
+	          <li>
+              <a href="integration.html"><span class="fa fa-cogs mr-3"></span> Integration</a>
+	          </li>
+	          <li>
+              <a href="triggers.html"><span class="fa fa-paper-plane mr-3"></span> Triggers</a>
+	          </li>
+			  <li>
+				<a href="ExtraQS.html"><span class="fa fa-paper-plane mr-3"></span> Extra Questions</a>
+				</li>
+				<li  class="active">
+					<a href="ExtraTopics.html"><span class="fa fa-paper-plane mr-3"></span> More Topics</a>
+					</li>
+	        </ul>
+
+
+	       <!--  <div class="mb-5">
+						<h3 class="h6 mb-3">Subscribe for newsletter</h3>
+						<form action="#" class="subscribe-form">
+	            <div class="form-group d-flex">
+	            	<div class="icon"><span class="icon-paper-plane"></span></div>
+	              <input type="text" class="form-control" placeholder="Enter Email Address">
+	            </div>
+	          </form>
+					</div> -->
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This  is made with Love
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Authentication/Authorisation</h2>
+        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:center;'><strong><span style="font-size:24px;line-height:107%;color:red;">Authentication in Salesforce</span></strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><strong><span style="font-size:20px;line-height:107%;color:red;">1. What do you mean by authentication in salesforce?</span></strong></p>
+<ul style="list-style-type: undefined;margin-left:26px;">
+    <li><span style="line-height:107%;font-size:17px;">Authentication in Salesforce refers to the process of verifying the identity of a user or application attempting to access the Salesforce platform.&nbsp;</span></li>
+    <li><span style="line-height:107%;font-size:17px;">It involves confirming that the user or application is who they claim to be before granting them access to Salesforce data or functionality.&nbsp;</span></li>
+    <li><span style="line-height:107%;font-size:17px;">Salesforce provides several authentication options, including <strong>Username</strong> <strong>and Password</strong>, <strong>Single Sign-On (SSO), and two-factor authentication (2FA)</strong> among others.&nbsp;</span></li>
+    <li><span style="line-height:107%;font-size:17px;">These options allow organizations to choose the most appropriate authentication method based on their security requirements, user needs, and compliance regulations.&nbsp;</span></li>
+    <li><span style="line-height:107%;font-size:17px;">Once a user or application is authenticated, they can access Salesforce data and functionality based on the permissions and access levels granted to them by the Salesforce administrator. This helps ensure that sensitive data and resources within Salesforce are protected from unauthorized access or misuse.</span></li>
+</ul>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><strong><span style="font-size:20px;line-height:107%;color:red;">2. Can you explain the different authentication options available in Salesforce?</span></strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;line-height:normal;'><span style="font-size:19px;">There are several authentication options available in Salesforce, including:</span></p>
+<div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;'>
+    <ol style="margin-bottom:0cm;list-style-type: decimal;margin-left:26px;">
+        <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;'><strong><span style="font-size:17px;">Username and Password:</span></strong><span style="font-size:17px;">&nbsp;This is the most basic form of authentication, where users enter their Salesforce username and password to log in.</span></li>
+    </ol>
+</div>
+<div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;'>
+    <ol style="margin-bottom:0cm;list-style-type: undefined;margin-left:26px;">
+        <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;'><strong><span style="font-size:17px;">Single Sign-On (SSO):</span></strong><span style="font-size:17px;">&nbsp;SSO allows users to authenticate once with an identity provider (such as Okta or Active Directory) and then access multiple applications, including Salesforce, without having to log in again.</span></li>
+    </ol>
+</div>
+<div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;'>
+    <ol style="margin-bottom:0cm;list-style-type: undefined;margin-left:26px;">
+        <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;'><strong><span style="font-size:17px;">Two-Factor Authentication (2FA):</span></strong><span style="font-size:17px;">&nbsp;This adds an extra layer of security by requiring users to enter a verification code in addition to their username and password.</span></li>
+    </ol>
+</div>
+<div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;'>
+    <ol style="margin-bottom:0cm;list-style-type: undefined;margin-left:26px;">
+        <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;'><strong><span style="font-size:17px;">IP Address Restrictions:</span></strong><span style="font-size:17px;">&nbsp;(From Setup -&gt; Network Access)This option allows administrators to restrict access to Salesforce based on specific IP addresses or ranges.</span></li>
+    </ol>
+</div>
+<div style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;'>
+    <ol style="margin-bottom:0cm;list-style-type: undefined;margin-left:26px;">
+        <li style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;'><strong><span style="font-size:17px;">Federated Authentication:</span></strong><span style="font-size:17px;">&nbsp;This option allows users to authenticate with external identity providers, such as Google or Facebook, using OAuth or SAML.</span></li>
+    </ol>
+</div>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><strong><span style="font-size:20px;line-height:107%;color:red;">&nbsp;</span></strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;line-height:normal;'><strong><span style="font-size:20px;color:red;">3. Difference between authentication and authorization in salesforce ?</span></strong></p>
+<ul>
+    <li style="margin-top: 0cm; margin-right: 0cm; margin-bottom: 0cm; font-size: 11pt; font-family: Calibri, sans-serif; text-align: justify; line-height: normal;"><span style="font-size:17px;  ;">Authentication and authorization are two different concepts in Salesforce, although they are often used together to ensure secure access to Salesforce data and functionality.&nbsp;</span></li>
+    <li style="margin-top: 0cm; margin-right: 0cm; margin-bottom: 0cm; font-size: 11pt; font-family: Calibri, sans-serif; text-align: justify; line-height: normal;"><span style="font-size:17px;  ;">Authentication is the process of verifying the identity of a user or application attempting to access Salesforce. It involves confirming that the user or application is who they claim to be before granting them access to Salesforce data or functionality. Authentication ensures that only authorized users or applications can access Salesforce, which helps protect against unauthorized access or data breaches.&nbsp;</span></li>
+    <li style="margin-top: 0cm; margin-right: 0cm; margin-bottom: 0cm; font-size: 11pt; font-family: Calibri, sans-serif; text-align: justify; line-height: normal;"><span style="font-size:17px;  ;">Authorization, on the other hand, refers to the process of granting access to specific data or functionality within Salesforce. Once a user or application is authenticated, they must be authorized to access certain parts of Salesforce based on their assigned permissions and access levels. Authorization ensures that users or applications only have access to the data and functionality they need to perform their job duties, while keeping sensitive information protected.&nbsp;</span></li>
+    <li style="margin-top: 0cm; margin-right: 0cm; margin-bottom: 0cm; font-size: 11pt; font-family: Calibri, sans-serif; text-align: justify; line-height: normal;"><span style="font-size:17px;  ;">In summary, authentication verifies the identity of a user or application, while authorization determines what specific data and functionality that user or application is authorized to access within Salesforce. Authorization, on the other hand, is the process of determining what a user is allowed to do once they have been authenticated.</span></li>
+</ul>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;line-height:normal;'><strong><span style="font-size:19px;color:red;">Example of Authorization :</span></strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;line-height:normal;'><span style="font-size:17px;  ;">An example of authorization in Salesforce is assigning different levels of access to users or groups based on their job roles, responsibilities, and the data they need to access. Here&apos;s an example:</span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><span style="font-size:17px;line-height:107%;">Let&apos;s say a company has a Salesforce org where they store customer data. The org has several different types of users, such as sales reps, customer service agents, and managers. The sales reps need access to view and edit their own accounts and opportunities, while customer service agents need access to view and update customer cases. Managers need access to view reports and dashboards on the performance of their team.</span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><span style="font-size:17px;line-height:107%;">&nbsp;</span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><strong><span style="font-size:20px;line-height:107%;color:red;">Single-Sign On (SSO) Setup:</span></strong></p>
+<img style="max-width: 100%;" src="images/SSO.jpg">
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><span style="font-size:17px;line-height:107%;">From Setup -&gt; Single-Sign On Setting -&gt; New</span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><br></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><strong><span style="font-size:17px;line-height:107%;color:red;">Entity ID</span></strong><strong><span style="font-size:17px;line-height:107%;">:</span></strong><span style="font-size:17px;line-height:107%;">&nbsp;Enter your My Domain URL, which is displayed on your org&apos;s My Domain Setup page. Make sure that entity ID includes &quot;https&quot; and references the Salesforce domain.</span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><span style="font-size:17px;line-height:107%;">&nbsp;It should look something like this: https://mydomain-dev-ed.my.salesforce.com.</span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;border:none;'><strong><span style="font-size:17px;line-height:107%;color:red;">Issuer</span></strong><strong><span style="font-size:17px;line-height:107%;">:</span></strong><span style="font-size:17px;line-height:107%;">&nbsp;It is an Security Assertion Markup Language (SAML) identity provider like Axiom,&nbsp;</span><span style="font-size:16px;font-family:Roboto;  ;background:#F7F7F8;">Okta, OneLogin, Ping Identity etc.</span><span style="font-size:17px;line-height:107%;">&nbsp;(EX. of SSO Tool).</span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><strong><span style="font-size:17px;line-height:107%;color:red;">Identity Provider Certificate:</span></strong><strong><span style="font-size:17px;line-height:107%;">&nbsp;</span></strong><span style="font-size:17px;line-height:107%;">It will be provided by the issuer.</span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><strong><span style="font-size:17px;line-height:107%;">NOTE</span></strong><span style="font-size:17px;line-height:107%;">: We can use &ldquo;Assertion contains the User ID from the User object&rdquo; instead of &ldquo;Assertion contains the Federation ID from the User object&rdquo;.</span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><strong><span style="font-size:17px;line-height:107%;color:red;">Federation ID</span></strong><span style="font-size:17px;line-height:107%;">: We can create from the User detail page.</span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;border:none;'><strong><span style="font-size:20px;line-height:107%;color:red;">Two Factor Authentication Setup (2FA)</span></strong></p>
+<p style='margin-top:29.15pt;margin-right:43.0pt;margin-bottom:0cm;margin-left:.3pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;text-indent:.45pt;line-height:117%;'><strong><span style="font-size:17px;line-height:117%; ">STEP - 1</span><span style="font-size:17px;line-height:117%; ">&nbsp;From set-up goto &ldquo;Identify Verification&rdquo;. Enable &ldquo;Require multi-factor authentication (MFA) for all direct UI logins to your Salesforce org&rdquo; then click on SAVE.</span></strong></p>
+<img style="max-width: 100%;" src="images/2FAStep1.jpg">
+<p style='margin-top:0cm;margin-right:13.35pt;margin-bottom:0cm;margin-left:.5pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;text-indent:.3pt;line-height:117%;'><strong><span style="font-size:17px;line-height:117%; ">STEP - 2</span><span style="font-size:17px;line-height:117%; ">&nbsp;From set-up goto &ldquo;Session Setting&rdquo;, and make sure that &ldquo;Multi Factor Authentication - MFA&rdquo; should be on the box.&nbsp;</span></strong></p>
+<img style="max-width: 100%;" src="images/2FAStep2.png">
+<p style='margin-top:9.55pt;margin-right:3.95pt;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;text-indent:.8pt;line-height:117%;'><strong><span style="font-size:17px;line-height:117%; ">STEP - 3</span><span style="font-size:17px;line-height:117%; ">&nbsp;In Mobile, download the &ldquo;Salesforce Authenticator&rdquo; app from the app store and click on &ldquo;Add Account&rdquo;, it will give a &ldquo;Two Word Phrase&rdquo;</span></strong></p>
+<p style='margin-top:0cm;margin-right:10.7pt;margin-bottom:0cm;margin-left:.4pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;text-indent:.4pt;line-height:116%;'><strong><span style="font-size:17px;line-height:116%; ">STEP - 4</span><span style="font-size:17px;line-height:116%; ">&nbsp;Now login to your SFDC account, here it will ask for that &ldquo;Two Word Phrase&rdquo; which you got from previous steps (STEP - 3). Then your SFDC account will be connected with the Mobile app.&nbsp;</span></strong></p>
+<img style="max-width: 100%;" src="images/2FAStep4.png">
+<p style='margin-top:0cm;margin-right:8.35pt;margin-bottom:0cm;margin-left:.05pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;text-indent:.4pt;line-height:116%;'><span style="font-size:17px;line-height:116%; ">From next time whenever you try to login your SFDC account, it will notify you in your salesforce mobile app and ask for &ldquo;Approve&rdquo; or &ldquo;Deny&rdquo;.</span></p>
+<p style='margin-top:0cm;margin-right:11.25pt;margin-bottom:0cm;margin-left:.7pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;text-indent:-.15pt;line-height:152%;'><strong><span style="font-size:17px;line-height:152%; ">IMPORTANT NOTE</span></strong><span style="font-size:17px;line-height:152%; ">&nbsp;<s>-</s> If you&rsquo;re disconnecting an account to switch to a new device, follow the steps to back up your Connected Accounts before proceeding.&nbsp;</span></p>
+<p style='margin-top:11.35pt;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;text-indent:-17.25pt;line-height:116%;'><span style="font-size:17px;line-height:116%; ">1. Begin in a web browser, in your Salesforce account. From your personal settings, in the Quick Find box, enter Advanced User Details, then select Advanced User Details. No results? In the Quick Find box, enter Personal Information, then select Personal Information.&nbsp;</span></p>
+<p style='margin-top:1.15pt;margin-right:34.9pt;margin-bottom:0cm;margin-left:36.65pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;text-indent:-18.1pt;line-height:116%;'><span style="font-size:17px;line-height:116%; ">2. Find App Registration: Salesforce Authenticator, and click Disconnect.&nbsp;</span></p>
+<p style='margin-top:1.15pt;margin-right:18.95pt;margin-bottom:0cm;margin-left:36.7pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;text-indent:-18.25pt;line-height:116%;'><span style="font-size:17px;line-height:116%; ">3. Open the Salesforce Authenticator app on your mobile device.&nbsp;</span></p>
+<p style='margin-top:1.15pt;margin-right:15.85pt;margin-bottom:0cm;margin-left:36.0pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;text-indent:-17.6pt;line-height:116%;'><span style="font-size:17px;line-height:116%; ">4. In the app list of Connected Accounts, find the account you want to remove.&nbsp;</span></p>
+<p style='margin-top:1.15pt;margin-right:0cm;margin-bottom:0cm;margin-left:18.65pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;line-height:normal;'><span style="font-size:17px; ">5. Swipe left on the account username.&nbsp;</span></p>
+<p style='margin-top:4.15pt;margin-right:0cm;margin-bottom:0cm;margin-left:18.55pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;line-height:normal;'><span style="font-size:17px; ">6. Tap Remove or Delete, whichever appears.&nbsp;</span></p>
+<p style='margin-top:4.15pt;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;line-height:normal;'><span style="font-size:17px; ">A confirmation dialog appears.&nbsp;</span></p>
+<p style='margin-top:4.15pt;margin-right:3.7pt;margin-bottom:0cm;margin-left:.4pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;text-indent:18.35pt;line-height:153%;'><span style="font-size:17px;line-height:153%; ">7. To confirm the removal of the account, tap Remove. If Salesforce Authenticator was your only MFA verification method, you&rsquo;re prompted to register another method the next time you log in to Salesforce.</span></p>
+<p style='margin-top:0cm;margin-right:8.3pt;margin-bottom:0cm;margin-left:.35pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;text-indent:.45pt;line-height:116%;'><strong><span style="font-size:17px;line-height:116%; ">OR we can do simply</span></strong><span style="font-size:17px;line-height:116%; ">&nbsp;- From set-up go to &ldquo;Identify Verification&rdquo;. Disable &ldquo;Require multi-factor authentication (MFA) for all direct UI logins to your Salesforce org&rdquo; then click on SAVE</span></p>
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
