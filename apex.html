@@ -9,6 +9,7 @@
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="assets/plugins/highlight/styles/monokai-sublime.min.css">
   </head>
   <body>
 		
@@ -936,13 +937,58 @@
 <li>Moving from Checkbox, auto number, multi-select picklist to any other types.&nbsp;</li>
 <li>Changing text area to phone, URL, email, or text.</li>
 </ul>
+<p><strong><span style="color: #ff0000;">108. A basic batch class Example to update the account name</span></strong></p>
+<pre>
+	<code>global class batchExample implements Database.Batchable<sObject> {
+	global Database.QueryLocator start(Database.BatchableContext BC) {
+		// collect the batches of records or objects to be passed to execute
+		String query = 'SELECT Id,Name FROM Account';
+		return Database.getQueryLocator(query);
+	}
+	
+	global void execute(Database.BatchableContext BC, List<Account> accList) {
+		// process each batch of records
+		for(Account acc : accList)
+		{        
+			// Update the Account Name 
+			acc.Name = acc.Name + 'Webkul';
+		}
+		try {
+			// Update the Account Record
+			update accList;
+		
+		} catch(Exception e) {
+			System.debug(e);
+		}
+		
+	}   
+	
+	global void finish(Database.BatchableContext BC) {
+		// execute any post-processing operations
+	}
+}
+
+	</code>
+</pre>
+<strong>To Run the Batch class</strong>
+<pre>
+	<code>batchExample be = new batchExample();
+	database.executeBatch(be,100);
+	</code>
+</pre>
 </div>
 	  <!-- Scroll-to-top button -->
   <button id="scrollToTopBtn" class="btn btn-primary scroll-to-top">
     <i class="fa fa-arrow-up"></i>
   </button>
 		</div>
-
+		<script src="cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+	<script>hljs.highlightAll();</script>
+	<script>/*<![CDATA[*/
+		/*! Pre code with copy button v2.0 | (c) anutrickz | https://anutrickz.blogspot.com/ */
+		var codeBlocks=document.querySelectorAll("pre");codeBlocks.forEach(function(t){var o=document.createElement("button");o.className="at_copy",o.type="button",o.ariaLabel="Copy code to clipboard",o.innerText="Copy",t.append(o),o.addEventListener("click",function(){var e=t.querySelector("code").innerText.trim();window.navigator.clipboard.writeText(e),o.innerText="Copied";setTimeout(function(){o.innerText="Copy"},1e3)})});
+		/*]]>*/</script>
     <script>
 			// Function to show or hide the scroll-to-top button
 			function toggleScrollToTopButton() {
