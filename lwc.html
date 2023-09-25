@@ -9,6 +9,10 @@
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="assets/plugins/highlight/styles/monokai-sublime.min.css">
+		<!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
   </head>
   <body>
 		
@@ -71,18 +75,255 @@
 
 	      </div>
     	</nav>
-
+		
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
         <h2 class="mb-4">LWC Questions</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
+		<h2 id="h-aura-vs-lwc" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">Aura Vs LWC</span></h2>
+<p>Aura components and Lightning web components can coexist and interoperate, and they share the same high level services:</p>
+<ul>
+<li>Aura components and Lightning web components can coexist on the same page</li>
+<li>Aura components can include Lightning web components</li>
+<li>Aura components and Lightning web components share the same base Lightning components. Base Lightning components were already implemented as Lightning web components.</li>
+<li>Aura components and Lightning web components share the same underlying services (Lightning Data Service, User Interface API, etc.)</li>
+</ul>
+<h2 id="what-is-data-binding-in-lightning-web-component" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">What Is Data Binding In Lightning Web&nbsp;Component?</span></h2>
+<p>In simple words when you map your data from the backend(JS) to the front end(HTML) that&rsquo;s called data&nbsp;binding in LWC.</p>
+<img src="images/DataBinding.webp" style="max-width:100%">
+<h2 id="different-ways-of-data-binding" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;"><strong>Different Ways Of Data Binding</strong></span></h2>
+<p>There are two way to data binding in LWC.</p>
+<ol>
+<li>Using Expressions</li>
+<li>Using getter properties</li>
+</ol>
+<h3 id="1-using-expressions" class="wp-block-heading joli-heading jtoc-heading" style="padding-left: 30px;">#1. Using Expressions</h3>
+<p style="padding-left: 30px;">Below is a simple example of how to bind the data using expressions.</p>
+<img src="images/Data-Binding-using-Expressions.webp" style="max-width:100%">
+<h3 id="1-using-expressions" class="wp-block-heading joli-heading jtoc-heading" style="padding-left: 30px;">#1.1. Using Dynamic Expressions</h3>
+<p style="padding-left: 30px;"><img alt="" />&nbsp;Below is a simple example of how to bind the data using Dynamic Expressions.</p>
+<img src="images/Using-Dynamic-Expressions.webp" style="max-width:100%">
+<h3 id="2-using-getter-properties" class="wp-block-heading joli-heading jtoc-heading" style="padding-left: 30px;">#2. Using getter properties</h3>
+<p style="padding-left: 30px;">To compute a value for a property, use a JavaScript getter. For example, to convert the name to all uppercase letters, use a getter function in the JavaScript class, not an expression in the template.</p>
+<img src="images/using getter.webp" style="max-width:100%">
+<h2 id="type-of-decorators-in-lightning-web-component" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">Type Of Decorators In Lightning Web Component</span></h2>
+<p>we have three unique decorators that add functionality to a function or property. Decorators dynamically alter or modify the functionality</p>
+<p>There are three type of Decorators in Lightning web components.</p>
+<ol>
+<li><strong>@api:</strong> This annotation is used to define a public property that can be accessed by other components.</li>
+<li><strong>@wire:</strong> This annotation is used to connect a component to an Apex method or a wire adapter.</li>
+<li><strong>@track:</strong> This annotation defines a reactive property that causes the component to re-render when the property changes.</li>
+
+
+</ol>
+<h2 id="what-are-lifecycle-hooks-in-lightning-web-component" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">What Are Lifecycle Hooks In Lightning Web Component?</span></h2>
+<ul>
+<li><strong>Constructor() - Invoked when the instance of the component is created, this is similar to the init() method in the aura component.</strong></li>
+<ul>
+<li>Child elements can&rsquo;t be accessed because they don&rsquo;t exist yet</li>
+<li>Element properties are assigned to the component after construction, so do not access them as they are not yet in existence (public properties decorated with @api)</li>
+<li>It is necessary to invoke super() from the constructor, since the Lightning web component extends LightningElement which has a constructor and is not supposed to bypass the parent class constructor (To assign the correct property (prototype) and set a value to &lsquo;this&rsquo; attribute)</li>
+</ul>
+<li><strong>ConnectedCallback() - ConnectedCallback() Invoked when the component is inserted into DOM.</strong></li>
+<ul>
+<li>Child elements can&rsquo;t be accessed because they don&rsquo;t exist yet</li>
+<li>This hook flows from parent component to child component</li>
+<li>Eventually this method is invoked, all the public properties (decorated with @api) would have been received from the parent component by which we can call an apex method which requires these public properties as input parameters.</li>
+<li>In order to verify if a component is connected to DOM, the isConnected property can be used</li>
+<li>Parent elements can be accessed and modified in this lifecycle hook</li>
+</ul>
+<li><strong>Render() -&nbsp;Render() Invoked after the execution of connectedCallback() method.</strong>&nbsp;
+<ul>
+<li>Flows from parent component to child component</li>
+<li>Rendering process can be controlled by conditionally rendering the template on the basis of certain conditions or criteria</li>
+<li>This hook is not technically a lifecycle hook. It is protected method on the LightningElement class</li>
+</ul>
+</li>
+<li><strong>rendercallback() -Invoked when a component is completely rendered on UI.</strong></li>
+<ul>
+<li>Flows from child component to parent component</li>
+<li>This hook should be used cautiously so that an infinite rendering loop is not triggered since this hook is called after the component gets rendered every time</li>
+<li>Make sure to use a private boolean property like isRendered to track whether renderedCallback() has been executed</li>
+<li>Not recommended to use renderedCallback() to change the state of the component instead use getter and setter</li>
+<li>Reactive property in renderedCallback() leads to infinite loop</li>
+</ul>
+<li><strong>DisconnectedCallback() -&nbsp;&nbsp;Invoked when a component is removed from DOM. Flows from parent component to child component</strong></li>
+<li><strong>ErrorCallback( error ,stack) -ErrorCallback() Invoked when the component throws error in one of the lifecycle hooks (instantiating the component, connecting or rendering)</strong></li>
+<ul>
+<li>Similar to JavaScript catch{} block, error and stack are the two arguments.error is javascript native error object whereas stack is a string</li>
+<li>To capture the stack information and render a different template when error is occurred</li>
+</ul>
+</ul>
+<p>For more Details Visit here&nbsp;<a href="https://www.apexhours.com/lifecycle-hooks-in-lightning-web-component/">Apex Hours</a>.</p>
+<h2 id="h-what-is-events-in-lightning-web-components" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">What Is Events In Lightning Web Components?</span></h2>
+<ol>
+<li>Parent to Child Event communication in Lightning web component</li>
+<li>Custom Event Communication in Lightning Web Component (<em>Child to Parent&nbsp;</em>)</li>
+<li>Publish Subscriber model</li>
+</ol>
+<p style="padding-left: 30px;"><strong>Parent- Child</strong></p>
+<pre><code> &lt;c-child-comp &gt;&lt;/c-child-comp&gt; </code></pre>
+<p style="padding-left: 30px;"><strong>child- parent</strong><code> </code></p>
+<pre><code>let ev = new CustomEvent('childmethod', {detail : paramData );
+	this.dispatchEvent(ev); </code></pre>
+
+	<h3> <span style="color: #ff0000;"> How can you render multiple templates in LWC?</span></h3>
+<p>In LWC, we can display multiple templates conditionally based on the component's state using the&nbsp;<strong>if:true</strong>&nbsp;directive.</p>
+<p>Here's an example of how to display multiple templates in LWC:</p>
+<pre>
+<code>&lt;template&gt;
+    &lt;template if:true={showTemplate1}&gt;
+        &lt;p&gt;This is template 1&lt;/p&gt;
+    &lt;/template&gt;
+    &lt;template if:true={showTemplate2}&gt;
+        &lt;p&gt;This is template 2&lt;/p&gt;
+    &lt;/template&gt;
+&lt;/template&gt;
+</code>
+</pre>
+<p><span style="color: #ff0000;"><strong>Can we call the @AuraEnabled function in the apex class using wire ?&nbsp;</strong></span></p>
+<p style="padding-left: 30px;">Function also needs to have cacheable = true&nbsp; annotation ie should be like @AuraEnabled(cacheable = true)</p>
+<p><span style="color: #ff0000;"><strong>What is the difference between event.StopPropogation() and Event.preventDefault()?</strong></span></p>
+<p style="padding-left: 30px;"><strong>stopPropagation</strong> prevents further propagation of the current event in the capturing and bubbling phases.&nbsp;<strong>preventDefault</strong> prevents the default action the browser makes on that event.</p>
+<p><strong><span style="color: #ff0000;">How can we navigate user from LWC component to record detail page?</span></strong></p>
+<p style="padding-left: 30px;">Can be done using NavigationMixin service</p>
+<p><strong><span style="color: #ff0000;">Can i call function annotated with @AuraEnabled(cacheable= true) imperatively ?</span></strong></p>
+<p style="padding-left: 30px;">Yes</p>
+<p><strong><span style="color: #ff0000;">Explain the different ways of retrieving data from apex in lwc ?</span></strong></p>
+<p style="padding-left: 30px;"><strong>Imperative Apex Method Calls</span></strong></p>
+<p style="padding-left: 30px;"><strong>Wire Service</strong></p>
+<p style="padding-left: 30px;"><strong>Lightning Data Service (LDS)</strong></p>
+<p style="padding-left: 30px;"><strong>Platform Events</strong></p>
+<strong>Imperative Apex Method Calls</strong>
+<pre>
+	<code>import fetchDataFromApex from '@salesforce/apex/MyController.fetchDataFromApex';
+
+	// Inside your JavaScript code
+	fetchDataFromApex({ params })
+		.then(result => {
+			// Handle the result data
+		})
+		.catch(error => {
+			// Handle any errors
+		});
+	</code>
+</pre>
+<strong>Wire Service</strong>
+<pre>
+	<code>import fetchDataFromApex from '@salesforce/apex/MyController.fetchDataFromApex';
+
+	@wire(fetchDataFromApex, { params })
+	wiredData;
+	
+	// Access data in the component
+	get data() {
+		return this.wiredData.data;
+	}
+	</code>
+</pre>
+<strong>Lightning Data Service (LDS)</strong>
+<pre>
+	<code>import { LightningElement, wire } from 'lwc';
+import { getRecord } from 'lightning/uiRecordApi';
+	
+	const FIELDS = ['Account.Name', 'Account.Type'];
+	
+	export default class MyComponent extends LightningElement {
+		@wire(getRecord, { recordId: '001234567890abcd', fields: FIELDS })
+		account;
+	
+		get name() {
+			return this.account.data.fields.Name.value;
+		}
+	
+		get type() {
+			return this.account.data.fields.Type.value;
+		}
+	}
+		
+	</code>
+</pre>
+<strong>Platform Events</strong>
+<pre>
+	<code>import { subscribe, unsubscribe, MessageContext } from 'lightning/messageService';
+import MY_EVENT from '@salesforce/messageChannel/My_Event__c';
+	
+	export default class MyComponent extends LightningElement {
+		@wire(MessageContext)
+		messageContext;
+	
+		subscription = null;
+	
+		connectedCallback() {
+			this.subscribeToMyEvent();
+		}
+	
+		subscribeToMyEvent() {
+			if (!this.subscription) {
+				this.subscription = subscribe(
+					this.messageContext,
+					MY_EVENT,
+					(message) => {
+						// Handle the message (data) received
+					}
+				);
+			}
+		}
+	
+		disconnectedCallback() {
+			unsubscribe(this.subscription);
+			this.subscription = null;
+		}
+	}
+		
+	</code>
+</pre>
+		</div>
+	  <!-- Scroll-to-top button -->
+  <button id="scrollToTopBtn" class="btn btn-primary scroll-to-top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
 		</div>
 
+    <!-- Page Specific JS -->
+    <script src="cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+	<script>hljs.highlightAll();</script>
+    <script>
+			// Function to show or hide the scroll-to-top button
+			function toggleScrollToTopButton() {
+			  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				scrollToTopBtn.style.display = "block";
+			  } else {
+				scrollToTopBtn.style.display = "none";
+			  }
+			}
+		  
+			// Function to scroll to the top of the page
+			function scrollToTop() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+		  
+			// Add a scroll event listener to toggle the button visibility
+			window.onscroll = function () {
+			  toggleScrollToTopButton();
+			};
+		  
+			// Add a click event listener to the button to scroll to the top
+			var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+			if (scrollToTopBtn) {
+			  scrollToTopBtn.addEventListener("click", function () {
+				scrollToTop();
+			  });
+			}
+		  </script>
+		  
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script>	
+	
+	
   </body>
 </html>

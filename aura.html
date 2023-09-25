@@ -9,6 +9,7 @@
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/style.css">
+		
   </head>
   <body>
 		
@@ -77,9 +78,45 @@
         <h2 class="mb-4">AURA Questions</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		
       </div>
+	  <!-- Scroll-to-top button -->
+  <button id="scrollToTopBtn" class="btn btn-primary scroll-to-top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
 		</div>
-
+		  
+    <script>
+			// Function to show or hide the scroll-to-top button
+			function toggleScrollToTopButton() {
+			  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				scrollToTopBtn.style.display = "block";
+			  } else {
+				scrollToTopBtn.style.display = "none";
+			  }
+			}
+		  
+			// Function to scroll to the top of the page
+			function scrollToTop() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+		  
+			// Add a scroll event listener to toggle the button visibility
+			window.onscroll = function () {
+			  toggleScrollToTopButton();
+			};
+		  
+			// Add a click event listener to the button to scroll to the top
+			var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+			if (scrollToTopBtn) {
+			  scrollToTopBtn.addEventListener("click", function () {
+				scrollToTop();
+			  });
+			}
+		  </script>
+		  
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>

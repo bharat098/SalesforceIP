@@ -153,8 +153,43 @@
 <p style='margin-top:4.15pt;margin-right:3.7pt;margin-bottom:0cm;margin-left:.4pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;text-indent:18.35pt;line-height:153%;'><span style="font-size:17px;line-height:153%; ">7. To confirm the removal of the account, tap Remove. If Salesforce Authenticator was your only MFA verification method, you&rsquo;re prompted to register another method the next time you log in to Salesforce.</span></p>
 <p style='margin-top:0cm;margin-right:8.3pt;margin-bottom:0cm;margin-left:.35pt;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;text-indent:.45pt;line-height:116%;'><strong><span style="font-size:17px;line-height:116%; ">OR we can do simply</span></strong><span style="font-size:17px;line-height:116%; ">&nbsp;- From set-up go to &ldquo;Identify Verification&rdquo;. Disable &ldquo;Require multi-factor authentication (MFA) for all direct UI logins to your Salesforce org&rdquo; then click on SAVE</span></p>
       </div>
+	  <!-- Scroll-to-top button -->
+  <button id="scrollToTopBtn" class="btn btn-primary scroll-to-top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
 		</div>
 
+    <script>
+			// Function to show or hide the scroll-to-top button
+			function toggleScrollToTopButton() {
+			  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				scrollToTopBtn.style.display = "block";
+			  } else {
+				scrollToTopBtn.style.display = "none";
+			  }
+			}
+		  
+			// Function to scroll to the top of the page
+			function scrollToTop() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+		  
+			// Add a scroll event listener to toggle the button visibility
+			window.onscroll = function () {
+			  toggleScrollToTopButton();
+			};
+		  
+			// Add a click event listener to the button to scroll to the top
+			var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+			if (scrollToTopBtn) {
+			  scrollToTopBtn.addEventListener("click", function () {
+				scrollToTop();
+			  });
+			}
+		  </script>
+		  
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
