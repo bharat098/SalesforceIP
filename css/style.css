@@ -8345,5 +8345,18 @@ a[data-toggle="collapse"] {
   pre { overflow-x: auto; position:relative; max-width: 100%; color: var(--gray85);  line-height: 1.5em; background: var(--gray05);text-align: left; white-space: pre; word-spacing: normal; word-break: normal; word-wrap: normal;tab-size: 4; -webkit-hyphens: none; -moz-hyphens: none; -ms-hyphens: none; hyphens: none; }pre code { padding: 0; font-size: inherit; line-height: inherit; background: 0 0; }pre code::-webkit-scrollbar {width:5px;} .at_copy{position: absolute; top:35px; right: 30px; background: #54b689; color: #fff; padding: 5px 12px; border: 0;z-index:9;}
 
   pre> button { opacity: 0; } pre:hover > button { opacity: 1;transition: all 1s ease-out; } pre > button:active, pre > button:focus { opacity: 1;transition: all 1s ease-out; }
+  		/* Scroll-to-top button styles */
+.scroll-to-top {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	display: none;
+	z-index: 999;
+  }
+  
+  /* Style for the button icon */
+  .scroll-to-top i {
+	font-size: 20px;
+  }
   
   
