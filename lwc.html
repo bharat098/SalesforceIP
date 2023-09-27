@@ -277,6 +277,40 @@ import MY_EVENT from '@salesforce/messageChannel/My_Event__c';
 		
 	</code>
 </pre>
+<p><strong>&nbsp;<span style="color: #ff0000;">What is LMS ?</span></strong></p>
+<p>LMS is defined as the standard publish-subscribe library that enables communication with DOM across the components be it Visualforce Pages, Aura components, and Lightning Web Components (LWC) all can use it to publish message and listen to messages published by others.</p>
+<p><span style="color: #ff0000;"><strong>Do we have application events in LWC?</strong></span></p>
+<p>We don't have application event as such in LWC like Aura rather we have LMS in LWC to communicate between components which are not part of same hierarchy.</p>
+<p><span style="color: #ff0000;"><strong>What is difference between &lsquo;==&rsquo; and &lsquo;===&rsquo; ?</strong></span></p>
+<p style="padding-left: 30px;">Both are used to compare two variables but == doesn't take data type into consideration and does type coercion ie interpreter tries to automatically convert data types to match the values while in === case if data type is not same it will always return false.</p>
+<p style="padding-left: 30px;"><strong>For example :</strong></p>
+<p style="padding-left: 30px;">2==&rdquo;2&rdquo; will return True (Type coercion happens)<br />2===&rdquo;2&rdquo; will return False ( No Type coercion)</p>
+<p><span style="color: #ff0000;"><strong>What is the role of the `lightning-datatable` component in LWC?</strong></span></p>
+<p>The&nbsp;<strong>`lightning-datatable`</strong>&nbsp;component is used to display tabular data in a customizable and user-friendly format. Here's an example:</p>
+<pre> 
+<code><!-- datatableExample.html -->&lt;template&gt;
+    &lt;lightning-datatable data="{data}" columns="{columns}" key-field="Id"&gt;&lt;/lightning-datatable&gt;
+&lt;/template&gt;
+</code>
+</pre>
+<pre> 
+<code>// datatableExample.js
+import { LightningElement } from 'lwc';
+ 
+export default class DatatableExample extends LightningElement {
+    data = [
+        { Id: '001', Name: 'Account 1', Industry: 'Finance' },
+        { Id: '002', Name: 'Account 2', Industry: 'Technology' },
+        { Id: '003', Name: 'Account 3', Industry: 'Healthcare' },
+    ];
+ 
+    columns = [
+        { label: 'Account Name', fieldName: 'Name', type: 'text' },
+        { label: 'Industry', fieldName: 'Industry', type: 'text' },
+    ];
+}
+</code>
+</pre>
 		</div>
 	  <!-- Scroll-to-top button -->
   <button id="scrollToTopBtn" class="btn btn-primary scroll-to-top">
