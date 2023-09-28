@@ -8,7 +8,13 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style.css"><style>
+			/* Add this CSS for the content area */
+			#content {
+			  max-height: calc(100vh - 70px); /* Adjust the value (70px) as needed */
+			  overflow-y: auto;
+			}
+		  </style>
         <link rel="stylesheet" href="assets/plugins/highlight/styles/monokai-sublime.min.css">
 		
   </head>
@@ -18,41 +24,41 @@
 			<nav id="sidebar">
 				<div class="custom-menu">
 					<button type="button" id="sidebarCollapse" class="btn btn-primary">
-	          <i class="fa fa-bars"></i>
-	          <span class="sr-only">Toggle Menu</span>
-	        </button>
-        </div>
+						<i class="fa fa-bars"></i>
+						<span class="sr-only">Toggle Menu</span>
+					</button>
+				</div>
 				<div class="p-4">
 		  		<h1><a href="index.html" class="logo">Salesforce <span>Interview Preparation</span></a></h1>
-	        <ul class="list-unstyled components mb-5">
-	          <li >
-	            <a href="index.html"><span class="fa fa-home mr-3"></span> Home</a>
-	          </li>
-	          <li >
-	              <a href="admin.html"><span class="fa fa-user mr-3"></span> Admin</a>
-	          </li>
-	          <li>
-              <a href="apex.html"><span class="fa fa-briefcase mr-3"></span> Apex</a>
-	          </li>
-	          <li >
-              <a href="aura.html"><span class="fa fa-sticky-note mr-3"></span> AURA</a>
-	          </li>
-	          <li>
-              <a href="lwc.html"><span class="fa fa-suitcase mr-3"></span> LWC</a>
-	          </li>
-	          <li>
-              <a href="integration.html"><span class="fa fa-cogs mr-3"></span> Integration</a>
-	          </li>
-	          <li>
-              <a href="triggers.html"><span class="fa fa-paper-plane mr-3"></span> Triggers</a>
-	          </li>
-			  <li>
-				<a href="ExtraQS.html"><span class="fa fa-paper-plane mr-3"></span> Extra Questions</a>
-				</li>
-				<li class="active">
+					<ul class="list-unstyled components mb-5">
+					<li >
+						<a href="index.html"><span class="fa fa-home mr-3"></span> Home</a>
+					</li>
+					<li >
+						<a href="admin.html"><span class="fa fa-user mr-3"></span> Admin</a>
+					</li>
+					<li>
+					<a href="apex.html"><span class="fa fa-briefcase mr-3"></span> Apex</a>
+					</li>
+					<li >
+					<a href="aura.html"><span class="fa fa-sticky-note mr-3"></span> AURA</a>
+					</li>
+					<li>
+					<a href="lwc.html"><span class="fa fa-suitcase mr-3"></span> LWC</a>
+					</li>
+					<li>
+					<a href="integration.html"><span class="fa fa-cogs mr-3"></span> Integration</a>
+					</li>
+					<li>
+					<a href="triggers.html"><span class="fa fa-paper-plane mr-3"></span> Triggers</a>
+					</li>
+					<li>
+					<a href="ExtraQS.html"><span class="fa fa-paper-plane mr-3"></span> Extra Questions</a>
+					</li>
+					<li class="active">
 					<a href="ExtraTopics.html"><span class="fa fa-paper-plane mr-3"></span> More Topics</a>
 					</li>
-	        </ul>
+					</ul>
 
 
 	       <!--  <div class="mb-5">
