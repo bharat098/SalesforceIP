@@ -166,17 +166,96 @@
 </table>
 </figure>
 <h3 id="h-7-what-all-integration-options-are-available-in-salesforce" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">7.&nbsp;What all Integration options are available in Salesforce?</span></h3>
-<ul>
-<li>REST API</li>
-<li>SOAP API</li>
-<li>Chatter REST API</li>
-<li>Analytics REST API</li>
-<li>Bulk API</li>
-<li>Metadata API</li>
-<li>Streaming API</li>
-<li>Apex REST API</li>
-<li>Tooling API</li>
-</ul>
+<figure>
+	<table style="width: 100%; border: 2px solid red; border-collapse: collapse;">
+	<tbody>
+	<tr>
+	<td style="border: 2px solid red; background-color: #e7e9eb; text-align: center;"><strong>S.No</strong></td>
+	<td style="border: 2px solid red; background-color: #e7e9eb; text-align: center;"><strong>API Name</strong></td>
+	<td style="border: 2px solid red; background-color: #e7e9eb; text-align: center;"><strong>Protocol</strong></td>
+	<td style="border: 2px solid red; background-color: #e7e9eb; text-align: center;"><strong>Data Format</strong></td>
+	<td style="border: 2px solid red; background-color: #e7e9eb; text-align: center;"><strong>Communication</strong></td>
+	</tr>
+	<tr>
+	<td style="border: 2px solid red;">1</td>
+	<td style="border: 2px solid red;"><strong>REST API</strong></td>
+	<td style="border: 2px solid red;">REST</td>
+	<td style="border: 2px solid red;">JSON, XML</td>
+	<td style="border: 2px solid red;">Synchronous</td>
+	</tr>
+	<tr>
+	<td style="border: 2px solid red;">2</td>
+	<td style="border: 2px solid red;"><strong>Apex REST API</strong></td>
+	<td style="border: 2px solid red;">REST</td>
+	<td style="border: 2px solid red;">JSON, XML, Custom</td>
+	<td style="border: 2px solid red;">Synchronous</td>
+	</tr>
+	<tr>
+	<td style="border: 2px solid red;">3</td>
+	<td style="border: 2px solid red;"><strong>SOAP API</strong></td>
+	<td style="border: 2px solid red;">SOAP (WSDL)</td>
+	<td style="border: 2px solid red;">XML</td>
+	<td style="border: 2px solid red;">Synchronous</td>
+	</tr>
+	<tr>
+	<td style="border: 2px solid red;">4</td>
+	<td style="border: 2px solid red;"><strong>Apex SOAP API</strong></td>
+	<td style="border: 2px solid red;">SOAP (WSDL)</td>
+	<td style="border: 2px solid red;">XML</td>
+	<td style="border: 2px solid red;">Synchronous</td>
+	</tr>
+	<tr>
+		<td style="border: 2px solid red;" >5</td>
+		<td style="border: 2px solid red;" ><strong>Chatter REST API</strong></td>
+		<td style="border: 2px solid red;" >REST</td>
+		<td style="border: 2px solid red;" >JSON, XML</td>
+		<td style="border: 2px solid red;" >Synchronous (photos are processed asynchronously)</td>
+		</tr>
+		<tr>
+		<td style="border: 2px solid red;" >6</td>
+		<td style="border: 2px solid red;" ><strong>Analytics REST API</strong></td>
+		<td style="border: 2px solid red;" >REST</td>
+		<td style="border: 2px solid red;" >JSON, XML</td>
+		<td style="border: 2px solid red;" >Synchronous</td>
+		</tr>
+		<tr>
+		<td style="border: 2px solid red;" >7</td>
+		<td style="border: 2px solid red;" ><strong>User Interface API</strong></td>
+		<td style="border: 2px solid red;" >REST</td>
+		<td style="border: 2px solid red;" >JSON</td>
+		<td style="border: 2px solid red;" >Synchronous</td>
+		</tr>
+		<tr>
+		<td style="border: 2px solid red;" >8</td>
+		<td style="border: 2px solid red;" ><strong>Tooling API</strong></td>
+		<td style="border: 2px solid red;" >REST or SOAP (WSDL)</td>
+		<td style="border: 2px solid red;" >JSON, XML, Custom</td>
+		<td style="border: 2px solid red;" >Synchronous</td>
+		</tr>
+		<tr>
+		<td style="border: 2px solid red;" >9</td>
+		<td style="border: 2px solid red;" ><strong>Bulk API</strong></td>
+		<td style="border: 2px solid red;" >REST</td>
+		<td style="border: 2px solid red;" >CSV</td>
+		<td style="border: 2px solid red;" >Asynchronous</td>
+		</tr>
+		<tr>
+		<td style="border: 2px solid red;" >10</td>
+		<td style="border: 2px solid red;" ><strong>Metadata API</strong></td>
+		<td style="border: 2px solid red;" >SOAP (WSDL)</td>
+		<td style="border: 2px solid red;" >XML</td>
+		<td style="border: 2px solid red;" >Asynchronous. Retrieve, deploy, and modify metadata</td>
+		</tr>
+		<tr>
+		<td style="border: 2px solid red;" >11</td>
+		<td style="border: 2px solid red;" ><strong>Streaming API</strong></td>
+		<td style="border: 2px solid red;" >Bayeux</td>
+		<td style="border: 2px solid red;" >JSON</td>
+		<td style="border: 2px solid red;" >Asynchronous. Push notifications from Salesforce to<br />subscribing applications/entities<br />(replaces polling).</td>
+		</tr>
+	</tbody>
+	</table>
+	</figure>
 <h3 id="h-8-what-is-wsdl" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">8. What is WSDL?</span></h3>
 <p>WSDL (Web Services Description Language) is an XML document that describes a web service. There are two types of WSDL in&nbsp;Salesforce:</p>
 <ul>
@@ -258,6 +337,54 @@
 <li>Access to latest data</li>
 <li>Access like Salesforce Object</li>
 </ol>
+<h4><p><span style="color: #ff0000;">20. What is Callouts?</span></p></h4>
+<p>An Apex callout&nbsp;<strong>enables you to tightly integrate your Apex with an external service by making a call to an external Web service or sending a HTTP request from Apex code and then receiving the response</strong>. Apex provides integration with Web services that utilize SOAP and WSDL, or HTTP services (RESTful services).</p>
+<h4><p><span style="color: #ff0000;">21. What do you mean by Inbound and Outbound Integration?</span></p></h4>
+<p>Integration can be two direction inbound integration or outbound Integration.</p>
+<ul>
+<li><strong>Inbound Integration</strong>: An external system initiates contact with Salesforce.</li>
+<li><strong>Outbound Integration</strong>: Salesforce initiates contact with an external system.</li>
+</ul>
+<h4><p><span style="color: #ff0000;">22.Time Based Integration Process</span></p></h4>
+<p>Salesforce integration can be Synchronous, Asynchronous, and a Batch process. Let see when to use which time-based Salesforce Integration processes.</p>
+<p><strong>1. Synchronous Process</strong></p>
+<p>A user action creates a request, and the user is blocked from continuing until the response is returned. A very near real-time response is expected and needed.</p>
+<ul>
+<li>Tools/Technique : REST or SOAP API</li>
+</ul>
+<p><em><strong>Scenario</strong>: When a Salesforce account is created, a lookup must happen in the existing legacy system to check whether the Salesforce account already exists or not before the Save is completed.</em></p>
+<p><strong>2. Asynchronous Process</strong></p>
+<p>A user action creates a request, and the system does not wait for the response before letting the user move to the next task. Analogous to near real-time process</p>
+<ul>
+<li>Tools/Technique : MQ ,Kafka</li>
+</ul>
+<p><em><strong>Scenario</strong>: When the user changes an account record, the process of replicating the change to external systems begins immediately. However, the&nbsp;process of replication does not block the user from continuing the work.</em></p>
+<p><strong>3. Batch Process</strong></p>
+<p>Large data volumes are broken into chunks and processed in queues based on available resources. Can be implemented through Bulk API,SOAP/REST API. Often associated with a scheduled process.</p>
+<ul>
+<li>Tools/Technique: Bulk API/ETL/File Transfer</li>
+</ul>
+<p><em><strong>Scenario</strong>: When we need to update account information once in a day to a back-end system.</em></p>
+<h4><p><span style="color: #ff0000;">23. Tools for Event-Driven Architecture with Salesforce</span></p></h4>
+<p><img src="images/Tools-for-Event-Driven-Architecture-with-Salesforce.webp" alt="" style="max-width: 100%;padding:20px" /></p>
+<h4><p><span style="color: #ff0000;">24. Ways To Fetch Data From SFDC</span><br />There are different way to fetch data from Salesforce.</p></h4>
+<ul>
+<li>Change Data Capture</li>
+<li>Outbound Messaging</li>
+<li>Apex Custom Code</li>
+<li>Polling</li>
+<li>Data Export</li>
+<li>Salesforce Connector</li>
+<li>Heroku Connect</li>
+</ul>
+<p><img src="images/Ways-to-Fetch-data-from-SFDC-.webp" alt="" style="max-width: 100%;padding:20px" /></p>
+<p><span style="color: #ff0000;">25. Data Integration With Salesforce</span><br />There are different way and option are available for Data Integration with Salesforce.</p></h4>
+<ul>
+<li>Salesforce to External Systems</li>
+<li>External Systems to Salesforce</li>
+<li>Salesforce to Salesforce</li>
+</ul>
+<p><img src="images/Data-Integration-with-Salesforce.webp" alt="" style="max-width: 100%;padding:20px" /></p>
 		</div>
 	  <!-- Scroll-to-top button -->
   <button id="scrollToTopBtn" class="btn btn-primary scroll-to-top">
