@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Salesforce IP</title>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Learn about Salesforce Interview Preparation and its benefits on my website.">
+	<meta name="keywords" content="Salesforce IP, Salesforce, IP, CRM, Software,Interview Preparation,Interview,bharatLearning">
+	<link rel="canonical" href="https://bharat098.github.io/SalesforceIP/index.html">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css"><style>
+			/* Add this CSS for the content area */
+			#content {
+			  max-height: calc(100vh - 70px); /* Adjust the value (70px) as needed */
+			  overflow-y: auto;
+			}
+			table,
+			th,
+			td {
+				border: 1px solid#d1cfcf;
+				border-collapse: collapse;
+				padding: 5px;
+			}
+
+			tr:nth-child(odd) {
+				background-color: #ebe9e9;
+			}
+			@media screen and (max-width: 500px) {
+				table{
+					display: block;
+					border: 1px solid#d1cfcf;
+					border-collapse: collapse;
+					overflow-x: auto;
+			  	}
+			}
+		  </style>
+		
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4">
+		  		<h1><a href="index.html" class="logo">Salesforce <span>Interview Preparation</span></a></h1>
+	        <ul class="list-unstyled components mb-5">
+	          <li >
+	            <a href="index.html"><span class="fa fa-home mr-3"></span> Home</a>
+	          </li>
+	          <li >
+	              <a href="admin.html"><span class="fa fa-user mr-3"></span> Admin</a>
+	          </li>
+	          <li>
+              <a href="apex.html"><span class="fa fa-briefcase mr-3"></span> Apex</a>
+	          </li>
+	          <li >
+              <a href="aura.html"><span class="fa fa-sticky-note mr-3"></span> AURA</a>
+	          </li>
+	          <li>
+              <a href="lwc.html"><span class="fa fa-suitcase mr-3"></span> LWC</a>
+	          </li>
+	          <li>
+              <a href="integration.html"><span class="fa fa-cogs mr-3"></span> Integration</a>
+	          </li>
+	          <li>
+              <a href="triggers.html"><span class="fa  fa-terminal mr-3"></span> Triggers</a>
+	          </li>
+			  <li>
+			<a href="ExtraQS.html"><span class="fa  fa-graduation-cap mr-3"></span> Extra Questions</a>
+			</li>
+			<li class="active">
+				<a href="ExtraTopics.html"><span class="fa   fa-external-link-square mr-3"></span> More Topics</a>
+			</li>
+	        </ul>
+
+
+	       <!--  <div class="mb-5">
+						<h3 class="h6 mb-3">Subscribe for newsletter</h3>
+						<form action="#" class="subscribe-form">
+	            <div class="form-group d-flex">
+	            	<div class="icon"><span class="icon-paper-plane"></span></div>
+	              <input type="text" class="form-control" placeholder="Enter Email Address">
+	            </div>
+	          </form>
+					</div> -->
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This  is made with Love
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Governer Limits</h2>
+        <h2 id="h3-0"><span style="color: #ff0000;">What Are Governor Limits in Salesforce?</span></h2>
+<p>Salesforce Governor Limits are the run time limits that are apply in order to have some performance to the database since it runs on multi tenancy environment.</p>
+
+<h2 id="h3-1"><span style="color: #0000ff;">Types of Salesforce Governor Limits</span></h2>
+<p>Here are some Apex governor limits on the Salesforce platform:</p>
+<ul>
+<li><strong>Per-Transaction Apex Limits&nbsp;</strong>(such limitations are applicable for every Apex transaction; what&rsquo;s for Batch Apex cases, limitations are reset);</li>
+<li><strong>Per-Transaction Certified Managed Package Limits</strong>&nbsp;(such limits are applied to the packages installed to an org with a namespace, such packages were created by SFDC partners and have successfully passed the majority transaction limit security checks run by the AppExchange);</li>
+<li><strong>Lightning Platform Apex Limits</strong>&nbsp;(such limitations are enforced by the platform as they aren&rsquo;t particular to Apex transactions);</li>
+<li><strong>Static Apex Limits</strong>&nbsp;(restricts loop and apex trigger sizes, callout sizes and times, trigger code unit numbers, etc.);</li>
+<li><strong>Size-Specific Apex Limits</strong>&nbsp;(as evident from the name, such limits are used to regulate sizes so that no inappropriately sized items are used in the classes).</li>
+</ul>
+<h2 id="h3-2"><span style="color: #0000ff;">List of Governor Limits in Salesforce for Apex</span></h2>
+<h3 id="h4-2-0"><span style="color: #008000;">Major Governor Limits</span></h3>
+<p>Firstly, in this small Salesforce governor limits cheat sheet, let&rsquo;s overview the important limits that everyone should know:</p>
+<figure>
+<table>
+<tbody>
+<tr>
+<td><strong>Overview</strong></td>
+<td><strong>Governor Limit</strong></td>
+</tr>
+<tr>
+<td>Total number of SOSL queries issued in Salesforce</td>
+<td>20</td>
+</tr>
+<tr>
+<td>DML Governor Limits in Salesforce (Total number of issued statements per transaction)</td>
+<td>150</td>
+</tr>
+<tr>
+<td>Total number of records retrieved by a single SOSL query</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>Total number of records that were retrieved by SOQL queries</td>
+<td>50000</td>
+</tr>
+<tr>
+<td>Total number of records retrieved by Database.getQueryLocator</td>
+<td>10000</td>
+</tr>
+<tr>
+<td>Salesforce Governor Limits for heap size total</td>
+<td>6 MB/12 MB</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<h3 id="h4-2-1"><span style="color: #008000;">Per-Transaction Apex Limits</span></h3>
+<p>The limits in the table below are applied for every Apex transaction. In some cases, when the limits vary depending on whether the transaction is synchronous or asynchronous, they are indicated in separate columns.</p>
+<figure >
+<table >
+<tbody>
+<tr>
+<td><strong>Overview</strong></td>
+<td><strong>Governor Limits for Synchronous Transactions</strong></td>
+<td><strong>Governor Limits for Asynchronous Transactions</strong></td>
+</tr>
+<tr>
+<td>SOQL queries issued (total number)</td>
+<td>100</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Records retrieved by SOQL queries&nbsp; (total number)</td>
+<td colspan="2">50000</td>
+</tr>
+<tr>
+<td>Records retrieved by Database.getQueryLocator&nbsp; (total number)</td>
+<td colspan="2">10000</td>
+</tr>
+<tr>
+<td>SOSL queries issued (total number)</td>
+<td colspan="2">20</td>
+</tr>
+<tr>
+<td>Records retrieved by one SOSL query (total number)</td>
+<td colspan="2">2000</td>
+</tr>
+<tr>
+<td>DML statements issued (total number)</td>
+<td colspan="2">150</td>
+</tr>
+<tr>
+<td>Records processed as a result of DML statements, Approval.process, or database.emptyRecycleBin (total number)</td>
+<td colspan="2">10000</td>
+</tr>
+<tr>
+<td>Stack depth total for any Apex invocation that recursively fires triggers because of insert, update, or delete statements</td>
+<td colspan="2">16</td>
+</tr>
+<tr>
+<td>Callouts (HTTP requests or web services calls) per transaction&nbsp; (total number)&nbsp;</td>
+<td colspan="2">100</td>
+</tr>
+<tr>
+<td>Max. cumulative timeout for all callouts (HTTP requests or Web services calls) per transaction</td>
+<td colspan="2">120 sec.</td>
+</tr>
+<tr>
+<td>Max. number of methods with the future annotation allowed per Apex invocation</td>
+<td>50</td>
+<td>0 in batch and future contexts; 1 in queueable context</td>
+</tr>
+<tr>
+<td>Max. number of Apex jobs added to the queue with System.enqueueJob</td>
+<td>50</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Allowed sendEmail methods (total number)</td>
+<td>10</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Heap size total</td>
+<td>6 MB</td>
+<td>12 MB</td>
+</tr>
+<tr>
+<td>Max. CPU time on the Salesforce servers</td>
+<td>10 thousand milliseconds.</td>
+<td>60 thousand milliseconds.</td>
+</tr>
+<tr>
+<td>Max. execution time per Apex transaction</td>
+<td colspan="2">10 min.</td>
+</tr>
+<tr>
+<td>Max. number of push notification method calls allowed per Apex transaction</td>
+<td colspan="2">10</td>
+</tr>
+<tr>
+<td>Max. number of push notifications that can be sent in each push notification method call</td>
+<td colspan="2">2000</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<h3 id="h4-2-2"><span style="color: #008000;">Per-Transaction Certified Managed Package Limits</span></h3>
+<p>As stated earlier, such limits are applied to third-party-developed packages installed from the AppExchange. Certified packages have their own cumulative cross-namespace limits applied; browse details on them in the table below.</p>
+<figure  >
+<table>
+<tbody>
+<tr>
+<td><strong>Overview</strong></td>
+<td><strong>Governor Limit</strong></td>
+</tr>
+<tr>
+<td>SOQL queries issued (total number)</td>
+<td>1100</td>
+</tr>
+<tr>
+<td>Records retrieved by Database.getQueryLocator (total number)</td>
+<td>110000</td>
+</tr>
+<tr>
+<td>SOSL queries issued (total number)</td>
+<td>220</td>
+</tr>
+<tr>
+<td>DML statements issued (total number)</td>
+<td>1650</td>
+</tr>
+<tr>
+<td>Governor Limits in Salesforce for the total number of callouts (HTTP requests or web services calls) per transaction</td>
+<td>1100</td>
+</tr>
+<tr>
+<td>SendEmail methods allowed (total number)</td>
+<td>110</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<h3 id="h4-2-3"><span style="color: #008000;">Lightning Platform Apex Limits</span></h3>
+<p>The following governor limits in Salesforce refer to the limits that are handled by the platform:</p>
+<figure  >
+<table>
+<tbody>
+<tr>
+<td><strong>Overview</strong></td>
+<td><strong>Governor Limit</strong></td>
+</tr>
+<tr>
+<td>Max. number of asynchronous Apex method executions (these include Batch Apex Governor Limits in Salesforce, future methods, Queueable Apex, and scheduled Apex) for every 24-hour period</td>
+<td>250,000 or the number of user licenses in your org multiplied by 200, whichever is greater</td>
+</tr>
+<tr>
+<td>Number of synchronous concurrent transactions for long-running transactions (which take more than 5 sec per org.)</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Max. number of concurrently scheduled Apex classes</td>
+<td>100 (note that for the Developer Edition, the limit is 5)</td>
+</tr>
+<tr>
+<td>Max. number of &ldquo;Holding&rdquo; status batch Apex jobs in an Apex flex queue</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Max. number of batch Apex jobs queued or active concurrently</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Max. number of batch Apex job start method concurrent executions</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Max. number of batch jobs that can be submitted in a running test</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Max. number of test classes that can be queued within 24 hours (not applicable to Developer Edition)</td>
+<td>The greater of 500 or 10 multiplied by the number of test classes in the org</td>
+</tr>
+<tr>
+<td>Max. number of test classes that can be queued per 24-hour period (sandbox and Developer Edition orgs)</td>
+<td>The greater of 500 or 20 multiplied by the number of test classes in the org</td>
+</tr>
+<tr>
+<td>Max. number of query cursors open concurrently per user</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Max. number of query cursors open concurrently per user for the Batch Apex start method</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Max. number of query cursors open concurrently per user for the Batch Apex execute and finish methods</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<h3 id="h4-2-4"><span style="color: #008000;">Static Apex Limits</span></h3>
+<p>The following table on static Apex limits collects the extra restrictions regarding Apex callouts, queries, records, and when there&rsquo;s more than one transaction.</p>
+<figure  >
+<table>
+<tbody>
+<tr>
+<td><strong>Overview</strong></td>
+<td><strong>Governor Limit</strong></td>
+</tr>
+<tr>
+<td>Default timeout of callouts (HTTP requests or Web services calls) in a transaction</td>
+<td>10 sec.</td>
+</tr>
+<tr>
+<td>Max. size of callout request or response (HTTP request or Web services call)</td>
+<td>6 MB for synchronous Apex | 12 MB for asynchronous Apex</td>
+</tr>
+<tr>
+<td>Max. SOQL query run time prior to transaction cancellation by Salesforce</td>
+<td>120 sec.</td>
+</tr>
+<tr>
+<td>Max. number of class and trigger code units in Apex deployment</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>Batch size of Apex trigger</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Batch size for loop list</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Max. record number returned for a Batch Apex query in Database.QueryLocator</td>
+<td>50 000 000</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<h3 id="h4-2-5"><span style="color: #008000;">Size-Specific Apex Limits</span></h3>
+<p>The limits in the following table restrict the sizes indicated within the Apex code, including the number of characters and method size.</p>
+<figure  >
+<table>
+<tbody>
+<tr>
+<td><strong>Overview</strong></td>
+<td><strong>Governor Limit</strong></td>
+</tr>
+<tr>
+<td>Max. number of characters for a class</td>
+<td>1 000 000</td>
+</tr>
+<tr>
+<td>Max. number of characters for a trigger</td>
+<td>1 000 000</td>
+</tr>
+<tr>
+<td>Max. amount of code used by all Apex code in an org</td>
+<td>6 MB</td>
+</tr>
+<tr>
+<td>Method size limit&nbsp;</td>
+<td>65,535 bytecode instructions in compiled form</td>
+</tr>
+</tbody>
+</table>
+</figure>
+      </div>
+	  <!-- Scroll-to-top button -->
+  <button id="scrollToTopBtn" class="btn btn-primary scroll-to-top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+		</div>
+		  
+    <script>
+			// Function to show or hide the scroll-to-top button
+			function toggleScrollToTopButton() {
+			  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				scrollToTopBtn.style.display = "block";
+			  } else {
+				scrollToTopBtn.style.display = "none";
+			  }
+			}
+		  
+			// Function to scroll to the top of the page
+			function scrollToTop() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+		  
+			// Add a scroll event listener to toggle the button visibility
+			window.onscroll = function () {
+			  toggleScrollToTopButton();
+			};
+		  
+			// Add a click event listener to the button to scroll to the top
+			var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+			if (scrollToTopBtn) {
+			  scrollToTopBtn.addEventListener("click", function () {
+				scrollToTop();
+			  });
+			}
+		  </script>
+		  
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
