@@ -87,9 +87,41 @@
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
         <h2 class="mb-4">Best Practises</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		
+        <h1 class="entry-title"><span style="color: #339966;">Salesforce Apex Best Practices</span></h1>
+<ol>
+<li><span style="color: #ff0000;">Bulkify Your Code</span></li>
+<li><span style="color: #ff0000;">Avoid DML/SOQL Queries in Loops</span></li>
+<li><span style="color: #ff0000;">Avoid Hard-coded IDs</span></li>
+<li><span style="color: #ff0000;">Explicitly Declare Sharing Model</span></li>
+<li><span style="color: #ff0000;">Use a Single Trigger per SObject Type</span></li>
+<li><span style="color: #ff0000;">Use SOQL for Loops</span></li>
+<li><span style="color: #ff0000;">Modularize Your Code</span></li>
+<li><span style="color: #ff0000;">Test Multiple Scenarios</span></li>
+<li><span style="color: #ff0000;">Avoid Nested Loops</span></li>
+<li><span style="color: #ff0000;">Have a Naming Convention</span></li>
+<li><span style="color: #ff0000;">Avoid Business Logic in Triggers</span></li>
+<li><span style="color: #ff0000;">Avoid Returning JSON to Lightning Components</span></li>
+</ol>
+<h1 class="entry-title"><span style="color: #339966;">Salesforce Trigger Best Practices</span></h1>
+<ul>
+<li><span style="color: #ff0000;">Test class must start with&nbsp;<strong>@isTest</strong>&nbsp;annotation.</span></li>
+<li><span style="color: #ff0000;"><strong>Focus 90+&nbsp;</strong>: To deploy to production at least&nbsp;<strong>75% code coverage is required.&nbsp;</strong>But always try to focus on 90%+. We should not focus on the percentage of code coverage, We should make sure that every use case should covered including positive, negative,bulk and single record.</span></li>
+<li><span style="color: #ff0000;"><strong>One Assert Statement per method</strong>&nbsp;: Always put&nbsp;<strong>assert statements</strong>&nbsp;for negative and positive tests.</span>
+<ul>
+<li><span style="color: #ff0000;">System.assert(condition, msg)</span></li>
+<li><span style="color: #ff0000;">System.assertEquals(expected, actual, msg)</span></li>
+<li><span style="color: #ff0000;">System.assertNotEquals(expected, actual, msg)</span></li>
+</ul>
+</li>
+<li><span style="color: #ff0000;"><strong>@testSetup</strong>&nbsp;to create test records once in a method and use in every test method in the test class.</span></li>
+<li><span style="color: #ff0000;">Create&nbsp;<strong>TestFactory</strong>&nbsp;class with @isTest annotation to exclude from organization code size limit.</span></li>
+<li><span style="color: #ff0000;"><strong>No SeeAllData=true</strong>&nbsp;: Always use (&nbsp;<strong>seeAllData = false</strong>&nbsp;) at class or method level. User, profile, organization, AsyncApexjob, Corntrigger, RecordType, ApexClass, ApexComponent, ApexPage we can access without (seeAllData=true) .</span></li>
+<li><span style="color: #ff0000;">As apex runs in system mode so the permission and record sharing are not taken into account . So we need to use&nbsp;<strong>System.runAs&nbsp;</strong>to enforce record sharing.</span></li>
+<li><span style="color: #ff0000;">Avoid Using&nbsp;<strong>Hard Coding Ids</strong>&nbsp;anywhere in test Class or any apex class</span></li>
+<li><span style="color: #ff0000;"><strong>Governor limits</strong>&nbsp;: Using&nbsp;<code>Test.startTest()</code>gives developers a new set of governor limits for the act stage of their test.&nbsp;<code>Test.stopTest()</code>&nbsp;then allows them to return to their previous governor limits. Test classes must test for Governor Limits using Limits Class</span></li>
+<li><span style="color: #ff0000;"><strong>Testing Exception&nbsp;:&nbsp;</strong>Any exceptions that are caught in the production methods should be tested by feeding the test data that throws exception. Exception Type and error message should be asserted</span></li>
+<li><span style="color: #ff0000;"><strong>Exercise bulk trigger functionality&nbsp;&ndash;&nbsp;</strong>use at least 200 records in your tests</span></li>
+</ul>
       </div>
 	  <!-- Scroll-to-top button -->
   <button id="scrollToTopBtn" class="btn btn-primary scroll-to-top">
