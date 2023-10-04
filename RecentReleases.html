@@ -16,6 +16,22 @@
 			  max-height: calc(100vh - 70px); /* Adjust the value (70px) as needed */
 			  overflow-y: auto;
 			}
+			#blink_text{	
+				animation-name:blink;
+				width:280px;
+				animation-duration:2s;
+				animation-timing-function:ease-in;
+				animation-iteration-count:Infinite;
+				}
+			  
+			  @keyframes blink{
+				0%{color:red;}
+				20%{color:greenyellow;}
+				60%{color:blue;}
+				80%{color:greenyellow;}
+				100%{color:red;}
+			  }
+			  
 		  </style>
         <link rel="stylesheet" href="assets/plugins/highlight/styles/monokai-sublime.min.css">
 		
@@ -85,45 +101,93 @@
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
         <h2 class="mb-4">Recent Releases</h2>
-        <h2 id="h-salesforce-summer-23-features-for-admins" class="wp-block-heading joli-heading jtoc-heading"><span style="text-decoration: underline; color: #339966;">Salesforce Summer &rsquo;23 Features For Admins:</span></h2>
-<h3 id="1-quick-actions-on-related-lists-open-beta" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">1. Quick Actions on Related Lists (Open Beta):</span></h3>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;Admins currently have no way to add custom quick actions to the related list and need to add actions on the highlight panel which impacts user experience. You can now use custom quick actions on the related lists and they will be able to configure custom quick actions both on Page Layout Editor and Dynamic Related List in App Builder. Only Create/Update Quick Actions are supported.</p>
-<p><strong>Use Case:&nbsp;</strong>Mass Create Quick Action directly from the Related List Mass Update Quick Action to update e.g. status of more than one case from the Account Related List.&nbsp;</p>
-<h3 id="2-app-clone" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">2. App Clone:</span></h3>
-<p>App clone is new enhancements in App Manager. Admins often need to create custom apps for different departments and business units in their organizations with similar use cases. These apps may have a few differences but creating them from scratch can be time consuming and inefficient.</p>
-<p id="solution-how-to-configure" class="wp-block-heading joli-heading jtoc-heading"><strong>How To Configure:</strong>&nbsp; Within the App Manager, select a custom app and click on the drop-down to Clone.</p>
-<h3 id="3-set-field-level-security-on-permission-sets-instead-of-profiles" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">3. Set Field Level Security on Permission Sets instead of Profiles:</span></h3>
-<p>Admins can now easily set FLS on permission sets during field creation or edit making it easier to use permission sets over profiles.</p>
-<h3 id="4-dynamic-forms-on-mobile" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">4. Dynamic Forms on Mobile:</span></h3>
-<p>Addresses one of the top voted ideas on IdeaExchange! Most of the customers have highlighted the need to provide a simpler experience for end users while on the go.</p>
-<p>Now Dynamic form is available on an opt-in basis from the mobile settings area in the Setup menu. Once opted in, enable the feature from Lightning App Builder. For pages that have already been upgraded to Dynamic Forms, remove the Record Detail &ndash; Mobile component from the page, and forms will be rendered on mobile. For pages that have not yet been upgraded, the legacy component will no longer be added to the page upon upgrade, and Dynamic Forms on mobile will work without additional configuration.</p>
-<h3 id="5-post-http-callouts-beta" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">5. POST HTTP Callouts (Beta):</span></h3>
-<p>Send Salesforce Data to an External Server Without Code via HTTP Callout. With Post HTTP Callout you can declaratively add Salesforce data to external systems to reduce the dependency on developers.</p>
-<p>You can create a reusable HTTP Callout action and use POST to perform a callout that adds resource to any HTTP-based API. To set Request Body, create resource and select Apex-defined type that parses the action&rsquo;s Body. Then add an Assignment element, select the output variable from the previous step and map each body field.</p>
-<p>&nbsp;</p>
-<h2 id="salesforce-summer-23-features-for-developer" class="wp-block-heading joli-heading jtoc-heading"><span style="text-decoration: underline; color: #339966;">Salesforce Summer &rsquo;23 Features For Developer:</span></h2>
-<h3 id="1-lwc-calendar" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">1. LWC Calendar:</span></h3>
-<p>Calendar Home is now a Lightning Web Component. Limitations in the number of events viewed on the calendar existed, and the way events were displayed was difficult to navigate. Limitations in the Aura implementation of calendar prevented new features from being implemented effectively.</p>
-<h4 id="how-to-configure_1" class="wp-block-heading joli-heading jtoc-heading">How To Configure</h4>
-<p>Navigate to Activity Settings in Setup and enable &ldquo;Use Lightning Web Components for Calendar Home&rdquo; to turn on the new Calendar experience.</p>
-<h3 id="2-access-labels-in-apex-dynamically" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">2. Access Labels in Apex Dynamically:</span></h3>
-<p>Use the&nbsp;<code>System.Label.get(namespace, label, language)</code>&nbsp;method to get a custom label, optionally specifying a language. The feature now allows dynamic resolution of label names at run time, including overriding the user&rsquo;s current language if a translation exists for the requested language. Previously, retrieving labels required compile-time knowledge of the label API name.</p>
-<pre class="wp-block-code"><code>String strLabel = System.Label.get('namespace','LableName','hi');</code></pre>
-<h3 id="3-manage-dml-exceptions-in-user-mode-database-operations" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">3. Manage DML Exceptions in User-Mode Database Operations:</span></h3>
-<p>Database methods for user-mode DML operations generate the correct DMLException. Previously they generated a SecurityException. This behavior is versioned, and the correct exception is generated in API version 58.0 and later.</p>
-<pre class="wp-block-code"><code>Account acct = new Account();
+		<a href="https://salesforce.vidyard.com/watch/WGTkdaJrEirvHuW3ERTQPN"><span class="fa fa-video-camera mr-3"></span> See the video Here</a>
+		<a id = "blink_text" href = "images/salesforce_winter24_release_notes.pdf" download >  
+			<span class="fa fa-download" style="font-size:24px;color:red" title="Download The Release Notes Document here"> Download</span>    
+		   </a>
+		<h4 id="h-salesforce-summer-23-features-for-admins" class="wp-block-heading joli-heading jtoc-heading"><span style="text-decoration: underline; color: #339966;">Salesforce Winter &rsquo;24 Features For Admins:</span></h4>
+<ol>
+	<li><span style="color: #ff0000;">Dynamic Forms Are Avalable in mobile</span></li>
+	<li><span style="color: #ff0000;">View Summery(Beta ) ----&gt;Permision set</span></li>
+	<li><span style="color: #ff0000;">Mass Quick Actions on related list</span></li>
+	<li><span style="color: #ff0000;">Custom Error messages on record trigger flow&nbsp;</span></li>
+	<li><span style="color: #ff0000;">Change owner of Dashboard in Dashboard</span></li>
+	<li><span style="color: #ff0000;">Enhanced Formula screen in Reports</span></li>
+	<li><span style="color: #ff0000;">Lightning apps can be cloned</span></li>
+</ol>
+<h4 id="salesforce-summer-23-features-for-developer" class="wp-block-heading joli-heading jtoc-heading"><span style="text-decoration: underline; color: #339966;">Salesforce Winter &rsquo;23 Features For Developer:</span></h4>
+<ol>
+	<li><span style="color: #ff0000;">Specify Custom Access Using PermissionSets for User Mode Database Operations(Developer Preview)</span></li>
+	<li><span style="color: #ff0000;">getSalesforceBaseUrl() Method Is Being Deprecated</span></li>
+	<li><span style="color: #ff0000;">LWC Calendar</span></li>
+	<li><span style="color: #ff0000;">Access Labels in Apex Dynamically</span></li>
+	<li><span style="color: #ff0000;">Manage DML Exceptions in User-Mode Database Operations</span></li>
+	<pre>
+		<code>Account acct = new Account();
 try {
-insert as user acct;
-Assert.fail('DmlException expected due to missing Name field');
+	insert as user acct;
+	Assert.fail('DmlException expected due to missing Name field');
 } catch (Exception ex) {
- Assert.isTrue(ex.getMessage().contains('REQUIRED_FIELD_MISSING'));
-// This assertion fails with API versions below v58.0 because a SecurityException is generated
-         Assert.isInstanceOfType(ex, DmlException.class);
+	Assert.isTrue(ex.getMessage().contains('REQUIRED_FIELD_MISSING'));
+			// This assertion fails with API versions below v58.0 because a SecurityException is generated
+			Assert.isInstanceOfType(ex, DmlException.class);
+}
+		</code>
+	</pre>
+	<li><span style="color: #ff0000;">Quickly Create Full Sandboxes</span></li>
+	<li><span style="color: #ff0000;">Use the Iterable Interface with Set Type</span></li>
+	<pre>
+		<code>Set&lt;String&gt; letters = new Set&lt;String&gt;{'a','b','c','d'};
+System.debug(String.join(letters, '...'));
+		</code>
+	</pre>
+	<li><span style="color: #ff0000;">Query Five Levels of Parent-to-Child Relationships in SOQL Queries</span></li>
+	<pre>
+		<code>SELECT Name,
+	(SELECT LastName,
+		(SELECT AssetLevel,
+			(SELECT Description,
+				(SELECT LineItemNumber FROM WorkOrderLineItems)    
+			FROM WorkOrders)    
+		FROM Assets)    
+	FROM Contacts)    
+FROM Account
+		</code>
+	</pre>
+	<li><span style="color: #ff0000;">Manage Toast Notifications with a Toast Container (Beta) </span></li>
+	<pre>
+		<code>// c/myApp.js
+import { LightningElement } from 'lwc';
+import ToastContainer from 'lightning/toastContainer';
 
-}</code></pre>
-<h3 id="4-quickly-create-full-sandboxes" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">4. Quickly Create Full Sandboxes:</span></h3>
-<p>The Quick Create technology enhances the speed at which Full sandboxes are created or refreshed. Teams can focus more time on developing and testing solutions, and less time waiting for sandboxes to be built.</p>
-      </div>
+export default class MyApp extends LightningElement {
+	connectedCallback() {
+		const toastContainer = ToastContainer.instance();
+		toastContainer.maxShown = 5;
+		toastContainer.toastPosition = 'top-right';
+	}
+}
+		</code>
+	</pre>
+	
+</ol>
+<h4 id="salesforce-summer-23-features-for-developer" class="wp-block-heading joli-heading jtoc-heading"><span style="text-decoration: underline; color: #339966;">Salesforce Winter &rsquo;23 Features:</span></h4>
+<ol>
+	<li><span style="color: #ff0000;">Recently Salesforce launches its Devops center</span></li>
+	<li><span style="color: #ff0000;">Full Apex Auto-Complete in DeveloperConsole is Being Retired</span></li>
+
+</ol>
+
+
+
+
+
+
+
+
+
+
+</div>
 	  <!-- Scroll-to-top button -->
   <button id="scrollToTopBtn" class="btn btn-primary scroll-to-top">
     <i class="fa fa-arrow-up"></i>
@@ -160,6 +224,10 @@ Assert.fail('DmlException expected due to missing Name field');
 			  });
 			}
 		  </script>
+		  <script>/*<![CDATA[*/
+			/*! Pre code with copy button v2.0 | (c) anutrickz | https://anutrickz.blogspot.com/ */
+			var codeBlocks=document.querySelectorAll("pre");codeBlocks.forEach(function(t){var o=document.createElement("button");o.className="at_copy",o.type="button",o.ariaLabel="Copy code to clipboard",o.innerText="Copy",t.append(o),o.addEventListener("click",function(){var e=t.querySelector("code").innerText.trim();window.navigator.clipboard.writeText(e),o.innerText="Copied";setTimeout(function(){o.innerText="Copy"},1e3)})});
+			/*]]>*/</script>
     <script src="cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>	
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
     <script>hljs.highlightAll();</script>	  
