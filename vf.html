@@ -36,31 +36,31 @@
 		  		<h1><a href="index.html" class="logo">Salesforce <span>Interview Preparation</span></a></h1>
 	        <ul class="list-unstyled components mb-5">
 	          <li >
-	            <a href="index.html"><span class="fa fa-home mr-3"></span> Home</a>
+	            <a href="index.html"><span class="fa fa-home mr-3"></span>Home</a>
 	          </li>
 	          <li >
-	              <a href="admin.html"><span class="fa fa-user mr-3"></span> Admin</a>
+	              <a href="admin.html"><span class="fa fa-user mr-3"></span>Admin</a>
 	          </li>
 	          <li>
-              <a href="apex.html"><span class="fa fa-briefcase mr-3"></span> Apex</a>
+              <a href="apex.html"><span class="fa fa-briefcase mr-3"></span>Apex</a>
 	          </li>
 	          <li >
-              <a href="aura.html"><span class="fa fa-sticky-note mr-3"></span> AURA</a>
+              <a href="aura.html"><span class="fa fa-sticky-note mr-3"></span>AURA</a>
 	          </li>
 	          <li>
-              <a href="lwc.html"><span class="fa fa-suitcase mr-3"></span> LWC</a>
+              <a href="lwc.html"><span class="fa fa-suitcase mr-3"></span>LWC</a>
 	          </li>
 	          <li>
-              <a href="integration.html"><span class="fa fa-cogs mr-3"></span> Integration</a>
+              <a href="integration.html"><span class="fa fa-cogs mr-3"></span>Integration</a>
 	          </li>
 	          <li>
-              <a href="triggers.html"><span class="fa  fa-terminal mr-3"></span> Triggers</a>
+              <a href="TriggerTheory.html"><span class="fa  fa-terminal mr-3"></span>Triggers</a>
 	          </li>
 			  <li>
-				<a href="ExtraQS.html"><span class="fa  fa-graduation-cap mr-3"></span> Extra Questions</a>
+				<a href="ExtraQS.html"><span class="fa  fa-graduation-cap mr-3"></span>Extra Questions</a>
 				</li>
 				<li class="active">
-				<a href="ExtraTopics.html"><span class="fa   fa-external-link-square mr-3"></span> More Topics</a>
+				<a href="ExtraTopics.html"><span class="fa   fa-external-link-square mr-3"></span>More Topics</a>
 			</li>
 	        </ul>
 
@@ -87,45 +87,155 @@
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
         <h2 class="mb-4">VF Questions</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		
+        <ol>
+			<li>
+			<p><strong><span style="color: #ff0000;">What is Visualforce in Salesforce, and why is it used?</span></strong></p>
+			<ul>
+			<li>Visualforce is a framework in Salesforce for creating custom user interfaces, allowing developers to build pages and components. It is used to design and control the look and feel of Salesforce applications.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">What is the primary purpose of a Visualforce page?</span></strong></p>
+			<ul>
+			<li>The primary purpose of a Visualforce page is to define the layout and behavior of a user interface in Salesforce, often used to display, edit, and interact with data stored in Salesforce.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">Can you explain the structure of a Visualforce page?</span></strong></p>
+			<ul>
+			<li>A Visualforce page typically includes HTML-like markup mixed with Visualforce-specific tags. It can have standard HTML, Visualforce components, and Apex code to control its functionality.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">What is the difference between a Visualforce page and a Lightning component in Salesforce?</span></strong></p>
+			<ul>
+			<li>Visualforce pages are based on older technology and primarily used for rendering pages and forms, while Lightning components are more modern and modular, designed for building dynamic, interactive user interfaces.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">How can you display data from a Salesforce object on a Visualforce page?</span></strong></p>
+			<ul>
+			<li>You can use Visualforce's standard or custom controllers to fetch and display data from Salesforce objects. Common methods include using <code>&lt;apex:pageBlockTable&gt;</code>, <code>&lt;apex:dataTable&gt;</code>, or custom queries in Apex.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">What are the different standard controllers available in Visualforce, and when would you use them?</span></strong></p>
+			<ul>
+			<li>Standard controllers like <code>&lt;apex:page standardController="ObjectName"&gt;</code> can be used with objects like Account, Contact, or Opportunity to perform basic operations like viewing and editing records.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">How do you create a custom controller for a Visualforce page?</span></strong></p>
+			<ul>
+			<li>You create a custom controller by writing an Apex class and associating it with a Visualforce page using the <code>controller</code> attribute in the <code>&lt;apex:page&gt;</code> tag.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">What are Visualforce components, and how are they different from standard Visualforce tags?</span></strong></p>
+			<ul>
+			<li>Visualforce components are reusable units of Visualforce markup that encapsulate behavior or functionality. They can be more complex and modular than standard tags and are created using the <code>&lt;apex:component&gt;</code> tag.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">Explain the usage of the <code>&lt;apex:page&gt;</code> tag and some of its important attributes.</span></strong></p>
+			<ul>
+			<li>The <code>&lt;apex:page&gt;</code> tag defines a Visualforce page. Important attributes include <code>standardController</code>, <code>extensions</code>, <code>title</code>, <code>sidebar</code>, <code>showHeader</code>, and more to control page behavior.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">How do you pass data from a Visualforce page to an Apex controller, and vice versa?</span></strong></p>
+			<ul>
+			<li>Data can be passed from the page to the controller using Visualforce components like <code>&lt;apex:inputText&gt;</code>, and from the controller to the page using variables and getter methods in the controller class.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">What is the purpose of the <code>&lt;apex:form&gt;</code> tag in Visualforce, and when is it used?</span></strong></p>
+			<ul>
+			<li>The <code>&lt;apex:form&gt;</code> tag is used to create a form that contains input elements and allows users to submit data to the server. It's crucial when performing data operations on the server.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">How do you apply styling to Visualforce pages using CSS?</span></strong></p>
+			<ul>
+			<li>You can include CSS within <code>&lt;style&gt;</code> tags or link to an external stylesheet in the <code>&lt;apex:page&gt;</code> tag. CSS classes can be applied to Visualforce components and elements for styling.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">What are the different ways to include JavaScript in a Visualforce page?</span></strong></p>
+			<ul>
+			<li>JavaScript can be added within <code>&lt;script&gt;</code> tags in the Visualforce page or linked from external scripts. You can also use JavaScript libraries like jQuery.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">How can you create a custom Visualforce component and reuse it across multiple pages?</span></strong></p>
+			<ul>
+			<li>To create a custom component, you use the <code>&lt;apex:component&gt;</code> tag. Once created, you can include it in other Visualforce pages using <code>&lt;c:componentName&gt;</code>.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">What is the purpose of the <code>&lt;apex:actionFunction&gt;</code> tag, and how does it work?</span></strong></p>
+			<ul>
+			<li><code>&lt;apex:actionFunction&gt;</code> allows you to call an Apex method from JavaScript, enabling asynchronous operations on a Visualforce page without a full page reload.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">Explain the use of the <code>&lt;apex:pageBlock&gt;</code> and <code>&lt;apex:pageBlockSection&gt;</code> tags in Visualforce.</span></strong></p>
+			<ul>
+			<li><code>&lt;apex:pageBlock&gt;</code> is used to group related fields and sections on a page. <code>&lt;apex:pageBlockSection&gt;</code> is used to create sections within a page block, providing organization and styling.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">How can you implement pagination on a Visualforce page displaying a list of records?</span></strong></p>
+			<ul>
+			<li>Pagination can be achieved by using <code>&lt;apex:pageBlockTable&gt;</code> or <code>&lt;apex:dataTable&gt;</code> along with <code>&lt;apex:pageBlockSectionItem&gt;</code> and a custom controller to manage the data to be displayed.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">What are the best practices for optimizing Visualforce page performance?</span></strong></p>
+			<ul>
+			<li>Best practices include minimizing the use of server calls, using lazy loading, optimizing queries, and reducing the size of the view state by using transient variables.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">Describe the process of rendering Visualforce pages for mobile devices using Salesforce Mobile.</span></strong></p>
+			<ul>
+			<li>Salesforce Mobile enables Visualforce pages to be responsive by default. Developers should focus on creating pages that work well on both desktop and mobile, utilizing mobile-friendly CSS and layouts.</li>
+			</ul>
+			</li>
+			<li>
+			<p><strong><span style="color: #ff0000;">What is the difference between a Standard Controller and a Custom Controller in Visualforce?</span></strong></p>
+			<ul>
+			<li>A Standard Controller is provided by Salesforce and is used for standard objects, while a Custom Controller is an Apex class that you create to handle custom logic for a Visualforce page. Custom Controllers provide more flexibility for custom functionality.</li>
+			</ul>
+			</li>
+			</ol>
       </div>
 	  <!-- Scroll-to-top button -->
   <button id="scrollToTopBtn" class="btn btn-primary scroll-to-top">
-    <i class="fa fa-arrow-up"></i>
-  </button>
+		<i class="fa fa-arrow-up"></i>
+	  </button>
 		</div>
 		  
     <script>
-			// Function to show or hide the scroll-to-top button
-			function toggleScrollToTopButton() {
-			  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			// Get the button element
+			var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+		  
+			// Get the content area element
+			var contentArea = document.getElementById("content");
+		  
+			// When the content area is scrolled down, show the button
+			contentArea.addEventListener("scroll", function() {
+			  if (contentArea.scrollTop > 20) {
 				scrollToTopBtn.style.display = "block";
 			  } else {
 				scrollToTopBtn.style.display = "none";
 			  }
-			}
+			});
 		  
-			// Function to scroll to the top of the page
-			function scrollToTop() {
-			  document.body.scrollTop = 0;
-			  document.documentElement.scrollTop = 0;
-			}
-		  
-			// Add a scroll event listener to toggle the button visibility
-			window.onscroll = function () {
-			  toggleScrollToTopButton();
-			};
-		  
-			// Add a click event listener to the button to scroll to the top
-			var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-			if (scrollToTopBtn) {
-			  scrollToTopBtn.addEventListener("click", function () {
-				scrollToTop();
-			  });
-			}
+			// When the user clicks on the button, scroll to the top of the content area
+			scrollToTopBtn.addEventListener("click", function() {
+			  contentArea.scrollTop = 0;
+			});
 		  </script>
 		  
     <script src="js/jquery.min.js"></script>

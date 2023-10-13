@@ -35,31 +35,31 @@
 		  		<h1><a href="index.html" class="logo">Salesforce <span>Interview Preparation</span></a></h1>
 	        <ul class="list-unstyled components mb-5">
 	          <li >
-	            <a href="index.html"><span class="fa fa-home mr-3"></span> Home</a>
+	            <a href="index.html"><span class="fa fa-home mr-3"></span>Home</a>
 	          </li>
 	          <li >
-	              <a href="admin.html"><span class="fa fa-user mr-3"></span> Admin</a>
+	              <a href="admin.html"><span class="fa fa-user mr-3"></span>Admin</a>
 	          </li>
 	          <li>
-              <a href="apex.html"><span class="fa fa-briefcase mr-3"></span> Apex</a>
+              <a href="apex.html"><span class="fa fa-briefcase mr-3"></span>Apex</a>
 	          </li>
 	          <li>
-              <a href="aura.html"><span class="fa fa-sticky-note mr-3"></span> AURA</a>
+              <a href="aura.html"><span class="fa fa-sticky-note mr-3"></span>AURA</a>
 	          </li>
 	          <li>
-              <a href="lwc.html"><span class="fa fa-suitcase mr-3"></span> LWC</a>
+              <a href="lwc.html"><span class="fa fa-suitcase mr-3"></span>LWC</a>
 	          </li>
 	          <li>
-              <a href="integration.html"><span class="fa fa-cogs mr-3"></span> Integration</a>
+              <a href="integration.html"><span class="fa fa-cogs mr-3"></span>Integration</a>
 	          </li>
 	          <li>
-              <a href="triggers.html"><span class="fa  fa-terminal mr-3"></span> Triggers</a>
+              <a href="TriggerTheory.html"><span class="fa  fa-terminal mr-3"></span>Triggers</a>
 	          </li>
 			  <li>
-				<a href="ExtraQS.html"><span class="fa  fa-graduation-cap mr-3"></span> Extra Questions</a>
+				<a href="ExtraQS.html"><span class="fa  fa-graduation-cap mr-3"></span>Extra Questions</a>
 				</li>
 				<li  class="active">
-					<a href="ExtraTopics.html"><span class="fa  fa-external-link-square mr-3"></span> More Topics</a>
+					<a href="ExtraTopics.html"><span class="fa  fa-external-link-square mr-3"></span>More Topics</a>
 					</li>
 	        </ul>
 
@@ -605,39 +605,30 @@
 <p style="text-align: justify;"><span style="font-size:12pt;">The main benefit of Files Connect is that it enhances collaboration and streamlines the workflow by bringing external file repositories directly into the Salesforce environment. Users can attach external files to records, collaborate on files, and search for content across both Salesforce and the connected repositories seamlessly.</span></p></div>
 	  <!-- Scroll-to-top button -->
   <button id="scrollToTopBtn" class="btn btn-primary scroll-to-top">
-    <i class="fa fa-arrow-up"></i>
-  </button>
+		<i class="fa fa-arrow-up"></i>
+	  </button>
 		</div>
 
     <script>
-			// Function to show or hide the scroll-to-top button
-			function toggleScrollToTopButton() {
-			  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			// Get the button element
+			var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+		  
+			// Get the content area element
+			var contentArea = document.getElementById("content");
+		  
+			// When the content area is scrolled down, show the button
+			contentArea.addEventListener("scroll", function() {
+			  if (contentArea.scrollTop > 20) {
 				scrollToTopBtn.style.display = "block";
 			  } else {
 				scrollToTopBtn.style.display = "none";
 			  }
-			}
+			});
 		  
-			// Function to scroll to the top of the page
-			function scrollToTop() {
-			  document.body.scrollTop = 0;
-			  document.documentElement.scrollTop = 0;
-			}
-		  
-			// Add a scroll event listener to toggle the button visibility
-			window.onscroll = function () {
-			  toggleScrollToTopButton();
-			};
-		  
-			// Add a click event listener to the button to scroll to the top
-			var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-			if (scrollToTopBtn) {
-			  scrollToTopBtn.addEventListener("click", function () {
-				scrollToTop();
-			  });
-			}
+			// When the user clicks on the button, scroll to the top of the content area
+			scrollToTopBtn.addEventListener("click", function() {
+			  contentArea.scrollTop = 0;
+			});
 		  </script>
 		  
     <script src="js/jquery.min.js"></script>

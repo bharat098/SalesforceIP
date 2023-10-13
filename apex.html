@@ -36,31 +36,31 @@
 		  		<h1><a href="index.html" class="logo">Salesforce <span>Interview Preparation</span></a></h1>
 	        <ul class="list-unstyled components mb-5">
 	          <li >
-	            <a href="index.html"><span class="fa fa-home mr-3"></span> Home</a>
+	            <a href="index.html"><span class="fa fa-home mr-3"></span>Home</a>
 	          </li>
 	          <li >
-	              <a href="admin.html"><span class="fa fa-user mr-3"></span> Admin</a>
+	              <a href="admin.html"><span class="fa fa-user mr-3"></span>Admin</a>
 	          </li>
 	          <li class="active">
-              <a href="apex.html"><span class="fa fa-briefcase mr-3"></span> Apex</a>
+              <a href="apex.html"><span class="fa fa-briefcase mr-3"></span>Apex</a>
 	          </li>
 	          <li>
-              <a href="aura.html"><span class="fa fa-sticky-note mr-3"></span> AURA</a>
+              <a href="aura.html"><span class="fa fa-sticky-note mr-3"></span>AURA</a>
 	          </li>
 	          <li>
-              <a href="lwc.html"><span class="fa fa-suitcase mr-3"></span> LWC</a>
+              <a href="lwc.html"><span class="fa fa-suitcase mr-3"></span>LWC</a>
 	          </li>
 	          <li>
-              <a href="integration.html"><span class="fa fa-cogs mr-3"></span> Integration</a>
+              <a href="integration.html"><span class="fa fa-cogs mr-3"></span>Integration</a>
 	          </li>
 	          <li>
-              <a href="triggers.html"><span class="fa  fa-terminal mr-3"></span> Triggers</a>
+              <a href="TriggerTheory.html"><span class="fa  fa-terminal mr-3"></span>Triggers</a>
 	          </li>
 			  <li>
-				<a href="ExtraQS.html"><span class="fa  fa-graduation-cap mr-3"></span> Extra Questions</a>
+				<a href="ExtraQS.html"><span class="fa  fa-graduation-cap mr-3"></span>Extra Questions</a>
 				</li>
 				<li>
-					<a href="ExtraTopics.html"><span class="fa  fa-external-link-square mr-3"></span> More Topics</a>
+					<a href="ExtraTopics.html"><span class="fa  fa-external-link-square mr-3"></span>More Topics</a>
 					</li>
 	        </ul>
 
@@ -950,19 +950,19 @@
 </ul>
 <p><strong><span style="color: #ff0000;">108. A basic batch class Example to update the account name</span></strong></p>
 <pre>
-	<code>global class batchExample implements Database.Batchable<sObject> {
+	<code>global class batchExample implements Database.Batchable&lt;sObject&gt; {
 	global Database.QueryLocator start(Database.BatchableContext BC) {
 		// collect the batches of records or objects to be passed to execute
 		String query = 'SELECT Id,Name FROM Account';
 		return Database.getQueryLocator(query);
 	}
 	
-	global void execute(Database.BatchableContext BC, List<Account> accList) {
+	global void execute(Database.BatchableContext BC, List&lt;Account&gt; accList) {
 		// process each batch of records
 		for(Account acc : accList)
 		{        
 			// Update the Account Name 
-			acc.Name = acc.Name + 'Webkul';
+			acc.Name = acc.Name + 'InterviewPreparation';
 		}
 		try {
 			// Update the Account Record
@@ -987,11 +987,110 @@
 	database.executeBatch(be,100);
 	</code>
 </pre>
+<p><strong><span style="color: #ff0000;">109. A basic Queueable class Example to append "InterviewPreparation" at the end of account name</span></strong></p>
+<pre>
+	<code>public class AccountQueueableExample implements Queueable {
+	public List&lt;Account&gt; accList ; 
+	public AccountQueueableExample(List&lt;Account&gt; accList){
+		this.accList = accList ;  
+	}
+	public void execute(QueueableContext context) {
+		for(Account acc :accList){
+			// Update the Account Name 
+			acc.Name = acc.Name + 'InterviewPreparation';
+		}
+		update accList;
+	}
+}
+	</code>
+</pre>
+<strong>Run the job from the execute anonymous with below code</strong>
+<pre>
+	<code>List&lt;Account&gt; accList = [Select Id , Name from Account ];
+		ID jobID = System.enqueueJob(new AccountQueueableExample(accList));
+		System.debug('jobID'+jobID);
+	</code>
+</pre>
+<strong>Test class for the Queueable class</strong>
+<pre>
+	<code>@isTest
+public class AccountQueueableExampleTest {
+	@testSetup
+	static void setup() {
+		List&lt;Account&gt; accounts = new List&lt;Account&gt;();
+		// add 100 accounts
+		for (Integer i = 0; i &lt; 100; i++) {
+			accounts.add(new Account(
+				name='Test Account'+i
+			));
+		}
+		insert accounts;
+	}
+		
+	static testmethod void testQueueable() {
+		// query for test data to pass to queueable class
+		List&lt;Account&gt; accounts = [select id, name from account where name like 'Test Account%'];
+		// Create our Queueable instance
+		AccountQueueableExample accQObj = new AccountQueueableExample(accounts);
+		// startTest/stopTest block to force async processes to run
+		Test.startTest();        
+		System.enqueueJob(accQObj);
+		Test.stopTest();        
+		// Validate the job ran
+		System.assertEquals(100, [select count() from account where Name like = '%sfdcpoint%']);
+	}
+		
+}
+	</code>
+</pre>
+<p><strong><span style="color: #ff0000;">110. Scheduling the apex at 1:53 PM on 7th Dec 2017, for deleting contacts which are created today</span></strong></p>
+<pre>
+	<code>public class Scheduleapex implements schedulable {
+	public void execute(SchedulableContext sc){
+		list&lt;contact&gt; accs=[select id,lastname from contact where createddate=TODAY];
+		delete accs;
+	}
+} 
+	</code>
+</pre>
+<strong>Code to schedule Apex Class</strong>
+<pre>
+	<code>Scheduleapex sa=new Scheduleapex();
+string expression='0 53 13 7 12 ? 2017';
+system.schedule('vipin',expression,sa);
+	</code>
+</pre>
+<p><strong><span style="color: #ff0000;">111. A basic Future class Example </span></strong></p>
+<pre>
+	<code>public class FutureAcc {
+	public void acc(){
+		List&lt;Account&gt; acc=[select id,Email__c,fax,phone from Account where industry='banking'];
+		for(account a:acc){
+			// a.phone='+9999999';
+			a.Email__c='salman@gmail.com';
+			update a;
+		}
+	}
+	@future
+	public static void accs(){
+		List&lt;Account&gt; acc=[select id,Email__c,fax,phone from Account where industry='Education'];
+		for(account a:acc){
+			//a.fax='+911111111';
+			a.Email__c='Test@gmail.com';
+			update a;
+		}
+	}
+	public void accss(){
+		acc();
+		accs();
+	}
+}</code>
+</pre>
 </div>
 	  <!-- Scroll-to-top button -->
   <button id="scrollToTopBtn" class="btn btn-primary scroll-to-top">
-    <i class="fa fa-arrow-up"></i>
-  </button>
+		<i class="fa fa-arrow-up"></i>
+	  </button>
 		</div>
 		<script src="cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
@@ -1001,34 +1100,25 @@
 		var codeBlocks=document.querySelectorAll("pre");codeBlocks.forEach(function(t){var o=document.createElement("button");o.className="at_copy",o.type="button",o.ariaLabel="Copy code to clipboard",o.innerText="Copy",t.append(o),o.addEventListener("click",function(){var e=t.querySelector("code").innerText.trim();window.navigator.clipboard.writeText(e),o.innerText="Copied";setTimeout(function(){o.innerText="Copy"},1e3)})});
 		/*]]>*/</script>
     <script>
-			// Function to show or hide the scroll-to-top button
-			function toggleScrollToTopButton() {
-			  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-			  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			// Get the button element
+			var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+		  
+			// Get the content area element
+			var contentArea = document.getElementById("content");
+		  
+			// When the content area is scrolled down, show the button
+			contentArea.addEventListener("scroll", function() {
+			  if (contentArea.scrollTop > 20) {
 				scrollToTopBtn.style.display = "block";
 			  } else {
 				scrollToTopBtn.style.display = "none";
 			  }
-			}
+			});
 		  
-			// Function to scroll to the top of the page
-			function scrollToTop() {
-			  document.body.scrollTop = 0;
-			  document.documentElement.scrollTop = 0;
-			}
-		  
-			// Add a scroll event listener to toggle the button visibility
-			window.onscroll = function () {
-			  toggleScrollToTopButton();
-			};
-		  
-			// Add a click event listener to the button to scroll to the top
-			var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-			if (scrollToTopBtn) {
-			  scrollToTopBtn.addEventListener("click", function () {
-				scrollToTop();
-			  });
-			}
+			// When the user clicks on the button, scroll to the top of the content area
+			scrollToTopBtn.addEventListener("click", function() {
+			  contentArea.scrollTop = 0;
+			});
 		  </script>
 		  
     <script src="js/jquery.min.js"></script>
