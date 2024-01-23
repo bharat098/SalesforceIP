@@ -3,6 +3,7 @@
   <head>
   	<title>Salesforce IP</title>
     <meta charset="utf-8">
+<link rel="icon" type="image/x-icon" href="/images/icon.png">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Learn about Salesforce Interview Preparation and its benefits on my website.">
 	<meta name="keywords" content="Salesforce IP, Salesforce, IP, CRM, Software,Interview Preparation,Interview,bharatLearning">
@@ -75,9 +76,9 @@
 					</div> -->
 
 	        <div class="footer">
-	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This  is made with Love
-						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        	<p> 
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |  Bharat Chandra Mohanty <i class="fa fa-heart" style="color: yellow;"></i>
+						   </p>
 	        </div>
 
 	      </div>
@@ -292,6 +293,37 @@
     </li>
 </ol>
 <p><img style="max-width: 100%;" src="images/package1.png"></p>
+<h3 id="h-3-difference-between-json-vs-xml" class="wp-block-heading joli-heading jtoc-heading"><span style="color: #ff0000;">Difference between 1GP Vs 2GP?</span></h3>
+<figure class="wp-block-table is-style-stripes">
+<table style="width: 100%; border: 2px solid red; border-collapse: collapse;">
+<tbody>
+<tr style="height: 13px;">
+<td style="border: 2px solid red; background-color: #e7e9eb; text-align: center; height: 13px;"><strong>1GP</strong></td>
+<td style="border: 2px solid red; background-color: #e7e9eb; text-align: center; height: 13px;"><strong>2GP</strong></td>
+</tr>
+<tr style="border: 2px solid red; height: 13px;">
+<td style="border: 2px solid red; height: 13px;">The packaging org is the main source for the metadata in your package.</td>
+<td style="border: 2px solid red; height: 13px;">Your version control system is the main source (source-driven system) for the metadata in your package. And unlike 1GP, 2GP doesn’t use packaging or patch orgs.</td>
+</tr>
+<tr style="border: 2px solid red; height: 13px;">
+<td style="border: 2px solid red; height: 13px;">The packaging org owns the package. The metadata in the package resides in the packaging org.</td>
+<td style="border: 2px solid red; height: 13px;">The Dev Hub owns the package, but the Dev Hub doesn’t contain the packaged metadata. We recommend that you enable Dev Hub in your partner business org.</td>
+</tr>
+<tr style="height: 13px;">
+<td style="border: 2px solid red; height: 13px;">A packaging org can own only one managed package.</td>
+<td style="border: 2px solid red; height: 13px;">A Dev Hub can own one or more packages.</td>
+</tr>
+<tr style="height: 13.6875px;">
+<td style="border: 2px solid red; height: 13.6875px;">A namespace can be associated with only one package.</td>
+<td style="border: 2px solid red; height: 13.6875px;">Multiple packages can use the same namespace.</td>
+</tr>
+<tr style="height: 13px;">
+<td style="border: 2px solid red; height: 13px;">Global Apex is the only way to share code across packages.</td>
+<td style="border: 2px solid red; height: 13px;">Multiple packages sharing the same namespace can share code using public Apex classes and methods with @namespaceAccessible annotation.</td>
+</tr>
+</tbody>
+</table>
+</figure>
 <p style="text-align: center;"><strong><span style="color:#ff0000;font-size:18pt;">Salesforce Communities Overview:</span></strong></p>
 <p style="text-align: justify;"><strong><span style="color:#ff0000;font-size:13.999999999999998pt;">What is a Salesforce Community?</span></strong></p>
 <p style="text-align: justify;"><span style="font-size:13.999999999999998pt;">A Salesforce Community is an online platform that allows organizations to extend their Salesforce environment to external users such as customers or partners &nbsp;by enabling them to interact, collaborate and access information.</span></p>

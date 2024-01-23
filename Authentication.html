@@ -3,6 +3,7 @@
   <head>
   	<title>Salesforce IP</title>
     <meta charset="utf-8">
+<link rel="icon" type="image/x-icon" href="/images/icon.png">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Learn about Salesforce Interview Preparation and its benefits on my website.">
 	<meta name="keywords" content="Salesforce IP, Salesforce, IP, CRM, Software,Interview Preparation,Interview,bharatLearning">
@@ -75,9 +76,9 @@
 					</div> -->
 
 	        <div class="footer">
-	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This  is made with Love
-						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        	<p> 
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |  Bharat Chandra Mohanty <i class="fa fa-heart" style="color: yellow;"></i>
+						   </p>
 	        </div>
 
 	      </div>
@@ -87,7 +88,6 @@
       <div id="content" class="p-4 p-md-5 pt-5">
         <h2 class="mb-4">Authentication</h2>
 		
-        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:center;'><strong><span style="font-size:24px;line-height:107%;color:red;">Authentication in Salesforce</span></strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><strong><span style="font-size:20px;line-height:107%;color:red;">1. What do you mean by authentication in salesforce?</span></strong></p>
 <ul style="list-style-type: undefined;margin-left:26px;">
     <li><span style="line-height:107%;font-size:17px;">Authentication in Salesforce refers to the process of verifying the identity of a user or application attempting to access the Salesforce platform.&nbsp;</span></li>
@@ -135,6 +135,17 @@
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;line-height:normal;'><span style="font-size:17px;  ;">An example of authorization in Salesforce is assigning different levels of access to users or groups based on their job roles, responsibilities, and the data they need to access. Here&apos;s an example:</span></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><span style="font-size:17px;line-height:107%;">Let&apos;s say a company has a Salesforce org where they store customer data. The org has several different types of users, such as sales reps, customer service agents, and managers. The sales reps need access to view and edit their own accounts and opportunities, while customer service agents need access to view and update customer cases. Managers need access to view reports and dashboards on the performance of their team.</span></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><span style="font-size:17px;line-height:107%;">&nbsp;</span></p>
+<p style="font-size: 11.0pt; font-family: 'Calibri',sans-serif; text-align: justify; margin: 0cm 0cm 8.0pt 0cm;"><span style="font-size: 20px; line-height: 107%; color: red;"><strong>4. What is&nbsp;Delegated authentication</strong>?</span></p>
+<p>Delegated authentication in Salesforce is a feature that allows an organization to integrate its own authentication system with Salesforce. Instead of using Salesforce credentials to log in, users can use their existing credentials from your organization's authentication system. This helps streamline the login process and ensures that users only need to remember and manage one set of credentials.</p>
+<p style="font-size: 11.0pt; font-family: 'Calibri',sans-serif; text-align: justify; margin: 0cm 0cm 8.0pt 0cm;"><span style="font-size: 20px; line-height: 107%; color: red;"><strong>5. What is Certificates?</strong></span></p>
+<p>Salesforce uses certificates to either act as the Client, Server or for Client Authentication. We use SSL certificates for Delegated Authentication SSO, Apex callouts, Outbound Messaging, and other callouts.Salesforce certificates and key pairs are used for signatures that verify a request is coming from your organization. We offer two types of certificates:</p>
+<ul>
+<li><strong>A self-signed certificate</strong>&nbsp;is signed by Salesforce with the SHA-256 signature algorithm. Not all external websites accept self-signed certificate</li>
+<li><strong>A CA-signed certificate</strong>&nbsp;is signed by an external certificate authority (CA). Most external websites accept CA-signed certificates. We must first generate the certificate signing request to send to a CA, and then import the signed version of the certificate before we can use it.</li>
+</ul>
+<p style="font-size: 11.0pt; font-family: 'Calibri',sans-serif; text-align: justify; margin: 0cm 0cm 8.0pt 0cm;"><span style="font-size: 20px; line-height: 107%; color: red;"><strong>6. What is&nbsp;Just-In-Time?</strong></span></p>
+<p>"Just-In-Time (JIT)" provisioning in Salesforce authentication refers to the dynamic creation of user accounts in Salesforce at the time of a user's first login. Instead of manually creating user accounts in advance, JIT provisioning automates the process by creating user records on-the-fly when a user attempts to log in.</p>
+<p>In the context of Salesforce, JIT provisioning is often associated with Single Sign-On (SSO) implementations. When a user tries to access Salesforce for the first time, the identity provider (IdP) sends the necessary user information to Salesforce during the authentication process. Salesforce then uses this information to create a user account on the spot if one doesn't already exist.</p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><strong><span style="font-size:20px;line-height:107%;color:red;">Single-Sign On (SSO) Setup:</span></strong></p>
 <img style="max-width: 100%;" src="images/SSO.jpg">
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:justify;'><span style="font-size:17px;line-height:107%;">From Setup -&gt; Single-Sign On Setting -&gt; New</span></p>

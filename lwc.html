@@ -3,6 +3,7 @@
   <head>
   	<title>Salesforce IP</title>
     <meta charset="utf-8">
+<link rel="icon" type="image/x-icon" href="/images/icon.png">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Learn about Salesforce Interview Preparation and its benefits on my website.">
 	<meta name="keywords" content="Salesforce IP, Salesforce, IP, CRM, Software,Interview Preparation,Interview,bharatLearning">
@@ -79,9 +80,9 @@
 					</div> -->
 
 	        <div class="footer">
-	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This  is made with Love
-						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        	<p> 
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |  Bharat Chandra Mohanty <i class="fa fa-heart" style="color: yellow;"></i>
+						   </p>
 	        </div>
 
 	      </div>
@@ -288,6 +289,23 @@ import MY_EVENT from '@salesforce/messageChannel/My_Event__c';
 		
 	</code>
 </pre>
+<h4><span style="color: #ff0000;">Lightning Data Service(LDS)</span></h4>
+
+<p style="padding-left: 30px;">Lightning Data Service is a centralized data caching mechanism that is used to create,read, update and delete a record without server-side apex code</p>
+<p><strong>Advantages of LDS</strong></p>
+<ol>
+<li>No apex side controller required</li>
+<li>Caching techninque inproves the performance</li>
+</ol>
+<p><strong>LDS Based components</strong></p>
+<p style="padding-left: 30px;">There are three components that are built on Lightning Data Service(LDS)</p>
+<p style="padding-left: 30px;"><strong>1.<code class="language-text">lightning-record-view-form</code></strong></p>
+<p style="padding-left: 60px;">This form will allow you to view the record and to customize fields in the form.</p>
+<p style="padding-left: 30px;"><strong>2.<code class="language-text">lightning-record-edit-form</code></strong></p>
+<p style="padding-left: 60px;">This form will allow you to create and edit the record and to customize fields in the form.</p>
+<p style="padding-left: 30px;"><strong>3.<code class="language-text">lightning-record-form</code></strong></p>
+<p style="padding-left: 60px;">This form allow us to display a form with standard Lightning UI to view, edit, or create a record.</p>
+
 <p><strong>&nbsp;<span style="color: #ff0000;">What is LMS ?</span></strong></p>
 <p>LMS is defined as the standard publish-subscribe library that enables communication with DOM across the components be it Visualforce Pages, Aura components, and Lightning Web Components (LWC) all can use it to publish message and listen to messages published by others.</p>
 <p><span style="color: #ff0000;"><strong>Do we have application events in LWC?</strong></span></p>
@@ -322,6 +340,93 @@ export default class DatatableExample extends LightningElement {
 }
 </code>
 </pre>
+<h4><span style="color: #ff0000;">&nbsp;What is the role of the Shadow DOM in LWC, and how does it differ from the traditional DOM?</span></h4>
+<article class="ibpage-article">
+<p style="padding-left: 30px;">In LWC, the Shadow DOM is used to encapsulate the component's DOM hierarchy and prevent CSS styles and JavaScript code from bleeding out of the component and interfering with the rest of the page.</p>
+</article>
+
+<h4><span style="color: #ff0000;">What is the difference between Promise and Promise.all&nbsp;?</span></h4>
+<p style="padding-left: 30px;"><br /><em><strong>Promise</strong>.All takes in multiple promises in it and returns a single promise object.</em><br /><em><strong>Promise</strong>.all is used when I want to make sure once all promises are resolved then only execute then block.</em></p>
+<p>&nbsp;</p>
+<h4><span style="color: #ff0000;">lightning/ui Api</span></h4>
+<table style="width: 100%; border: 2px solid red; border-collapse: collapse;">
+	<tbody>
+		<tr style="height: 13px;">
+			<td style="border: 2px solid red; background-color: #e7e9eb; text-align: center; height: 13px;"><strong>Descriptors</strong></td>
+			<td style="border: 2px solid red; background-color: #e7e9eb; text-align: center; height: 13px;"><strong>Javascript Methods/Wire Adaptors</strong></td>
+			</tr>
+	<tr style="border: 2px solid red; height: 13px;">
+	<td style="border: 2px solid red; height: 13px;">
+	<div class="slds-grid">
+	<div class="slds-col slds-has-flexi-truncate"><header class="slds-media slds-wrap slds-media_center slds-has-flexi-truncate bundle-heading">
+	<div class="slds-col slds-size_4-of-10 slds-col_bump-right slds-media__body">
+	<h2 class="slds-card__header-title" title="ui-record-api"><span class="slds-page-header__title slds-m-right_small slds-align-middle slds-truncate">UI Record API</span></h2>
+	</div>
+	</header></div>
+	</div>
+	<p>&nbsp;</p>
+	<div class="card-body slds-grid">&nbsp;</div>
+	</td>
+	<td style="width: 71.7949%;">
+	<ul>
+	<li>createRecord(recordInput)</li>
+	<li>createRecordInputFilteredByEditedFields(recordInput, originalRecord)</li>
+	<li>deleteRecord(recordId)</li>
+	<li>generateRecordInputForCreate(record, objectInfo)</li>
+	<li>generateRecordInputForUpdate(record, objectInfo)</li>
+	<li>getFieldValue(record, field)</li>
+	<li>getFieldDisplayValue(record, field)</li>
+	<li>getRecord</li>
+	<li>getRecordCreateDefaults</li>
+	<li>getRecordUi (Deprecated)</li>
+	</ul>
+	</td>
+	</tr>
+	<tr style="border: 2px solid red; height: 13px;">
+	<td style="border: 2px solid red; height: 13px;"
+	<div class="slds-grid">
+	<div class="slds-col slds-has-flexi-truncate"><header class="slds-media slds-wrap slds-media_center slds-has-flexi-truncate bundle-heading">
+	<div class="slds-col slds-size_4-of-10 slds-col_bump-right slds-media__body">
+	<h2 class="slds-card__header-title" title="ui-related-list-api"><span class="slds-page-header__title slds-m-right_small slds-align-middle slds-truncate">UI Related List API</span></h2>
+	</div>
+	</header></div>
+	<div class="slds-col slds-no-flex slds-grid slds-align-top">&nbsp;</div>
+	</div>
+	</td>
+	<td style="width: 71.7949%;">
+	<ul>
+	<li>getRelatedListInfo</li>
+	<li>getRelatedListsInfo</li>
+	<li>getRelatedListRecords</li>
+	<li>getRelatedListCount</li>
+	<li>getRelatedListRecordsBatch</li>
+	<li>getRelatedListInfoBatch</li>
+	</ul>
+	</td>
+	</tr>
+	<tr style="border: 2px solid red; height: 13px;">
+	<td style="border: 2px solid red; height: 13px;">&nbsp;
+	<div class="slds-grid">
+	<div class="slds-col slds-has-flexi-truncate"><header class="slds-media slds-wrap slds-media_center slds-has-flexi-truncate bundle-heading">
+	<div class="slds-col slds-size_4-of-10 slds-col_bump-right slds-media__body">
+	<h2 class="slds-card__header-title" title="ui-object-info-api"><span class="slds-page-header__title slds-m-right_small slds-align-middle slds-truncate">UI Object Info API</span></h2>
+	</div>
+	</header></div>
+	</div>
+	<p>&nbsp;</p>
+	<div class="card-body slds-grid">&nbsp;</div>
+	</td>
+	<td style="width: 71.7949%;">
+	<ul>
+	<li>getObjectInfo</li>
+	<li>getObjectInfos</li>
+	<li>getPicklistValues</li>
+	<li>getPicklistValuesByRecordType</li>
+	</ul></td>
+	</tr>
+	
+	</tbody>
+	</table>
 		</div>
 	  <!-- Scroll-to-top button -->
   <button id="scrollToTopBtn" class="btn btn-primary scroll-to-top">
