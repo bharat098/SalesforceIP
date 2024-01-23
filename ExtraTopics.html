@@ -23,144 +23,9 @@
 			  overflow-y: auto;
 			}
 		  </style>
-        <!--<style>
-            .ag-format-container {
-                width: 1142px;
-                margin: 0 auto;
-              }
-              .ag-courses_box {
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: flex;
-                -webkit-box-align: start;
-                -ms-flex-align: start;
-                align-items: flex-start;
-                -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-                padding: 50px 0;
-              }
-              .ag-courses_item {
-                -ms-flex-preferred-size: calc(33.33333% - 30px);
-                flex-basis: calc(33.33333% - 30px);
-                margin: 0 15px 30px;
-                overflow: hidden;
-                border-radius: 28px;
-              }
-              .ag-courses-item_link {
-                display: block;
-                padding: 30px 20px;
-                background-color: #aeb5e1;
-                overflow: hidden;
-                position: relative;
-              }
-              .ag-courses-item_link:hover,
-              .ag-courses-item_link:hover .ag-courses-item_date {
-                text-decoration: none;
-                color: #000000;
-              }
-              .ag-courses-item_link:hover .ag-courses-item_bg {
-                -webkit-transform: scale(10);
-                -ms-transform: scale(10);
-                transform: scale(10);
-              }
-              .ag-courses-item_title {
-                min-height: 87px;
-                margin: 0 0 25px;
-                overflow: hidden;
-                font-weight: bold;
-                font-size: 30px;
-                color: #FFF;
-                z-index: 2;
-                position: relative;
-              }
-              .ag-courses-item_date-box {
-                font-size: 18px;
-                color: #FFF;
-                z-index: 2;
-                position: relative;
-              }
-              .ag-courses-item_date {
-                font-weight: bold;
-                color: #f9b234;
-                -webkit-transition: color .5s ease;
-                -o-transition: color .5s ease;
-                transition: color .5s ease
-              }
-              .ag-courses-item_bg {
-                height: 128px;
-                width: 128px;
-                background-color: #f9b234;
-              
-                z-index: 1;
-                position: absolute;
-                top: -75px;
-                right: -75px;
-              
-                border-radius: 50%;
-              
-                -webkit-transition: all .5s ease;
-                -o-transition: all .5s ease;
-                transition: all .5s ease;
-              }
-              .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
-                background-color: #3ecd5e;
-              }
-              .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-                background-color: #e44002;
-              }
-              .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
-                background-color: #952aff;
-              }
-              .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
-                background-color: #cd3e94;
-              }
-              .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
-                background-color: #4c49ea;
-              }
-              
-              
-              
-              @media only screen and (max-width: 979px) {
-                .ag-courses_item {
-                  -ms-flex-preferred-size: calc(50% - 30px);
-                  flex-basis: calc(50% - 30px);
-                }
-                .ag-courses-item_title {
-                  font-size: 24px;
-                }
-              }
-              
-              @media only screen and (max-width: 767px) {
-                .ag-format-container {
-                  width: 96%;
-                }
-              
-              }
-              @media only screen and (max-width: 639px) {
-                .ag-courses_item {
-                  -ms-flex-preferred-size: 100%;
-                  flex-basis: 100%;
-                }
-                .ag-courses-item_title {
-                  min-height: 72px;
-                  line-height: 1;
-              
-                  font-size: 24px;
-                }
-                .ag-courses-item_link {
-                  padding: 22px 40px;
-                }
-                .ag-courses-item_date-box {
-                  font-size: 16px;
-                }
-              }
-        </style> -->
+        
         <style>
 
-
-/*===========================
-  services css 
-===========================*/
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .services-eight {
@@ -244,6 +109,32 @@
 }
 
 
+
+button {
+  border: 1px  white;
+  background-color: transparent;
+  margin-left: -20px;
+  padding: 15px;
+  border-radius: 3px;
+  color: #50b848;
+  transition: background 0.5s ease;
+}
+.arrow1 {
+  animation: slide1 1s ease-in-out infinite;
+  margin-left: 9px;
+}
+@keyframes slide1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 0);
+  }
+}
+
+
         </style>
   </head>
   <body>
@@ -311,107 +202,7 @@
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
         <h2 class="mb-4">More Topics</h2>
-        <!--<div class="ag-format-container">
-            <div class="ag-courses_box">
-              <div class="ag-courses_item">
-                <a href="Deployment.html" class="ag-courses-item_link">
-                  <div class="ag-courses-item_bg"></div>
-          
-                  <div class="ag-courses-item_title">
-                   Deployment
-                  </div>
-                </a>
-              </div>
-          
-              <div class="ag-courses_item">
-                <a href="Sandbox.html" class="ag-courses-item_link">
-                  <div class="ag-courses-item_bg"></div>
-          
-                  <div class="ag-courses-item_title">
-                    SandBox
-                  </div>
-                </a>
-              </div>
-          
-              <div class="ag-courses_item">
-                <a href="AdminConcepts.html" class="ag-courses-item_link">
-                  <div class="ag-courses-item_bg"></div>
-          
-                  <div class="ag-courses-item_title">
-                    ADMIN Concepts
-                  </div>
-                </a>
-              </div>
-          
-               <div class="ag-courses_item">
-                <a href="triggers.html" class="ag-courses-item_link">
-                  <div class="ag-courses-item_bg"></div>
-          
-                  <div class="ag-courses-item_title">
-                    Trigger Examples
-                  </div>
-                </a>
-              </div>
-          
-              <div class="ag-courses_item">
-                <a href="Authentication.html" class="ag-courses-item_link">
-                  <div class="ag-courses-item_bg"></div>
-          
-                  <div class="ag-courses-item_title">
-                    Authentication
-                  </div>
-                </a>
-              </div>
-          
-              <div class="ag-courses_item">
-                <a href="vf.html" class="ag-courses-item_link">
-                  <div class="ag-courses-item_bg">
-                  </div>
-                  <div class="ag-courses-item_title">
-                    VisualForce
-                  </div>
-                </a>
-              </div>
-          
-              <div class="ag-courses_item">
-                <a href="RecentReleases.html" class="ag-courses-item_link">
-                  <div class="ag-courses-item_bg"></div>
-          
-                  <div class="ag-courses-item_title">
-                    Recent Releases
-                  </div>
-                </a>
-              </div> 
-              <div class="ag-courses_item">
-                <a href="BestPractises.html" class="ag-courses-item_link">
-                  <div class="ag-courses-item_bg"></div>
-          
-                  <div class="ag-courses-item_title">
-                    Best Practises
-                  </div>
-                </a>
-              </div>
-              <div class="ag-courses_item">
-                <a href="GovernerLimits.html" class="ag-courses-item_link">
-                  <div class="ag-courses-item_bg"></div>
-          
-                  <div class="ag-courses-item_title">
-                    Governer Limits
-                  </div>
-                </a>
-              </div>
-              <div class="ag-courses_item">
-                <a href="Cheatsheet.html" class="ag-courses-item_link">
-                  <div class="ag-courses-item_bg"></div>
-          
-                  <div class="ag-courses-item_title">
-                    Cheatsheet
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div> -->
-          
+        
   <!-- ===== service-area start ===== -->
   <section id="services" class="services-area services-eight">
     <div class="container">
@@ -422,7 +213,11 @@
               <i class="lni lni-capsule"></i>
             </div>
             <div class="service-content">
-             <a href="adminConcepts.html"><h4>Admin Concepts</h4></a> 
+             <a href="adminConcepts.html"><h4>Admin Concepts
+              <button>
+            <i class="fa fa-long-arrow-right arrow1" aria-hidden="true"></i>
+          </button>
+           </h4></a> 
             </div>
           </div>
         </div>
@@ -432,7 +227,9 @@
               <i class="lni lni-bootstrap"></i>
             </div>
             <div class="service-content">
-              <a href="Authentication.html"><h4>Authentication</h4></a>
+              <a href="Authentication.html"><h4>Authentication<button>
+                <i class="fa fa-long-arrow-right arrow1" aria-hidden="true"></i>
+              </button></h4></a>
             </div>
           </div>
         </div>
@@ -442,7 +239,9 @@
               <i class="lni lni-shortcode"></i>
             </div>
             <div class="service-content">
-              <a href="BestPractises.html"><h4>Best Practises</h4></a>
+              <a href="BestPractises.html"><h4>Best Practises<button>
+                <i class="fa fa-long-arrow-right arrow1" aria-hidden="true"></i>
+              </button></h4></a>
             </div>
           </div>
         </div>
@@ -452,7 +251,9 @@
               <i class="lni lni-dashboard"></i>
             </div>
             <div class="service-content">
-              <a href="cheatsheet.html"><h4>CheatSheet</h4></a>
+              <a href="cheatsheet.html"><h4>CheatSheet<button>
+                <i class="fa fa-long-arrow-right arrow1" aria-hidden="true"></i>
+              </button></h4></a>
             </div>
           </div>
         </div>
@@ -462,7 +263,9 @@
               <i class="lni lni-layers"></i>
             </div>
             <div class="service-content">
-              <a href="Deployment.html"> <h4>Deployment</h4></a>
+              <a href="Deployment.html"> <h4>Deployment<button>
+                <i class="fa fa-long-arrow-right arrow1" aria-hidden="true"></i>
+              </button></h4></a>
             </div>
           </div>
         </div>
@@ -472,7 +275,9 @@
               <i class="lni lni-reload"></i>
             </div>
             <div class="service-content">
-              <a href="GovernerLimits.html"><h4>Governer Limits</h4></a>
+              <a href="GovernerLimits.html"><h4>Governer Limits<button>
+                <i class="fa fa-long-arrow-right arrow1" aria-hidden="true"></i>
+              </button></h4></a>
             </div>
           </div>
         </div>
@@ -482,7 +287,9 @@
               <i class="lni lni-code"></i>
             </div>
             <div class="service-content">
-              <a href="RecentReleases.html"><h4>Recent Releases</h4></a>
+              <a href="RecentReleases.html"><h4>Recent Releases<button>
+                <i class="fa fa-long-arrow-right arrow1" aria-hidden="true"></i>
+              </button></h4></a>
             </div>
           </div>
         </div>
@@ -492,7 +299,9 @@
               <i class="lni lni-pie-chart"></i>
             </div>
             <div class="service-content">
-              <a href="Sandbox.html"><h4>Sandbox</h4></a>
+              <a href="Sandbox.html"><h4>Sandbox<button>
+                <i class="fa fa-long-arrow-right arrow1" aria-hidden="true"></i>
+              </button></h4></a>
             </div>
           </div>
         </div>
@@ -502,7 +311,9 @@
               <i class="lni lni-trello"></i>
             </div>
             <div class="service-content">
-              <a href="triggers.html"><h4>Trigger Examples</h4></a>
+              <a href="triggers.html"><h4>Trigger Examples<button>
+                <i class="fa fa-long-arrow-right arrow1" aria-hidden="true"></i>
+              </button></h4></a>
             </div>
           </div>
         </div>
@@ -512,7 +323,9 @@
               <i class="lni lni-webhooks"></i>
             </div>
             <div class="service-content">
-              <a href="vf.html"> <h4>VisualForce</h4></a>
+              <a href="vf.html"> <h4>VisualForce<button>
+                <i class="fa fa-long-arrow-right arrow1" aria-hidden="true"></i>
+              </button></h4></a>
             </div>
           </div>
         </div>
